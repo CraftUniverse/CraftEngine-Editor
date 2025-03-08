@@ -33,7 +33,7 @@ jobs:
         run: |
           dotnet publish -c Release -r ${{ matrix.platform }} --sc true \
           -p:PublishSingleFile=true -p:PublishTrimmed=true -p:StripSymbols=true \
-          -p:Version=nightly-${{ env.VERSION }} -p:ReadyToRun=false \
+          -p:InformationalVersion=nightly-${{ env.VERSION }} -p:ReadyToRun=false \
           -o build/${{ matrix.platform }}
 
       - name: Upload Build Artifacts
