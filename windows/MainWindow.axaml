@@ -5,7 +5,7 @@
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="dev.craftengine.editor.MainWindow"
-             Icon="/Assets/EMXControls.ico"
-             Title="CraftEngine_Editor">
+             Icon="/Assets/icon.ico"
+             Title="CraftEngine Editor">
     Welcome to Avalonia!
 </mx:MxWindow>

@@ -8,6 +8,8 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <AvaloniaVersion>11.2.2</AvaloniaVersion>
     <EremexVersion>[1.1.*,)</EremexVersion>
+    <RootNamespace>dev.craftengine.editor</RootNamespace>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,5 +25,16 @@
     
     <PackageReference Include="Eremex.Avalonia.Controls" Version="$(EremexVersion)" />
     <PackageReference Include="Eremex.Avalonia.Themes.DeltaDesign" Version="$(EremexVersion)"  />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="windows\MainWindow.axaml.cs">
+      <DependentUpon>MainWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
