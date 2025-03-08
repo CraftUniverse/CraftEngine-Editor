@@ -1,19 +1,11 @@
-using System;
-using System.Reflection;
 using Eremex.AvaloniaUI.Controls.Common;
 
-namespace dev.craftengine.editor;
+namespace dev.craftengine.editor.windows;
 
 public partial class MainWindow : MxWindow
 {
     public MainWindow()
     {
         InitializeComponent();
-
-        var version = Assembly.GetExecutingAssembly()
-            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
-            .InformationalVersion;
-
-        Console.WriteLine(version);
     }
 }

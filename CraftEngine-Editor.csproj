@@ -10,6 +10,12 @@
     <EremexVersion>[1.1.*,)</EremexVersion>
     <RootNamespace>dev.craftengine.editor</RootNamespace>
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <Authors>CraftUniverse</Authors>
+    <Copyright>©️2025 CraftUniverse</Copyright>
+    <PackageProjectUrl>https://craftengine.dev</PackageProjectUrl>
+    <PackageIcon>icon.ico</PackageIcon>
+    <Company>CraftUniverse</Company>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
