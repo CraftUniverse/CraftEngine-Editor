@@ -1,9 +1,8 @@
-﻿using Avalonia;
-using System;
-
+﻿using System;
+using Avalonia;
 using Eremex.AvaloniaUI.Controls;
 
-namespace CraftEngine_Editor;
+namespace dev.craftengine.editor;
 
 class Program
 {

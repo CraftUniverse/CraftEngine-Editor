@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace CraftEngine_Editor;
+namespace dev.craftengine.editor;
 
 public partial class App : Application
 {

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CraftEngine_Editor.MainWindow"
+             x:Class="dev.craftengine.editor.MainWindow"
              Icon="/Assets/EMXControls.ico"
              Title="CraftEngine_Editor">
     Welcome to Avalonia!
