@@ -1,0 +1,20 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="dev.craftengine.editor.windows.SplashScreen"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        CanResize="False"
+        Icon="/Assets/icon.ico"
+        Width="650"
+        Height="487"
+        Title="CraftEngine Editor SplashScreen">
+    <Window.Background>
+        <ImageBrush Source="../Assets/splash_screen.jpg" />
+    </Window.Background>
+    <Panel>
+        <TextBlock Margin="10" FontSize="30" FontWeight="Bold" Foreground="White">CraftEngine</TextBlock>
+    </Panel>
+</Window>

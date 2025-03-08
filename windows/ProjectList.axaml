@@ -11,5 +11,5 @@
              x:Class="dev.craftengine.editor.windows.ProjectList"
              Icon="/Assets/icon.ico"
              Title="CraftEngine Editor">
-    Project List
+    <Button Click="TestButton_OnClick">Test</Button>
 </mx:MxWindow>

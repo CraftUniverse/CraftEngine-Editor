@@ -7,6 +7,7 @@
         <entry key="MainWindow.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="windows/MainWindow.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="windows/ProjectList.axaml" value="CraftEngine-Editor.csproj" />
+        <entry key="windows/SplashScreen.axaml" value="CraftEngine-Editor.csproj" />
       </map>
     </option>
   </component>
