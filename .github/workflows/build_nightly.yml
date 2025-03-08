@@ -39,5 +39,5 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: craftengine-editor_${{ matrix.platform }}
+          name: ce-editor_${{ matrix.platform }}
           path: build/${{ matrix.platform }}
