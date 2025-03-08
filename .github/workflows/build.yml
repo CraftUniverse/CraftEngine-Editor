@@ -1,0 +1,38 @@
+﻿name: Build App
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        platform: [win-x64, win-arm64, linux-x64, linux-arm64, osx-arm64]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build for ${{ matrix.platform }}
+        run: |
+          dotnet publish -c Release -r ${{ matrix.platform }} --self-contained true \
+          -p:PublishSingleFile=true -p:PublishTrimmed=true -p:StripSymbols=true \
+          -p:Version=${{ github.event.inputs.version }} \
+          -o build/${{ matrix.platform }}
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.platform }}
+          path: build/${{ matrix.platform }}

@@ -14,7 +14,9 @@ PLATFORMS=(
 # Build for each platform
 for PLATFORM in "${PLATFORMS[@]}"; do
     echo "Building for $PLATFORM..."
-    dotnet publish -c Release -r $PLATFORM -v m --nologo -o "$BUILD_DIR/$PLATFORM"
+    
+    dotnet publish -c Release -r $PLATFORM --sc true -p:PublishTrimmed=true -p:StripSymbols=true -p:ReadyToRun=false -p:PublishSingleFile=true -o "$BUILD_DIR/$PLATFORM"
+    
     if [ $? -ne 0 ]; then
         echo "Error building for $PLATFORM!"
         exit 1

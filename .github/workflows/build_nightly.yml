@@ -1,0 +1,43 @@
+﻿name: Build App (Nightly)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        platform: [win-x64, win-arm64, linux-x64, linux-arm64, osx-arm64]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Delete old artifacts
+        uses: actions/delete-artifact@v4
+        with:
+          name: craftengine-editor_-*
+          
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Get Version from Git
+        run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+
+      - name: Build for ${{ matrix.platform }}
+        run: |
+          dotnet publish -c Release -r ${{ matrix.platform }} --sc true \
+          -p:PublishSingleFile=true -p:PublishTrimmed=true -p:StripSymbols=true \
+          -p:Version=nightly-${{ env.VERSION }} -p:ReadyToRun=false \
+          -o build/${{ matrix.platform }}
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: craftengine-editor_${{ matrix.platform }}
+          path: build/${{ matrix.platform }}
