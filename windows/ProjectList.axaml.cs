@@ -10,7 +10,7 @@ public partial class ProjectList : MxWindow
         InitializeComponent();
     }
 
-    private void TestButton_OnClick(object? sender, RoutedEventArgs e)
+    private void OpenButton_OnClick(object? sender, RoutedEventArgs e)
     {
         var splashscreen = new SplashScreen();
 

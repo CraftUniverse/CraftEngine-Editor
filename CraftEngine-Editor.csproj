@@ -28,24 +28,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+      <PackageReference Include="AsyncImageLoader.Avalonia" Version="3.3.0"/>
+      <PackageReference Include="Avalonia" Version="11.2.5"/>
+      <PackageReference Include="Avalonia.Desktop" Version="11.2.5"/>
+      <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5"/>
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+      <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.5"/>
+      <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5"/>
     
     <PackageReference Include="Eremex.Avalonia.Controls" Version="$(EremexVersion)" />
-    <PackageReference Include="Eremex.Avalonia.Themes.DeltaDesign" Version="$(EremexVersion)"  />
+
+      <PackageReference Include="Eremex.Avalonia.Controls3D" Version="1.1.99"/>
+
+      <PackageReference Include="Eremex.Avalonia.Themes.DeltaDesign" Version="1.1.99"/>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="windows\MainWindow.axaml.cs">
-      <DependentUpon>MainWindow.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+      <Folder Include="ViewModels\"/>
   </ItemGroup>
 </Project>

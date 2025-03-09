@@ -3,14 +3,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
              mc:Ignorable="d"
-             MinHeight="600"
-             MinWidth="400"
-             Width="400"
-             Height="600"
+             MinHeight="600" Height="600"
+             MinWidth="400" Width="400"
              WindowStartupLocation="CenterScreen"
              x:Class="dev.craftengine.editor.windows.ProjectList"
              Icon="/Assets/icon.ico"
              Title="CraftEngine Editor">
-    <Button Click="TestButton_OnClick">Test</Button>
+    <Panel>
+        <StackPanel Orientation="Vertical">
+            <DockPanel>
+                <Button Margin="10">New Project</Button>
+                <Button Click="OpenButton_OnClick">Open Project</Button>
+                <Border Margin="10" Width="25" Height="25" CornerRadius="50"
+                        ClipToBounds="True" HorizontalAlignment="Right">
+                    <Image asyncImageLoader:ImageLoader.Source="https://ui-avatars.com/api" Stretch="UniformToFill" />
+                </Border>
+            </DockPanel>
+        </StackPanel>
+    </Panel>
 </mx:MxWindow>
