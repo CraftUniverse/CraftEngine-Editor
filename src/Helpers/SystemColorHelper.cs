@@ -12,7 +12,7 @@ using AppKit;
 using System.Diagnostics;
 #endif
 
-namespace dev.craftengine.editor.helpers;
+namespace dev.craftengine.editor.Helpers;
 
 public static class SystemColorHelper
 {

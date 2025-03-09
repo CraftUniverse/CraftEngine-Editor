@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace dev.craftengine.editor.windows;
+namespace dev.craftengine.editor.Views;
 
 public partial class SplashScreen : Window
 {

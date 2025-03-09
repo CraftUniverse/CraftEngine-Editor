@@ -21,6 +21,7 @@
     <PackageId>CraftEngine Editor</PackageId>
     <PackageLicenseUrl>https://wiki.craftengine.dev/licence</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/CraftUniverse/CraftEngine-Editor</RepositoryUrl>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
   <ItemGroup>
       <PackageReference Include="AsyncImageLoader.Avalonia" Version="3.3.0"/>
       <PackageReference Include="Avalonia" Version="11.2.5"/>
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.5"/>
       <PackageReference Include="Avalonia.Desktop" Version="11.2.5"/>
       <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5"/>
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
@@ -40,6 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-      <Folder Include="ViewModels\"/>
+    <AdditionalFiles Include="src\Views\ProjectList.axaml"/>
+    <AdditionalFiles Include="src\Views\SplashScreen.axaml"/>
   </ItemGroup>
 </Project>

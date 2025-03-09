@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using dev.craftengine.editor.windows;
+using dev.craftengine.editor.Views;
 
 namespace dev.craftengine.editor;
 

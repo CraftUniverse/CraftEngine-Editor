@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace dev.craftengine.editor.windows;
+namespace dev.craftengine.editor.Views;
 
 public partial class ProjectList : Window
 {
