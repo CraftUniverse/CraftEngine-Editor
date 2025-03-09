@@ -1,0 +1,47 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
+        Height="178" Width="420" CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        x:Class="dev.craftengine.editor.Views.NewProject"
+        x:DataType="vm:ProjectList"
+        Icon="/Assets/icon.ico"
+        Title="CraftEngine Editor - New Project">
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10 ">
+                <TextBlock Margin="0 0 0 5">Name:</TextBlock>
+                <TextBox Text="New Project" MinWidth="250"
+                         Watermark="Name">
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 10">
+                <TextBlock Margin="0 0 0 5">Game Version:</TextBlock>
+                <ComboBox MinWidth="140" SelectedIndex="0" MaxDropDownHeight="100">
+                    <ComboBoxItem>1.21.4</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10 0 10 0">
+                <TextBlock Margin="0 0 0 5">Path:</TextBlock>
+                <TextBox Name="PathInput" Focusable="False" IsReadOnly="True"
+                         MinWidth="360" Watermark="Path">
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Margin="0 0 0 5"></TextBlock>
+                <Button Click="PathButton_OnClick">...</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <Button Click="CloseButton_OnClick" Margin="10 0">Close</Button>
+            <Button>Create</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
