@@ -10,11 +10,37 @@
         Icon="/Assets/icon.ico"
         Width="650"
         Height="487"
-        Title="CraftEngine Editor SplashScreen">
+        Title="Splash Screen">
     <Window.Background>
         <ImageBrush Source="../Assets/splash_screen.jpg" />
     </Window.Background>
     <Panel>
-        <TextBlock Margin="10" FontSize="30" FontWeight="Bold" Foreground="White">CraftEngine</TextBlock>
+        <StackPanel VerticalAlignment="Stretch">
+            <TextBlock Margin="10 10 0 0">
+                <Run Text="CraftEngine" FontSize="30"
+                     FontWeight="Bold" Foreground="White">
+                </Run>
+                <Run Text="1.0.0" FontSize="18"
+                     FontWeight="Medium" Foreground="DimGray">
+                </Run>
+            </TextBlock>
+
+            <TextBlock Margin="10 0" FontSize="20"
+                       FontWeight="Medium" Foreground="White">
+                Test
+            </TextBlock>
+            <TextBlock Margin="10 0" FontSize="20"
+                       FontWeight="Medium" Foreground="White">
+                Opening Project...
+            </TextBlock>
+            <ProgressBar Margin="10 5 300 0" Height="20"
+                         Minimum="0" Maximum="100" Value="14"
+                         ShowProgressText="True"
+                         Foreground="DimGray" />
+        </StackPanel>
+        <TextBlock Margin="10" VerticalAlignment="Bottom" FontSize="13"
+                   FontWeight="Light" Foreground="White">
+            Credits...
+        </TextBlock>
     </Panel>
 </Window>
