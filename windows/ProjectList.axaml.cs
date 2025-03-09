@@ -1,9 +1,9 @@
-﻿using Avalonia.Interactivity;
-using Eremex.AvaloniaUI.Controls.Common;
+﻿using Avalonia.Controls;
+using Avalonia.Interactivity;
 
 namespace dev.craftengine.editor.windows;
 
-public partial class ProjectList : MxWindow
+public partial class ProjectList : Window
 {
     public ProjectList()
     {

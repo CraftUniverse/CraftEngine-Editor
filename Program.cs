@@ -1,6 +1,5 @@
 ﻿using System;
 using Avalonia;
-using Eremex.AvaloniaUI.Controls;
 
 namespace dev.craftengine.editor;
 
@@ -18,6 +17,5 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .LogToTrace()
-            .UseEMXServices();
+            .LogToTrace();
 }

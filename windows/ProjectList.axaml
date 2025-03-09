@@ -1,16 +1,12 @@
-﻿<mx:MxWindow xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
-             xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
-             mc:Ignorable="d"
-             MinHeight="600" Height="600"
-             MinWidth="400" Width="400"
-             WindowStartupLocation="CenterScreen"
-             x:Class="dev.craftengine.editor.windows.ProjectList"
-             Icon="/Assets/icon.ico"
-             Title="CraftEngine Editor">
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+        MinHeight="600" Height="600"
+        MinWidth="400" Width="400"
+        WindowStartupLocation="CenterScreen"
+        x:Class="dev.craftengine.editor.windows.ProjectList"
+        Icon="/Assets/icon.ico"
+        Title="CraftEngine Editor">
     <Panel>
         <StackPanel Orientation="Vertical">
             <DockPanel>
@@ -23,4 +19,4 @@
             </DockPanel>
         </StackPanel>
     </Panel>
-</mx:MxWindow>
+</Window>
