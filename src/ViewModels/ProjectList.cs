@@ -1,26 +1,31 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace dev.craftengine.editor.ViewModels;
 
-public class ProjectList
+public class ProjectList : ViewModelBase
 {
-    public List<Project> Projects { get; }
+    public ObservableCollection<ProjectItem> Projects { get; }
 
     public ProjectList()
     {
-        Projects = new List<Project>()
+        var projects = new List<ProjectItem>()
         {
-            new("Test")
+            new("Test", "1.21.4")
         };
+
+        Projects = new ObservableCollection<ProjectItem>(projects);
     }
 
-    public class Project
+    public class ProjectItem
     {
         public string Name { get; set; }
+        public string Version { get; set; }
 
-        public Project(string name)
+        public ProjectItem(string name, string version)
         {
             Name = name;
+            Version = version;
         }
     }
 }

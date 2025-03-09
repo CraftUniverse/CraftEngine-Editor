@@ -1,14 +1,17 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
-        xmlns:viewModels="clr-namespace:dev.craftengine.editor.ViewModels"
+        xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
         MinHeight="600" Height="600"
         MinWidth="400" Width="400"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.ProjectList"
-        x:DataType="viewModels:ProjectList"
+        x:DataType="vm:ProjectList"
         Icon="/Assets/icon.ico"
         Title="CraftEngine Editor">
+    <Design.DataContext>
+        <vm:ProjectList />
+    </Design.DataContext>
 
     <Panel>
         <StackPanel Orientation="Vertical">
@@ -23,9 +26,28 @@
 
             <DockPanel>
                 <DataGrid Margin="10" ItemsSource="{Binding Projects}"
-                          IsReadOnly="True" BorderBrush="Gray">
+                          IsReadOnly="True" BorderBrush="Gray" CanUserSortColumns="False"
+                          Focusable="False" HeadersVisibility="None">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Binding="{Binding Name}" />
+                        <DataGridTextColumn Binding="{Binding Version}" />
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>Open</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>Delete</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>
