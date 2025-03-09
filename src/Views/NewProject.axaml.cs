@@ -28,6 +28,10 @@ public partial class NewProject : Window
         options.AllowMultiple = false;
 
         var dialog = StorageProvider.OpenFolderPickerAsync(options);
+
+        if (dialog.Result.Count != 1)
+            return;
+
         var path = dialog.Result[0].Path.LocalPath;
 
         PathInput.Text = path;
