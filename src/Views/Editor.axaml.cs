@@ -13,9 +13,10 @@ public partial class Editor : Window
 
         Title = "CraftEngine Editor " + VersionControl.Version;
 
-        var assetBrowser = new AssetBrowser("AssetBrowser");
-
-        MainPanel.Children.Add(assetBrowser);
+        PanelLayout1.Children.Add(new Hierarchy("Hierarchy"));
+        PanelLayout2.Children.Add(new GameViewer("GameViewer"));
+        PanelLayout3.Children.Add(new AssetBrowser("AssetBrowser"));
+        PanelLayout4.Children.Add(new Properties("Properties"));
     }
 
     private void Menu_File_Exit_OnClick(object? sender, RoutedEventArgs e)

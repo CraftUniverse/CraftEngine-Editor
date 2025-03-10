@@ -1,6 +1,6 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Height="720" Width="1280"
+        Height="1080" Width="1920"
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.Editor"
@@ -34,5 +34,14 @@
         </Menu>
 
         <TextBlock />
+
+        <Grid ColumnDefinitions="350 * 350">
+            <Panel Grid.Column="0" Name="PanelLayout1"></Panel>
+            <Grid Grid.Column="1" RowDefinitions="* 250">
+                <Panel Grid.Row="0" Name="PanelLayout2"></Panel>
+                <Panel Grid.Row="1" Name="PanelLayout3"></Panel>
+            </Grid>
+            <Panel Grid.Column="2" Name="PanelLayout4"></Panel>
+        </Grid>
     </DockPanel>
 </Window>

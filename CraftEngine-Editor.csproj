@@ -46,4 +46,19 @@
     <AdditionalFiles Include="src\Views\ProjectList.axaml"/>
     <AdditionalFiles Include="src\Views\SplashScreen.axaml"/>
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="src\Views\Panels\GameViewer.axaml.cs">
+      <DependentUpon>GameViewer.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="src\Views\Panels\Properties.axaml.cs">
+      <DependentUpon>Properties.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="src\Views\Panels\Hierarchy.axaml.cs">
+      <DependentUpon>Hierarchy.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
