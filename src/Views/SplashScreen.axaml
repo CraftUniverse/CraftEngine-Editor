@@ -10,9 +10,10 @@
         Icon="/Assets/icon.ico"
         Width="650"
         Height="487"
+        Loaded="Control_OnLoaded"
         Title="Splash Screen">
     <Window.Background>
-        <ImageBrush Source="../Assets/splash_screen.jpg" />
+        <ImageBrush Source="../../Assets/splash_screen.jpg" />
     </Window.Background>
     <Panel>
         <StackPanel VerticalAlignment="Stretch">

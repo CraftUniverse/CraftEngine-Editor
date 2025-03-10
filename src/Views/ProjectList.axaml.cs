@@ -12,9 +12,7 @@ public partial class ProjectList : Window
 
     private void OpenButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        var splashscreen = new SplashScreen();
-
-        splashscreen.Show();
+        new SplashScreen().Show();
         Close();
     }
 
