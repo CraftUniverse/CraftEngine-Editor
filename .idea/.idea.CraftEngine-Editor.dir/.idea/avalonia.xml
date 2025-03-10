@@ -9,6 +9,7 @@
         <entry key="Views/SplashScreen.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Editor.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/NewProject.axaml" value="CraftEngine-Editor.csproj" />
+        <entry key="src/Views/Panels/AssetBrowser.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/ProjectList.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/SplashScreen.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="windows/MainWindow.axaml" value="CraftEngine-Editor.csproj" />

@@ -5,13 +5,13 @@
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.Editor"
         Icon="/Assets/icon.ico">
-    <DockPanel>
+    <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_Save Level" />
                 <MenuItem Header="_Save Level as..." />
                 <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Click="Menu_File_Exit_OnClick" Header="_Exit" />
             </MenuItem>
 
             <MenuItem Header="_Edit">

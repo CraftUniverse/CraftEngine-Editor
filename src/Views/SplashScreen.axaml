@@ -10,18 +10,18 @@
         Icon="/Assets/icon.ico"
         Width="650"
         Height="487"
-        Loaded="Control_OnLoaded"
-        Title="Splash Screen">
+        Loaded="Control_OnLoaded">
     <Window.Background>
         <ImageBrush Source="../../Assets/splash_screen.jpg" />
     </Window.Background>
+
     <Panel>
         <StackPanel VerticalAlignment="Stretch">
             <TextBlock Margin="10 10 0 0">
                 <Run Text="CraftEngine" FontSize="30"
                      FontWeight="Bold" Foreground="White">
                 </Run>
-                <Run Text="1.0.0" FontSize="18"
+                <Run Name="VersionText" FontSize="18"
                      FontWeight="Medium" Foreground="DimGray">
                 </Run>
             </TextBlock>
