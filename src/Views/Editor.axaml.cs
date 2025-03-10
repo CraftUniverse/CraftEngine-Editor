@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
-using System.Reflection;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
+using dev.craftengine.editor.Helpers;
 
 namespace dev.craftengine.editor.Views;
 
@@ -10,8 +9,6 @@ public partial class Editor : Window
     {
         InitializeComponent();
 
-        var version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location)?.ProductVersion;
-
-        Title = "CraftEngine Editor " + version;
+        Title = "CraftEngine Editor " + VersionControl.Version;
     }
 }
