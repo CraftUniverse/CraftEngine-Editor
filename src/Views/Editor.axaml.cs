@@ -14,7 +14,7 @@ public partial class Editor : Window
         Title = "CraftEngine Editor " + VersionControl.Version;
 
         PanelLayout1.Children.Add(new Hierarchy("Hierarchy"));
-        PanelLayout2.Children.Add(new GameViewer("GameViewer"));
+        PanelLayout2.Children.Add(new Panels.GameViewer("GameViewer"));
         PanelLayout3.Children.Add(new AssetBrowser("AssetBrowser"));
         PanelLayout4.Children.Add(new Properties("Properties"));
     }

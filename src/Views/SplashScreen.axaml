@@ -19,11 +19,9 @@
         <StackPanel VerticalAlignment="Stretch">
             <TextBlock Margin="10 10 0 0">
                 <Run Text="CraftEngine" FontSize="30"
-                     FontWeight="Bold" Foreground="White">
-                </Run>
+                     FontWeight="Bold" Foreground="White" />
                 <Run Name="VersionText" FontSize="18"
-                     FontWeight="Medium" Foreground="DimGray">
-                </Run>
+                     FontWeight="Medium" Foreground="DimGray" />
             </TextBlock>
 
             <TextBlock Margin="10 0" FontSize="20"

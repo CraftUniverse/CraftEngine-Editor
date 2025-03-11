@@ -1,64 +1,78 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <AvaloniaVersion>11.2.2</AvaloniaVersion>
-    <EremexVersion>[1.1.*,)</EremexVersion>
-    <RootNamespace>dev.craftengine.editor</RootNamespace>
-    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
-    <Authors>CraftUniverse</Authors>
-    <Copyright>© 2025 CraftUniverse</Copyright>
-    <PackageProjectUrl>https://craftengine.dev</PackageProjectUrl>
-    <PackageIcon>icon.ico</PackageIcon>
-    <Company>CraftUniverse</Company>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyName>CraftEngine Editor</AssemblyName>
-    <IsPackable>false</IsPackable>
-    <PackageId>CraftEngine Editor</PackageId>
-    <PackageLicenseUrl>https://wiki.craftengine.dev/licence</PackageLicenseUrl>
-    <RepositoryUrl>https://github.com/CraftUniverse/CraftEngine-Editor</RepositoryUrl>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <AvaloniaVersion>11.2.2</AvaloniaVersion>
+        <EremexVersion>[1.1.*,)</EremexVersion>
+        <RootNamespace>dev.craftengine.editor</RootNamespace>
+        <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+        <Authors>CraftUniverse</Authors>
+        <Copyright>© 2025 CraftUniverse</Copyright>
+        <PackageProjectUrl>https://craftengine.dev</PackageProjectUrl>
+        <PackageIcon>icon.ico</PackageIcon>
+        <Company>CraftUniverse</Company>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyName>CraftEngine Editor</AssemblyName>
+        <IsPackable>false</IsPackable>
+        <PackageId>CraftEngine Editor</PackageId>
+        <PackageLicenseUrl>https://wiki.craftengine.dev/licence</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/CraftUniverse/CraftEngine-Editor</RepositoryUrl>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\**"/>
+    </ItemGroup>
 
-  <ItemGroup>
-      <PackageReference Include="AsyncImageLoader.Avalonia" Version="3.3.0"/>
-      <PackageReference Include="Avalonia" Version="11.2.5"/>
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.5"/>
-      <PackageReference Include="Avalonia.Desktop" Version="11.2.5"/>
-      <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5"/>
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-      <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.5"/>
-      <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5"/>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+    <ItemGroup>
+        <PackageReference Include="AsyncImageLoader.Avalonia" Version="3.3.0"/>
+        <PackageReference Include="Avalonia" Version="11.2.5"/>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.5"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.5"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.5"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+        <PackageReference Include="MessagePack" Version="3.1.3"/>
+        <PackageReference Include="SDL3-CS" Version="3.2.8.2"/>
+    </ItemGroup>
 
-    <PackageReference Include="MessagePack" Version="3.1.3"/>
-  </ItemGroup>
+    <ItemGroup>
+        <AdditionalFiles Include="src\Views\ProjectList.axaml"/>
+        <AdditionalFiles Include="src\Views\SplashScreen.axaml"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <AdditionalFiles Include="src\Views\ProjectList.axaml"/>
-    <AdditionalFiles Include="src\Views\SplashScreen.axaml"/>
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Update="src\Views\Panels\GameViewer.axaml.cs">
+            <DependentUpon>GameViewer.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="src\Views\Panels\Properties.axaml.cs">
+            <DependentUpon>Properties.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="src\Views\Panels\Hierarchy.axaml.cs">
+            <DependentUpon>Hierarchy.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="src\Views\Panels\GameViewer.axaml.cs">
-      <DependentUpon>GameViewer.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="src\Views\Panels\Properties.axaml.cs">
-      <DependentUpon>Properties.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="src\Views\Panels\Hierarchy.axaml.cs">
-      <DependentUpon>Hierarchy.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
+    <!-- SDL 3 -->
+    <ItemGroup>
+        <NativeCopy Include="Libraries\win-x64\*.dll" Condition="'$(RuntimeIdentifier)' == 'win-x64'"/>
+        <NativeCopy Include="Libraries\win-arm64\*.dll" Condition="'$(RuntimeIdentifier)' == 'win-arm64'"/>
+        <NativeCopy Include="Libraries\linux-x64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-x64'"/>
+        <NativeCopy Include="Libraries\linux-arm64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-arm64'"/>
+        <NativeCopy Include="Libraries\osx-arm64\*.dynlib" Condition="'$(RuntimeIdentifier)' == 'osx-arm64'"/>
+    </ItemGroup>
+
+    <Target Name="CopyNativeLibraries" AfterTargets="Build;Publish">
+        <Copy SourceFiles="@(NativeCopy)" DestinationFolder="$(PublishDir)"/>
+    </Target>
+
 </Project>

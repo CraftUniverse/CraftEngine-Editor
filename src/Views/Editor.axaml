@@ -21,7 +21,7 @@
             </MenuItem>
 
             <MenuItem Header="_Objects">
-                <MenuItem></MenuItem>
+                <MenuItem />
             </MenuItem>
 
             <MenuItem Header="_Windows">
@@ -36,12 +36,12 @@
         <TextBlock />
 
         <Grid ColumnDefinitions="350 * 350">
-            <Panel Grid.Column="0" Name="PanelLayout1"></Panel>
+            <Panel Grid.Column="0" Name="PanelLayout1" />
             <Grid Grid.Column="1" RowDefinitions="* 250">
-                <Panel Grid.Row="0" Name="PanelLayout2"></Panel>
-                <Panel Grid.Row="1" Name="PanelLayout3"></Panel>
+                <Panel Grid.Row="0" Name="PanelLayout2" />
+                <Panel Grid.Row="1" Name="PanelLayout3" />
             </Grid>
-            <Panel Grid.Column="2" Name="PanelLayout4"></Panel>
+            <Panel Grid.Column="2" Name="PanelLayout4" />
         </Grid>
     </DockPanel>
 </Window>
