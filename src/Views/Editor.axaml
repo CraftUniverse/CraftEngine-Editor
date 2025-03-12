@@ -8,16 +8,16 @@
     <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_Save Level" />
-                <MenuItem Header="_Save Level as..." />
+                <MenuItem Header="Save Level" />
+                <MenuItem Header="Save Level as..." />
                 <Separator />
-                <MenuItem Click="Menu_File_Exit_OnClick" Header="_Exit" />
+                <MenuItem Click="Menu_File_Exit_OnClick" Header="Exit" />
             </MenuItem>
 
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo" />
-                <MenuItem Header="_Redo" />
-                <MenuItem Header="_Preferences" />
+                <MenuItem Header="Undo" />
+                <MenuItem Header="Redo" />
+                <MenuItem Header="Preferences" Click="Menu_Preferences_OnClick" />
             </MenuItem>
 
             <MenuItem Header="_Objects">
@@ -25,11 +25,11 @@
             </MenuItem>
 
             <MenuItem Header="_Windows">
-                <MenuItem Header="_Game Viewer" ToggleType="CheckBox" IsChecked="True" />
-                <MenuItem Header="_Properties" ToggleType="CheckBox" IsChecked="True" />
-                <MenuItem Header="_Hierarchy" ToggleType="CheckBox" IsChecked="True" />
-                <MenuItem Header="_Asset Browser" ToggleType="CheckBox" IsChecked="True" />
-                <MenuItem Header="_Console" ToggleType="CheckBox" IsChecked="True" />
+                <MenuItem Header="Game Viewer" ToggleType="CheckBox" IsChecked="True" />
+                <MenuItem Header="Properties" ToggleType="CheckBox" IsChecked="True" />
+                <MenuItem Header="Hierarchy" ToggleType="CheckBox" IsChecked="True" />
+                <MenuItem Header="Asset Browser" ToggleType="CheckBox" IsChecked="True" />
+                <MenuItem Header="Console" ToggleType="CheckBox" IsChecked="True" />
             </MenuItem>
         </Menu>
 

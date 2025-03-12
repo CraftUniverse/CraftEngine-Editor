@@ -17,7 +17,7 @@ public partial class SplashScreen : Window
     private void Control_OnLoaded(object? sender, RoutedEventArgs e)
     {
         // temp. for developing, until a proper system exists
-        Thread.Sleep(1000 * 2);
+        Thread.Sleep(1000);
 
         new Editor().Show();
         Close();

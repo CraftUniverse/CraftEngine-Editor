@@ -23,4 +23,10 @@ public partial class Editor : Window
     {
         Close();
     }
+
+    private void Menu_Preferences_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var prefWin = new Preferences();
+        prefWin.Show(this);
+    }
 }

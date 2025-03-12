@@ -13,6 +13,7 @@
         <entry key="src/Views/Panels/GameViewer.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Panels/Hierarchy.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Panels/Properties.axaml" value="CraftEngine-Editor.csproj" />
+        <entry key="src/Views/Preferences.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/ProjectList.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/SplashScreen.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="windows/MainWindow.axaml" value="CraftEngine-Editor.csproj" />
