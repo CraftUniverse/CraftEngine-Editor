@@ -22,6 +22,8 @@
         <PackageLicenseUrl>https://wiki.craftengine.dev/licence</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/CraftUniverse/CraftEngine-Editor</RepositoryUrl>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <VersionPrefix>1.0.0</VersionPrefix>
+        <VersionSuffix>indev</VersionSuffix>
     </PropertyGroup>
 
     <ItemGroup>
@@ -39,7 +41,7 @@
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
         <PackageReference Include="MessagePack" Version="3.1.3"/>
-        <PackageReference Include="SDL3-CS" Version="3.2.8.2"/>
+        <PackageReference Include="SDL-Sharp" Version="2.2.5"/>
     </ItemGroup>
 
     <ItemGroup>
