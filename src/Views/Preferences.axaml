@@ -26,6 +26,14 @@
                         External Tools
                     </ListBoxItem>
                 </ListBox>
+
+                <Separator MinWidth="90"></Separator>
+
+                <TextBlock Margin="5" FontWeight="Bold">Panels</TextBlock>
+
+                <Separator MinWidth="90"></Separator>
+
+                <TextBlock Margin="5" FontWeight="Bold">Blueprints</TextBlock>
             </StackPanel>
         </ScrollViewer>
 
