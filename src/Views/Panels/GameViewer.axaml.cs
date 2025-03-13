@@ -6,6 +6,8 @@ namespace dev.craftengine.editor.Views.Panels;
 
 public partial class GameViewer : UserControl
 {
+    private SDLWindow _sdlWindow;
+
     public GameViewer(string name)
     {
         Name = name;
@@ -13,8 +15,15 @@ public partial class GameViewer : UserControl
         InitializeComponent();
     }
 
-    private void Control_OnLoaded(object? sender, RoutedEventArgs e)
+    private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        new SDLWindow(HostFrame.Handle);
+        _sdlWindow = new SDLWindow(HostFrame.Handle);
+    }
+
+    private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
+    {
+        if (!IsLoaded) return;
+
+        _sdlWindow.Resize((int)e.NewSize.Width, (int)e.NewSize.Height);
     }
 }
