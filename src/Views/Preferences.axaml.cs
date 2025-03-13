@@ -22,15 +22,10 @@ public partial class Preferences : Window
         {
             PanelGeneralExternal.IsVisible = true;
         }
-        else if (e.AddedItems.Contains(SidebarGeneralExternal_2)) // GENERAL - EXTERNAL TOOLS 2
-        {
-            PanelGeneralExternal_2.IsVisible = true;
-        }
     }
 
     private void ClosePanels()
     {
         PanelGeneralExternal.IsVisible = false;
-        PanelGeneralExternal_2.IsVisible = false;
     }
 }
