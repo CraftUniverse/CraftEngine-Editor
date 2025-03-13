@@ -11,14 +11,22 @@ public partial class Preferences : Window
 
         Title = "CraftEngine Editor " + VersionControl.Version + " - Preferences";
 
-        SidebarGeneral.SelectedItems?.Add(SidebarGeneralExternal);
+        SidebarGeneral.SelectedItems?.Add(SidebarGeneralEdior);
     }
 
     private void SidebarGeneral_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         ClosePanels();
 
-        if (e.AddedItems.Contains(SidebarGeneralExternal)) // GENERAL - EXTERNAL TOOLS
+        if (e.AddedItems.Contains(SidebarGeneralEdior)) // GENERAL - EDITOR
+        {
+            PanelGeneralEditor.IsVisible = true;
+        }
+        else if (e.AddedItems.Contains(SidebarGeneralPerformance)) // GENERAL - PERFORMANCE
+        {
+            PanelGeneralPerformance.IsVisible = true;
+        }
+        else if (e.AddedItems.Contains(SidebarGeneralExternal)) // GENERAL - EXTERNAL TOOLS
         {
             PanelGeneralExternal.IsVisible = true;
         }
@@ -26,6 +34,8 @@ public partial class Preferences : Window
 
     private void ClosePanels()
     {
+        PanelGeneralEditor.IsVisible = false;
+        PanelGeneralPerformance.IsVisible = false;
         PanelGeneralExternal.IsVisible = false;
     }
 }

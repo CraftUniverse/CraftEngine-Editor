@@ -13,6 +13,14 @@
 
                 <ListBox Name="SidebarGeneral" CornerRadius="3"
                          SelectionChanged="SidebarGeneral_OnSelectionChanged">
+                    <ListBoxItem Name="SidebarGeneralEdior" CornerRadius="3"
+                                 Padding="8">
+                        Editor
+                    </ListBoxItem>
+                    <ListBoxItem Name="SidebarGeneralPerformance" CornerRadius="3"
+                                 Padding="8">
+                        Performance
+                    </ListBoxItem>
                     <ListBoxItem Name="SidebarGeneralExternal" CornerRadius="3"
                                  Padding="8">
                         External Tools
@@ -21,54 +29,68 @@
             </StackPanel>
         </ScrollViewer>
 
-        <Border Width="3" Margin="5" Background="Gray" CornerRadius="50" />
+        <Border Width="3" Margin="5" Background="Gray"
+                CornerRadius="50" Opacity="0.45" />
 
         <StackPanel Orientation="Vertical">
-            <Panel Name="PanelGeneralExternal">
-                <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Margin="7">Image Editor</TextBlock>
-                        <ComboBox SelectedIndex="0"
-                                  AutoScrollToSelectedItem="True">
-                            <ComboBoxItem>Adobe Photoshop 2025</ComboBoxItem>
-                            <ComboBoxItem>paint.net</ComboBoxItem>
-                            <ComboBoxItem>Gimp</ComboBoxItem>
-                            <ComboBoxItem>Paint</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Margin="7">Audio Editor</TextBlock>
-                        <ComboBox SelectedIndex="0"
-                                  AutoScrollToSelectedItem="True">
-                            <ComboBoxItem>Adobe Audition 2025</ComboBoxItem>
-                            <ComboBoxItem>Audacity</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Margin="7">Code Editor</TextBlock>
-                        <ComboBox SelectedIndex="0"
-                                  AutoScrollToSelectedItem="True">
-                            <ComboBoxItem>Visual Studio Code</ComboBoxItem>
-                            <ComboBoxItem>Visual Studio Community 2022</ComboBoxItem>
-                            <ComboBoxItem>Notepad++</ComboBoxItem>
-                            <ComboBoxItem>Sublime</ComboBoxItem>
-                            <ComboBoxItem>Jetbrains Rider</ComboBoxItem>
-                            <ComboBoxItem>Jetbrains IDEA Community Edition</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Margin="7">Model Editor</TextBlock>
-                        <ComboBox SelectedIndex="0"
-                                  AutoScrollToSelectedItem="True">
-                            <ComboBoxItem>Blockbench</ComboBoxItem>
-                            <ComboBoxItem>Cubik Studio</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
+            <StackPanel Orientation="Vertical" Name="PanelGeneralEditor">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Margin="7">Language</TextBlock>
+                    <ComboBox SelectedIndex="0"
+                              AutoScrollToSelectedItem="True">
+                        <ComboBoxItem>English (US)</ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">English (UK)</ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">French</ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">German</ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">Swiss German</ComboBoxItem>
+                    </ComboBox>
                 </StackPanel>
-            </Panel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="PanelGeneralPerformance">
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="PanelGeneralExternal">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Margin="7">Image Editor</TextBlock>
+                    <ComboBox SelectedIndex="0"
+                              AutoScrollToSelectedItem="True">
+                        <ComboBoxItem>Adobe Photoshop 2025</ComboBoxItem>
+                        <ComboBoxItem>paint.net</ComboBoxItem>
+                        <ComboBoxItem>Gimp</ComboBoxItem>
+                        <ComboBoxItem>Paint</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Margin="7">Audio Editor</TextBlock>
+                    <ComboBox SelectedIndex="0"
+                              AutoScrollToSelectedItem="True">
+                        <ComboBoxItem>Adobe Audition 2025</ComboBoxItem>
+                        <ComboBoxItem>Audacity</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Margin="7">Code Editor</TextBlock>
+                    <ComboBox SelectedIndex="0"
+                              AutoScrollToSelectedItem="True">
+                        <ComboBoxItem>Visual Studio Code</ComboBoxItem>
+                        <ComboBoxItem>Visual Studio Community 2022</ComboBoxItem>
+                        <ComboBoxItem>Notepad++</ComboBoxItem>
+                        <ComboBoxItem>Sublime</ComboBoxItem>
+                        <ComboBoxItem>Jetbrains Rider</ComboBoxItem>
+                        <ComboBoxItem>Jetbrains IDEA Community Edition</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Margin="7">Model Editor</TextBlock>
+                    <ComboBox SelectedIndex="0"
+                              AutoScrollToSelectedItem="True">
+                        <ComboBoxItem>Blockbench</ComboBoxItem>
+                        <ComboBoxItem>Cubik Studio</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Window>
