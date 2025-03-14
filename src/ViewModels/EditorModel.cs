@@ -1,5 +1,5 @@
 ﻿namespace dev.craftengine.editor.ViewModels;
 
-public class Editor : ViewModelBase
+public class EditorModel : ViewModelBaseModel
 {
 }

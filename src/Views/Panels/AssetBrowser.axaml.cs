@@ -1,6 +1,9 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
+using dev.craftengine.editor.ViewModels;
 
 namespace dev.craftengine.editor.Views.Panels;
 
@@ -9,10 +12,20 @@ public partial class AssetBrowser : UserControl
     public AssetBrowser()
     {
         InitializeComponent();
+        DataContext = new AssetBrowserModel();
     }
 
-    private void Item_Click(object? sender, PointerPressedEventArgs e)
+    private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        if (!e.GetCurrentPoint((Visual?)sender).Properties.IsLeftButtonPressed) return;
+        var vm = DataContext as AssetBrowserModel;
+
+        vm!.Directories.Add(new("Test22", "@/test/test22"));
+        vm!.Files.Add(new("test22222.txt", "@/test/test22222.txt"));
+    }
+
+    private void ItemClick(object? sender, PointerPressedEventArgs e)
+    {
+        if (e.GetCurrentPoint((Visual?)sender).Properties.IsRightButtonPressed) return;
+        Console.WriteLine("TEST");
     }
 }

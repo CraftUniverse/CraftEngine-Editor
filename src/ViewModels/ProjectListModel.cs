@@ -3,11 +3,11 @@ using System.Collections.ObjectModel;
 
 namespace dev.craftengine.editor.ViewModels;
 
-public class ProjectList : ViewModelBase
+public class ProjectListModel : ViewModelBaseModel
 {
     public ObservableCollection<ProjectItem> Projects { get; }
 
-    public ProjectList()
+    public ProjectListModel()
     {
         var projects = new List<ProjectItem>()
         {

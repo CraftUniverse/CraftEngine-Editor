@@ -62,6 +62,10 @@
             <DependentUpon>Hierarchy.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="src\Views\Panels\AssetBrowser.axaml.cs">
+            <DependentUpon>AssetBrowser.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <!-- SDL 3 -->
@@ -71,6 +75,9 @@
         <NativeCopy Include="Libraries\linux-x64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-x64'"/>
         <NativeCopy Include="Libraries\linux-arm64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-arm64'"/>
         <NativeCopy Include="Libraries\osx-arm64\*.dynlib" Condition="'$(RuntimeIdentifier)' == 'osx-arm64'"/>
+    </ItemGroup>
+    <ItemGroup>
+        <UpToDateCheckInput Remove="src\Views\Panels\AssetBrowser\AssetEntry.axaml"/>
     </ItemGroup>
 
     <Target Name="CopyNativeLibraries" AfterTargets="Build;Publish">

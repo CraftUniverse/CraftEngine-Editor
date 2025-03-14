@@ -6,10 +6,10 @@
         MinWidth="400" Width="400"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.ProjectList"
-        x:DataType="vm:ProjectList"
+        x:DataType="vm:ProjectListModel"
         Icon="/Assets/icon.ico">
     <Design.DataContext>
-        <vm:ProjectList />
+        <vm:ProjectListModel />
     </Design.DataContext>
 
     <Panel>

@@ -2,6 +2,6 @@
 
 namespace dev.craftengine.editor.ViewModels;
 
-public class ViewModelBase : ObservableObject
+public class ViewModelBaseModel : ObservableObject
 {
 }

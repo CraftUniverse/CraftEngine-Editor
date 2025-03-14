@@ -4,7 +4,7 @@
         Height="178" Width="420" CanResize="False"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.NewProject"
-        x:DataType="vm:ProjectList"
+        x:DataType="vm:ProjectListModel"
         Icon="/Assets/icon.ico">
     <StackPanel>
 
