@@ -32,7 +32,7 @@ public class SDLWindow
         Redraw();
     }
 
-    public void Redraw()
+    private void Redraw()
     {
         if (_renderer == nint.Zero) return;
 

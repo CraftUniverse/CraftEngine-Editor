@@ -68,19 +68,20 @@
         </Compile>
     </ItemGroup>
 
-    <!-- SDL 3 -->
+    <!-- SDL 2 -->
     <ItemGroup>
-        <NativeCopy Include="Libraries\win-x64\*.dll" Condition="'$(RuntimeIdentifier)' == 'win-x64'"/>
-        <NativeCopy Include="Libraries\win-arm64\*.dll" Condition="'$(RuntimeIdentifier)' == 'win-arm64'"/>
-        <NativeCopy Include="Libraries\linux-x64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-x64'"/>
-        <NativeCopy Include="Libraries\linux-arm64\*.so" Condition="'$(RuntimeIdentifier)' == 'linux-arm64'"/>
-        <NativeCopy Include="Libraries\osx-arm64\*.dynlib" Condition="'$(RuntimeIdentifier)' == 'osx-arm64'"/>
-    </ItemGroup>
-    <ItemGroup>
-        <UpToDateCheckInput Remove="src\Views\Panels\AssetBrowser\AssetEntry.axaml"/>
+        <NativeCopy Include="Libaries\win-x64\*.dll" Condition="'$(BUILD_OS)' == 'win-x64'"/>
+        <NativeCopy Include="Libaries\win-arm64\*.dll" Condition="'$(BUILD_OS)' == 'win-arm64'"/>
+        <NativeCopy Include="Libaries\linux-x64\*.so" Condition="'$(BUILD_OS)' == 'linux-x64'"/>
+        <NativeCopy Include="Libaries\linux-arm64\*.so" Condition="'$(BUILD_OS)' == 'linux-arm64'"/>
+        <NativeCopy Include="Libaries\osx-arm64\*.dynlib" Condition="'$(BUILD_OS)' == 'osx-arm64'"/>
     </ItemGroup>
 
-    <Target Name="CopyNativeLibraries" AfterTargets="Build;Publish">
+    <Target Name="CopySDLLibraries" AfterTargets="CoreBuild">
+        <PropertyGroup>
+            <PublishDir>build\$(BUILD_OS)\</PublishDir>
+        </PropertyGroup>
+
         <Copy SourceFiles="@(NativeCopy)" DestinationFolder="$(PublishDir)"/>
     </Target>
 

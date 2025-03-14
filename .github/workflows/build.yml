@@ -24,6 +24,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Set build OS
+        run: echo "BUILD_OS=${{ matrix.platform }}" >> $GITHUB_ENV
+
       - name: Build for ${{ matrix.platform }}
         run: |
           dotnet publish -c Release -r ${{ matrix.platform }} --self-contained true \

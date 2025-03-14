@@ -4,14 +4,8 @@ namespace dev.craftengine.editor.ViewModels;
 
 public class AssetBrowserModel : ViewModelBaseModel
 {
-    public ObservableCollection<Entry> Directories { get; }
-    public ObservableCollection<Entry> Files { get; }
-
-    public AssetBrowserModel()
-    {
-        Directories = new ObservableCollection<Entry>();
-        Files = new ObservableCollection<Entry>();
-    }
+    public ObservableCollection<Entry> Directories { get; } = [];
+    public ObservableCollection<Entry> Files { get; } = [];
 
     public class Entry
     {
