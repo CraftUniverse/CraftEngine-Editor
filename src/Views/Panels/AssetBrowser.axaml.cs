@@ -19,8 +19,8 @@ public partial class AssetBrowser : UserControl
     {
         var vm = DataContext as AssetBrowserModel;
 
-        vm!.Directories.Add(new("Test22", "@/test/test22"));
-        vm!.Files.Add(new("test22222.txt", "@/test/test22222.txt"));
+        vm!.Directories.Add(new AssetBrowserModel.Entry("Test22", "@/test/test22"));
+        vm!.Files.Add(new AssetBrowserModel.Entry("test22222.txt", "@/test/test22222.txt"));
     }
 
     private void ItemClick(object? sender, PointerPressedEventArgs e)
