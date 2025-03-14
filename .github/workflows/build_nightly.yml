@@ -22,13 +22,13 @@ jobs:
           dotnet-version: '8.0.x'
       
       - name: Get Version from Git
-        run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+        run: echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
 
       - name: Build for ${{ matrix.platform }}
         run: |
           dotnet publish -c Release -r ${{ matrix.platform }} --sc true \
           -p:PublishSingleFile=true -p:PublishTrimmed=true -p:StripSymbols=true \
-          -p:VersionSuffix=nightly-${{ env.VERSION }} -p:ReadyToRun=false \
+          -p:VersionSuffix=nightly-${{ env.GIT_VERSION }} -p:ReadyToRun=false \
           -o build/${{ matrix.platform }}
 
       - name: Upload Build Artifacts
