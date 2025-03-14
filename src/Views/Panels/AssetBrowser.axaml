@@ -2,10 +2,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="400"
-             x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser">
-    <Panel>
-        <Rectangle ZIndex="0" Fill="Red" />
-        <TextBlock ZIndex="10">Asset Browser</TextBlock>
-    </Panel>
+             xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="400"
+             x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser"
+             x:DataType="vm:AssetBrowser">
+    <Design.DataContext>
+        <vm:AssetBrowser />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="200 0 *">
+        <ScrollViewer Grid.Column="0">
+            <TreeView ItemsSource="{Binding Directories}">
+                <TreeView.ItemTemplate>
+                    <TreeDataTemplate ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Name}" />
+                    </TreeDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </ScrollViewer>
+
+        <Border Grid.Column="1" Width="3" Margin="5" Background="Gray"
+                CornerRadius="50" Opacity="0.45" />
+
+        <Panel Grid.Column="2">
+            <ScrollViewer>
+                <WrapPanel>
+                    <ItemsControl ItemsSource="{Binding Files}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="Gray" CornerRadius="5"
+                                        Margin="10" Width="100" Height="100"
+                                        PointerPressed="Item_Click">
+                                    <Border.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Open" />
+                                            <Separator />
+                                            <MenuItem Header="Copy" />
+                                            <MenuItem Header="Paste" />
+                                        </ContextMenu>
+                                    </Border.ContextMenu>
+                                    <TextBlock Foreground="White" Margin="5"
+                                               VerticalAlignment="Bottom" Text="{Binding Name}" />
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </WrapPanel>
+            </ScrollViewer>
+        </Panel>
+    </Grid>
 </UserControl>

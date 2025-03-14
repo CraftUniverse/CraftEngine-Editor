@@ -4,10 +4,8 @@ namespace dev.craftengine.editor.Views.Panels;
 
 public partial class Hierarchy : UserControl
 {
-    public Hierarchy(string name)
+    public Hierarchy()
     {
-        Name = name;
-
         InitializeComponent();
     }
 }

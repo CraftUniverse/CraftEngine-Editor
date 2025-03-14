@@ -4,10 +4,8 @@ namespace dev.craftengine.editor.Views.Panels;
 
 public partial class Properties : UserControl
 {
-    public Properties(string name)
+    public Properties()
     {
-        Name = name;
-
         InitializeComponent();
     }
 }

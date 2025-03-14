@@ -8,10 +8,8 @@ public partial class GameViewer : UserControl
 {
     private SDLWindow _sdlWindow;
 
-    public GameViewer(string name)
+    public GameViewer()
     {
-        Name = name;
-
         InitializeComponent();
     }
 
