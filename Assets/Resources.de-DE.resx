@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral</value>
+    </resheader>
+    <data name="projectlist.buttons.new_project" xml:space="preserve"><value>NEUES PROJEKT</value>
+        <comment/></data>
+    <data name="projectlist.buttons.open_project" xml:space="preserve"><value>PROJEKT ÖFFNEN</value>
+        <comment/></data>
+    <data name="projectlist.buttons.reload.tooltip" xml:space="preserve"><value>Projekte Neuladen</value>
+        <comment/></data>
+    <data name="projectlist.list.item.delete.tooltip" xml:space="preserve"><value>Projekt Löschen</value>
+        <comment/></data>
+    <data name="projectlist.list.item.open.tooltip" xml:space="preserve"><value>Projekt Öffnen</value>
+        <comment/></data>
+    <data name="projectlist.list.name.title" xml:space="preserve"><value>Name</value>
+        <comment/></data>
+    <data name="projectlist.list.version.title" xml:space="preserve"><value>Minecraft Version</value>
+        <comment/></data>
+</root>

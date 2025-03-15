@@ -1,4 +1,5 @@
 ﻿using System;
+using Avalonia.Controls;
 using SDL_Sharp;
 
 namespace dev.craftengine.editor.GameViewer;
@@ -10,6 +11,8 @@ public class SDLWindow
 
     public SDLWindow(IntPtr windowHandle)
     {
+        if (Design.IsDesignMode) return;
+
         if (SDL.Init(SdlInitFlags.Video) < 0)
         {
             throw new Exception($"Failed at init SDL2. {SDL.GetError()}");

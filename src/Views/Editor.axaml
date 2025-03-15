@@ -34,12 +34,23 @@
             </MenuItem>
         </Menu>
 
+        <SplitButton HorizontalAlignment="Center" Margin="0 -32 0 0" DockPanel.Dock="Top">
+            Play
+            <SplitButton.Flyout>
+                <MenuFlyout Placement="Bottom">
+                    <MenuItem Header="Play Online" />
+                </MenuFlyout>
+            </SplitButton.Flyout>
+        </SplitButton>
+
         <TextBlock />
 
         <Grid ColumnDefinitions="350 * 350">
             <Panel Grid.Column="0" Name="PanelLayout1" />
             <Grid Grid.Column="1" RowDefinitions="* 250">
-                <Panel Grid.Row="0" Name="PanelLayout2" />
+                <Panel Grid.Row="0" Name="PanelLayout2">
+                    <Rectangle Fill="Green"></Rectangle>
+                </Panel>
                 <Panel Grid.Row="1" Name="PanelLayout3" />
             </Grid>
             <Panel Grid.Column="2" Name="PanelLayout4" />

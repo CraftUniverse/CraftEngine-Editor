@@ -68,6 +68,21 @@
         </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+        <EmbeddedResource Update="Assets\Resources.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Resources.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
     <!-- SDL 2 -->
     <ItemGroup>
         <NativeCopy Include="Libaries\win-x64\*.dll" Condition="'$(BUILD_OS)' == 'win-x64'"/>
