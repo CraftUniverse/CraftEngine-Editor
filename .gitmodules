@@ -1,0 +1,3 @@
+[submodule "RuntimeGenerator"]
+	path = RuntimeGenerator
+	url = https://github.com/CraftUniverse/CraftEngine-Runtime-Generator

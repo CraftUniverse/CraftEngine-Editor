@@ -25,12 +25,18 @@ public partial class Editor : Window
         PanelLayout4.Children.Add(new Properties());
     }
 
+    private void Menu_File_Export_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var win = new BuildProject();
+        win.Show(this);
+    }
+
     private void Menu_File_Exit_OnClick(object? sender, RoutedEventArgs e)
     {
         Close();
     }
 
-    private void Menu_Preferences_OnClick(object? sender, RoutedEventArgs e)
+    private void Menu_Edit_Preferences_OnClick(object? sender, RoutedEventArgs e)
     {
         var prefWin = new Preferences();
         prefWin.Show(this);

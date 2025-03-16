@@ -11,6 +11,7 @@
             <MenuItem Header="_File">
                 <MenuItem Header="Save Level" />
                 <MenuItem Header="Save Level as..." />
+                <MenuItem Click="Menu_File_Export_OnClick" Header="Build Project" />
                 <Separator />
                 <MenuItem Click="Menu_File_Exit_OnClick" Header="Exit" />
             </MenuItem>
@@ -18,7 +19,7 @@
             <MenuItem Header="_Edit">
                 <MenuItem Header="Undo" />
                 <MenuItem Header="Redo" />
-                <MenuItem Header="Preferences" Click="Menu_Preferences_OnClick" />
+                <MenuItem Header="Preferences" Click="Menu_Edit_Preferences_OnClick" />
             </MenuItem>
 
             <MenuItem Header="_Objects">
@@ -45,15 +46,27 @@
 
         <TextBlock />
 
-        <Grid ColumnDefinitions="350 * 350">
+        <Grid ColumnDefinitions="350 auto * auto 350">
             <Panel Grid.Column="0" Name="PanelLayout1" />
-            <Grid Grid.Column="1" RowDefinitions="* 250">
+
+            <Border Grid.Column="1" Width="5" Margin="0" Background="Gray"
+                    CornerRadius="50" Opacity="0.45" />
+
+            <Grid Grid.Column="2" RowDefinitions="* auto 250">
                 <Panel Grid.Row="0" Name="PanelLayout2">
                     <Rectangle Fill="Green"></Rectangle>
                 </Panel>
-                <Panel Grid.Row="1" Name="PanelLayout3" />
+
+                <Border Grid.Row="1" Height="5" Margin="0" Background="Gray"
+                        CornerRadius="50" Opacity="0.45" />
+
+                <Panel Grid.Row="2" Name="PanelLayout3" />
             </Grid>
-            <Panel Grid.Column="2" Name="PanelLayout4" />
+
+            <Border Grid.Column="3" Width="5" Margin="0" Background="Gray"
+                    CornerRadius="50" Opacity="0.45" />
+
+            <Panel Grid.Column="4" Name="PanelLayout4" />
         </Grid>
     </DockPanel>
 </Window>

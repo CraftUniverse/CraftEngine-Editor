@@ -5,7 +5,6 @@
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="400"
              x:Class="dev.craftengine.editor.Views.Panels.Hierarchy">
     <Panel>
-        <Rectangle ZIndex="0" Fill="Yellow" />
-        <TextBlock ZIndex="10" Foreground="Black">Hierarchy</TextBlock>
+        <TextBlock ZIndex="10">Hierarchy</TextBlock>
     </Panel>
 </UserControl>
