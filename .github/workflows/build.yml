@@ -52,8 +52,13 @@ jobs:
         with:
           go-version: "1.22.5"
 
-      - name: Set build OS
-        run: echo "BUILD_OS=${{ matrix.platform }}" >> $GITHUB_ENV
+      - name: Set Environment Variables
+        run: |
+          echo "BUILD_OS=${{ matrix.platform }}" >> $GITHUB_ENV
+          echo "GOOS=${{ matrix.goos }}" >> $GITHUB_ENV
+          echo "GOARCH=${{ matrix.goarch }}" >> $GITHUB_ENV
+          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+          echo "GENERATOR_OUTPUT_NAME=rungen${{ matrix.ext }}" >> $GITHUB_ENV
 
       - name: Build for ${{ matrix.platform }}
         run: |
@@ -62,14 +67,7 @@ jobs:
           -p:InformationalVersion=${{ github.event.inputs.version }} \
           -o build/${{ matrix.platform }}
 
-      - name: Set Environment Variables
-        run: |
-          echo "GOOS=${{ matrix.goos }}" >> $GITHUB_ENV
-          echo "GOARCH=${{ matrix.goarch }}" >> $GITHUB_ENV
-          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
-          echo "GENERATOR_OUTPUT_NAME=rungen-${{ matrix.ext }}" >> $GITHUB_ENV
-
-      - name: Run RuntimeGenerator build script
+      - name: Build RuntimeGenerator
         run: go build -ldflags "-w -X 'main.version=${{ env.GIT_VERSION }}'" -o build/${{ matrix.platform }}/${{ env.GENERATOR_OUTPUT_NAME }} ./RuntimeGenerator/cmd/generator/main.go
 
       - name: Upload Build Artifacts
@@ -77,3 +75,4 @@ jobs:
         with:
           name: ce-editor_${{ matrix.platform }}
           path: build/${{ matrix.platform }}
+          compression-level: 9
