@@ -9,6 +9,10 @@ public class AssetBrowserModel : ViewModelBaseModel
 
     public class Entry
     {
+        public string Name { get; private set; }
+        public string Path { get; private set; }
+        public ObservableCollection<Entry>? Children { get; private set; }
+
         public Entry(string name, string path)
         {
             Name = name;
@@ -21,9 +25,5 @@ public class AssetBrowserModel : ViewModelBaseModel
             Path = path;
             Children = children;
         }
-
-        public string Name { get; private set; }
-        public string Path { get; private set; }
-        public ObservableCollection<Entry>? Children { get; private set; }
     }
 }

@@ -13,7 +13,6 @@ public class ControlHost : NativeControlHost
         var handle = base.CreateNativeControlCore(parent);
         Handle = handle.Handle;
 
-        Console.WriteLine($"Handle : {Handle}");
         return handle;
     }
 }

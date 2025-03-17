@@ -15,8 +15,10 @@ public partial class NewProject : Window
 
         Title = "CraftEngine Editor " + VersionControl.Version + " - New Project";
 
-        PathInput.Text = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-            "CraftEngine Projects");
+        PathInput.Text = Path.Join(
+            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            "CraftEngine Projects"
+        );
     }
 
     private void CloseButton_OnClick(object? sender, RoutedEventArgs e)
@@ -27,15 +29,16 @@ public partial class NewProject : Window
     private void PathButton_OnClick(object? sender, RoutedEventArgs e)
     {
         var options = new FolderPickerOpenOptions();
-
         options.AllowMultiple = false;
 
         var dialog = StorageProvider.OpenFolderPickerAsync(options);
 
         if (dialog.Result.Count != 1)
+        {
             return;
+        }
 
-        var path = dialog.Result[0].Path.LocalPath;
+        string path = dialog.Result[0].Path.LocalPath;
 
         PathInput.Text = path;
     }

@@ -22,7 +22,6 @@ public partial class ProjectList : Window
     private void CreateButton_OnClick(object? sender, RoutedEventArgs e)
     {
         var newProject = new NewProject();
-
         newProject.ShowDialog(this);
     }
 }

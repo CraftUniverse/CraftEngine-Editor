@@ -11,7 +11,10 @@ public class SDLWindow
 
     public SDLWindow(IntPtr windowHandle)
     {
-        if (Design.IsDesignMode) return;
+        if (Design.IsDesignMode)
+        {
+            return;
+        }
 
         if (SDL.Init(SdlInitFlags.Video) < 0)
         {
@@ -37,7 +40,10 @@ public class SDLWindow
 
     private void Redraw()
     {
-        if (_renderer == nint.Zero) return;
+        if (_renderer == nint.Zero)
+        {
+            return;
+        }
 
         SDL.SetRenderDrawColor(_renderer, 0, 255, 0, 255);
         SDL.RenderClear(_renderer);
@@ -46,7 +52,10 @@ public class SDLWindow
 
     public void Resize(int width, int height)
     {
-        if (_window == nint.Zero) return;
+        if (_window == nint.Zero)
+        {
+            return;
+        }
 
         SDL.SetWindowSize(_window, width, height);
         Redraw();

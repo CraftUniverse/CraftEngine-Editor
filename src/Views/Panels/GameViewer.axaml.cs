@@ -20,7 +20,10 @@ public partial class GameViewer : UserControl
 
     private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
     {
-        if (!IsLoaded) return;
+        if (!IsLoaded)
+        {
+            return;
+        }
 
         _sdlWindow.Resize((int)e.NewSize.Width, (int)e.NewSize.Height);
     }

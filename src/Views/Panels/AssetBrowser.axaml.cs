@@ -1,5 +1,4 @@
-﻿using System;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -25,7 +24,9 @@ public partial class AssetBrowser : UserControl
 
     private void ItemClick(object? sender, PointerPressedEventArgs e)
     {
-        if (e.GetCurrentPoint((Visual?)sender).Properties.IsRightButtonPressed) return;
-        Console.WriteLine("TEST");
+        if (e.GetCurrentPoint((Visual?)sender).Properties.IsRightButtonPressed)
+        {
+            return;
+        }
     }
 }

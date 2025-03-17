@@ -19,13 +19,13 @@ public class ProjectListModel : ViewModelBaseModel
 
     public class ProjectItem
     {
+        public string Name { get; set; }
+        public string Version { get; set; }
+
         public ProjectItem(string name, string version)
         {
             Name = name;
             Version = version;
         }
-
-        public string Name { get; set; }
-        public string Version { get; set; }
     }
 }
