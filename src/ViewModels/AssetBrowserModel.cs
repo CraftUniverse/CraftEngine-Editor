@@ -6,6 +6,7 @@ public class AssetBrowserModel : ViewModelBaseModel
 {
     public ObservableCollection<Entry> Directories { get; } = [];
     public ObservableCollection<Entry> Files { get; } = [];
+    public ObservableCollection<AssetBrowserBreadcrumbItem> Breadcrumbs { get; } = [];
 
     public class Entry
     {
@@ -25,5 +26,15 @@ public class AssetBrowserModel : ViewModelBaseModel
             Path = path;
             Children = children;
         }
+    }
+}
+
+public class AssetBrowserBreadcrumbItem
+{
+    public string Name { get; private set; }
+
+    public AssetBrowserBreadcrumbItem(string name)
+    {
+        Name = name;
     }
 }

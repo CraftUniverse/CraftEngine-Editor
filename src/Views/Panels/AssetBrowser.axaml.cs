@@ -8,6 +8,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using dev.craftengine.editor.ViewModels;
+using FluentAvalonia.UI.Controls;
 
 namespace dev.craftengine.editor.Views.Panels;
 
@@ -21,6 +22,8 @@ public partial class AssetBrowser : UserControl
 
         _borders = new List<Border>();
         DataContext = new AssetBrowserModel();
+
+        BreadcrumbBar.ItemClicked += BreadcrumbBar_ItemClicked;
     }
 
     private void OnLoaded(object? sender, RoutedEventArgs e)
@@ -43,6 +46,9 @@ public partial class AssetBrowser : UserControl
             int num = rand.Next(1000000, 9999999);
             vm!.Files.Add(new AssetBrowserModel.Entry($"test{num}.txt", $"@/test/test{num}.txt"));
         }
+
+        vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test"));
+        vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test22"));
     }
 
     private void ItemClick(object? sender, PointerPressedEventArgs e)
@@ -96,5 +102,10 @@ public partial class AssetBrowser : UserControl
         }
 
         _borders.Clear();
+    }
+
+    private void BreadcrumbBar_ItemClicked(object? sender, BreadcrumbBarItemClickedEventArgs e)
+    {
+        Console.WriteLine($"Breacrumb Index:{e.Index}");
     }
 }
