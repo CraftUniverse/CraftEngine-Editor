@@ -9,7 +9,7 @@
         <StackPanel Orientation="Horizontal">
             <StackPanel Margin="5">
                 <TextBlock Margin="0 0 0 5">Export Path</TextBlock>
-                <TextBox MinWidth="355"></TextBox>
+                <TextBox MinWidth="355" />
             </StackPanel>
             <Button Margin="0 0 0 -21">...</Button>
         </StackPanel>

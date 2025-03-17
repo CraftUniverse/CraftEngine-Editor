@@ -42,12 +42,12 @@
                                         <ContextMenu>
                                             <MenuItem Header="Open">
                                                 <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource open_regular}"></PathIcon>
+                                                    <PathIcon Data="{StaticResource open_regular}" />
                                                 </MenuItem.Icon>
                                             </MenuItem>
                                             <MenuItem Header="New">
                                                 <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource add_regular}"></PathIcon>
+                                                    <PathIcon Data="{StaticResource add_regular}" />
                                                 </MenuItem.Icon>
 
                                                 <MenuItem Header="Level" />
@@ -55,17 +55,17 @@
                                             <Separator />
                                             <MenuItem Header="Delete">
                                                 <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource delete_regular}"></PathIcon>
+                                                    <PathIcon Data="{StaticResource delete_regular}" />
                                                 </MenuItem.Icon>
                                             </MenuItem>
                                             <MenuItem Header="Copy">
                                                 <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource copy_regular}"></PathIcon>
+                                                    <PathIcon Data="{StaticResource copy_regular}" />
                                                 </MenuItem.Icon>
                                             </MenuItem>
                                             <MenuItem Header="Paste" IsEnabled="False">
                                                 <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource clipboard_paste_regular}"></PathIcon>
+                                                    <PathIcon Data="{StaticResource clipboard_paste_regular}" />
                                                 </MenuItem.Icon>
                                             </MenuItem>
                                         </ContextMenu>

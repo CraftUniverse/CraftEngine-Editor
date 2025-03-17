@@ -5,11 +5,9 @@ namespace dev.craftengine.editor.ViewModels;
 
 public class ProjectListModel : ViewModelBaseModel
 {
-    public ObservableCollection<ProjectItem> Projects { get; }
-
     public ProjectListModel()
     {
-        var projects = new List<ProjectItem>()
+        var projects = new List<ProjectItem>
         {
             new("Test", "1.21.4")
         };
@@ -17,15 +15,17 @@ public class ProjectListModel : ViewModelBaseModel
         Projects = new ObservableCollection<ProjectItem>(projects);
     }
 
+    public ObservableCollection<ProjectItem> Projects { get; }
+
     public class ProjectItem
     {
-        public string Name { get; set; }
-        public string Version { get; set; }
-
         public ProjectItem(string name, string version)
         {
             Name = name;
             Version = version;
         }
+
+        public string Name { get; set; }
+        public string Version { get; set; }
     }
 }

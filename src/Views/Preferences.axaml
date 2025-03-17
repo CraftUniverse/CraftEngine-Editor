@@ -27,11 +27,11 @@
                     </ListBoxItem>
                 </ListBox>
 
-                <Separator MinWidth="90"></Separator>
+                <Separator MinWidth="90" />
 
                 <TextBlock Margin="5" FontWeight="Bold">Panels</TextBlock>
 
-                <Separator MinWidth="90"></Separator>
+                <Separator MinWidth="90" />
 
                 <TextBlock Margin="5" FontWeight="Bold">Blueprints</TextBlock>
             </StackPanel>
@@ -54,8 +54,7 @@
                     </ComboBox>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Name="PanelGeneralPerformance">
-            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="PanelGeneralPerformance" />
             <StackPanel Orientation="Vertical" Name="PanelGeneralExternal">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock Margin="7">Image Editor</TextBlock>
