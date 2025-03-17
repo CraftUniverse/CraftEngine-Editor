@@ -41,4 +41,8 @@ public partial class Editor : Window
         var prefWin = new Preferences();
         prefWin.Show(this);
     }
+
+    private void PlayOfflineButton(object? sender, RoutedEventArgs e)
+    {
+    }
 }

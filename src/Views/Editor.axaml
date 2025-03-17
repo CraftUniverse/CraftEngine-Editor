@@ -35,7 +35,8 @@
             </MenuItem>
         </Menu>
 
-        <SplitButton HorizontalAlignment="Center" Margin="0 -32 0 0" DockPanel.Dock="Top">
+        <SplitButton HorizontalAlignment="Center" Margin="0 -32 0 0" DockPanel.Dock="Top"
+                     Click="PlayOfflineButton">
             Play
             <SplitButton.Flyout>
                 <MenuFlyout Placement="Bottom">
