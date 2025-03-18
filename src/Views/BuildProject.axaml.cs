@@ -8,7 +8,5 @@ public partial class BuildProject : Window
     public BuildProject()
     {
         InitializeComponent();
-
-        Title = "CraftEngine Editor " + VersionControl.Version + " - Build Project";
     }
 }

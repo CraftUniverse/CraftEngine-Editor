@@ -28,7 +28,7 @@ public partial class Editor : Window
     private void Menu_File_Export_OnClick(object? sender, RoutedEventArgs e)
     {
         var win = new BuildProject();
-        win.Show(this);
+        win.ShowDialog(this);
     }
 
     private void Menu_File_Exit_OnClick(object? sender, RoutedEventArgs e)
