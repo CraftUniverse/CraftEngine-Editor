@@ -10,7 +10,7 @@ using Avalonia.Media;
 using dev.craftengine.editor.ViewModels;
 using FluentAvalonia.UI.Controls;
 
-namespace dev.craftengine.editor.Views.Panels;
+namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
 public partial class AssetBrowser : UserControl
 {
@@ -49,6 +49,8 @@ public partial class AssetBrowser : UserControl
 
         vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test"));
         vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test22"));
+
+        var newItemDropdown = new AssetBrowserNewItemDropdown();
     }
 
     private void ItemClick(object? sender, PointerPressedEventArgs e)

@@ -5,7 +5,7 @@
              xmlns:ui="using:FluentAvalonia.UI.Controls"
              xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="400"
-             x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser"
+             x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser.AssetBrowser"
              Loaded="OnLoaded" PointerPressed="OnPointerPressed"
              x:DataType="vm:AssetBrowserModel">
     <UserControl.Resources>
@@ -45,7 +45,7 @@
                         New
                         <Button.Flyout>
                             <MenuFlyout>
-                                <MenuItem Header="Level" />
+                                <!-- DROPDOWN ITEMS -->
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -89,7 +89,7 @@
                                                     <PathIcon Data="{StaticResource add_regular}" />
                                                 </MenuItem.Icon>
 
-                                                <MenuItem Header="Level" />
+                                                <!-- DROPDOWN ITEMS -->
                                             </MenuItem>
                                             <Separator />
                                             <MenuItem Header="Delete">

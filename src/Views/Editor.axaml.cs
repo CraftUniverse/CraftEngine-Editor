@@ -2,6 +2,7 @@
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
 using dev.craftengine.editor.Views.Panels;
+using dev.craftengine.editor.Views.Panels.AssetBrowser;
 
 namespace dev.craftengine.editor.Views;
 

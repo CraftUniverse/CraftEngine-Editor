@@ -64,7 +64,7 @@
             <DependentUpon>Hierarchy.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="src\Views\Panels\AssetBrowser.axaml.cs">
+        <Compile Update="src\Views\Panels\AssetBrowser\AssetBrowser.axaml.cs">
             <DependentUpon>AssetBrowser.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
