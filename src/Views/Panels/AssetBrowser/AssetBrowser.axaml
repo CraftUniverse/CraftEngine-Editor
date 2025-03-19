@@ -65,6 +65,10 @@
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource open_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>Return</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="New" GroupName="NewItem">
                                                 <MenuItem.Icon>
@@ -75,38 +79,66 @@
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource copy_link_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>CTRL + SHIFT + C</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <Separator />
                                             <MenuItem Header="Rename">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource rename_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>F2</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="Delete">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource delete_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>DELETE</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="Copy">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource copy_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>CTRL + C</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="Paste" IsEnabled="False">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource clipboard_paste_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>CTRL + V</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <Separator />
                                             <MenuItem Header="View Metadata">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource tag_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>F6</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="Show in Explorer">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource open_regular}" />
                                                 </MenuItem.Icon>
+
+                                                <MenuItem.InputGesture>
+                                                    <KeyGesture>CTRL + E</KeyGesture>
+                                                </MenuItem.InputGesture>
                                             </MenuItem>
                                             <MenuItem Header="Reload">
                                                 <MenuItem.Icon>
