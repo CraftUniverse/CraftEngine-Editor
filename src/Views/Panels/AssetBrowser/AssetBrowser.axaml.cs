@@ -117,7 +117,7 @@ public partial class AssetBrowser : UserControl
 
         border.Background = new SolidColorBrush((Color)accentColor!);
 
-        if (e.ClickCount != 2)
+        if (e.ClickCount != 2) // Only double clicks are allowed
         {
             return;
         }
@@ -174,6 +174,8 @@ public partial class AssetBrowser : UserControl
             }
 
             var newItemDropdown = new AssetBrowserNewItemDropdown();
+
+            item.Items.Clear();
 
             foreach (var child in newItemDropdown.Items)
             {
