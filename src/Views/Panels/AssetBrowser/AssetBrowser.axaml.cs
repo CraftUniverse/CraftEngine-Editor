@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Presenters;
@@ -49,8 +50,6 @@ public partial class AssetBrowser : UserControl
 
         vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test"));
         vm!.Breadcrumbs.Add(new AssetBrowserBreadcrumbItem(name: "test22"));
-
-        var newItemDropdown = new AssetBrowserNewItemDropdown();
     }
 
     private void ItemClick(object? sender, PointerPressedEventArgs e)
@@ -109,5 +108,27 @@ public partial class AssetBrowser : UserControl
     private void BreadcrumbBar_ItemClicked(object? sender, BreadcrumbBarItemClickedEventArgs e)
     {
         Console.WriteLine($"Breacrumb Index:{e.Index}");
+    }
+
+    private void ContextMenu_OnOpening(object? sender, CancelEventArgs e)
+    {
+        var menu = sender as ContextMenu;
+
+        foreach (MenuItem? item in menu!.Items)
+        {
+            if (item == null || item!.GroupName != "NewItem")
+            {
+                continue;
+            }
+
+            var newItemDropdown = new AssetBrowserNewItemDropdown();
+
+            foreach (var child in newItemDropdown.Items)
+            {
+                item.Items.Add(child);
+            }
+
+            break;
+        }
     }
 }

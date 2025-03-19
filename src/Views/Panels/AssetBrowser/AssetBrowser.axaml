@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:ab="using:dev.craftengine.editor.Views.Panels.AssetBrowser"
              xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="400"
              x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser.AssetBrowser"
@@ -44,9 +45,7 @@
                     <Button Grid.Column="0" Margin="5 0">
                         New
                         <Button.Flyout>
-                            <MenuFlyout>
-                                <!-- DROPDOWN ITEMS -->
-                            </MenuFlyout>
+                                <ab:AssetBrowserNewItemDropdown></ab:AssetBrowserNewItemDropdown>
                         </Button.Flyout>
                     </Button>
 
@@ -78,18 +77,16 @@
                                         Margin="10" Width="100" Height="100"
                                         PointerPressed="ItemClick" Name="{Binding Path, StringFormat='border_{0}'}">
                                     <Border.ContextMenu>
-                                        <ContextMenu>
+                                        <ContextMenu Opening="ContextMenu_OnOpening">
                                             <MenuItem Header="Open">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource open_regular}" />
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="New">
+                                            <MenuItem Header="New" GroupName="NewItem">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource add_regular}" />
                                                 </MenuItem.Icon>
-
-                                                <!-- DROPDOWN ITEMS -->
                                             </MenuItem>
                                             <Separator />
                                             <MenuItem Header="Delete">

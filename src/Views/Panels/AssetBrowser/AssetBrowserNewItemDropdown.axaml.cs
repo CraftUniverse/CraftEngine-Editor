@@ -1,11 +1,13 @@
-﻿using Avalonia.Controls;
+﻿using System;
+using Avalonia.Controls;
+using Avalonia.Interactivity;
 
 namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
-public partial class AssetBrowserNewItemDropdown : UserControl
+public class AssetBrowserNewItemDropdown : MenuFlyout
 {
-    public AssetBrowserNewItemDropdown()
+    private void MenuItem_OnClick(object? sender, RoutedEventArgs e)
     {
-        InitializeComponent();
+        Console.WriteLine("test");
     }
 }
