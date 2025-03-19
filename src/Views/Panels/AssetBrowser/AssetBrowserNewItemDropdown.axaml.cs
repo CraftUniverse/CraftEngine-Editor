@@ -6,8 +6,4 @@ namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
 public class AssetBrowserNewItemDropdown : MenuFlyout
 {
-    private void MenuItem_OnClick(object? sender, RoutedEventArgs e)
-    {
-        Console.WriteLine("test");
-    }
 }
