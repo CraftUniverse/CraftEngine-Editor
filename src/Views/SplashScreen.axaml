@@ -5,10 +5,10 @@
         mc:Ignorable="d" TransparencyLevelHint="Transparent"
         x:Class="dev.craftengine.editor.Views.SplashScreen"
         WindowStartupLocation="CenterScreen"
-        SystemDecorations="None" CanResize="False" Icon="/Assets/icon.ico"
+        SystemDecorations="None" CanResize="False" Icon="/Assets/Icon.ico"
         Width="650" Height="487" Loaded="Control_OnLoaded">
     <Window.Background>
-        <ImageBrush Source="../../Assets/splash_screen.jpg" />
+        <ImageBrush Source="../../Assets/SplashScreen.jpg" />
     </Window.Background>
 
     <Panel>

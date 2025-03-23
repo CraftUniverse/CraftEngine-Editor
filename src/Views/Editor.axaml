@@ -5,7 +5,7 @@
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.Editor"
-        Icon="/Assets/icon.ico">
+        Icon="/Assets/Icon.ico">
     <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">

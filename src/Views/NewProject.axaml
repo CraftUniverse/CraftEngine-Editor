@@ -5,7 +5,7 @@
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.NewProject"
         x:DataType="vm:ProjectListModel"
-        Icon="/Assets/icon.ico">
+        Icon="/Assets/Icon.ico">
     <StackPanel>
 
         <StackPanel Orientation="Horizontal">

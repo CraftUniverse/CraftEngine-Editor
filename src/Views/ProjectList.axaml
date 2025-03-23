@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.ProjectList"
         x:DataType="vm:ProjectListModel"
-        Icon="/Assets/icon.ico">
+        Icon="/Assets/Icon.ico">
     <Design.DataContext>
         <vm:ProjectListModel />
     </Design.DataContext>
