@@ -1,12 +1,13 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.GameViewer;
+using Window = dev.craftengine.editor.GameViewer.Window;
 
 namespace dev.craftengine.editor.Views.Panels;
 
 public partial class GameViewer : UserControl
 {
-    private SDLWindow _sdlWindow;
+    private Window _window;
 
     public GameViewer()
     {
@@ -15,7 +16,7 @@ public partial class GameViewer : UserControl
 
     private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        _sdlWindow = new SDLWindow(HostFrame.Handle);
+        _window = new Window(HostFrame.Handle);
     }
 
     private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
@@ -25,6 +26,6 @@ public partial class GameViewer : UserControl
             return;
         }
 
-        _sdlWindow.Resize((int)e.NewSize.Width, (int)e.NewSize.Height);
+  //      _window.Resize((int)e.NewSize.Width, (int)e.NewSize.Height);
     }
 }
