@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
@@ -13,14 +13,15 @@ public partial class SplashScreen : Window
         InitializeComponent();
 
         VersionText.Text = VersionControl.Version;
-
-        AssetDownloader.DownloadIndex();
     }
 
-    private void Control_OnLoaded(object? sender, RoutedEventArgs e)
+    private async void Control_OnLoaded(object? sender, RoutedEventArgs e)
     {
-        // temp. for developing, until a proper system exists
-        Thread.Sleep(1000);
+        ProgressBar.IsVisible = true;
+        InfoText.Text = "Downloading Minecraft Assets...";
+
+        await Task.Delay(1000);
+        await AssetDownloader.DownloadIndex(ProgressBar);
 
         new Editor().Show();
         Close();
