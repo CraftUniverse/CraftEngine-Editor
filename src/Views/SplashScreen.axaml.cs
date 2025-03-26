@@ -17,11 +17,13 @@ public partial class SplashScreen : Window
 
     private async void Control_OnLoaded(object? sender, RoutedEventArgs e)
     {
+        await Task.Delay(1000);
+
         ProgressBar.IsVisible = true;
+        InfoText2.IsVisible = true;
         InfoText.Text = "Downloading Minecraft Assets...";
 
-        await Task.Delay(1000);
-        await AssetDownloader.DownloadIndex(ProgressBar);
+        await AssetDownloader.Download(ProgressBar, InfoText2, "1.21.4");
 
         new Editor().Show();
         Close();

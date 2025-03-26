@@ -32,6 +32,8 @@
                          Minimum="0" Maximum="100" Value="0" IsVisible="False"
                          ShowProgressText="True" Name="ProgressBar"
                          Foreground="DimGray" />
+            <TextBlock Margin="10 0" FontSize="13" Name="InfoText2"
+                       FontWeight="Medium" Foreground="White" IsVisible="False" />
         </StackPanel>
         <TextBlock Margin="10" VerticalAlignment="Bottom" FontSize="13"
                    FontWeight="Light" Foreground="White">
