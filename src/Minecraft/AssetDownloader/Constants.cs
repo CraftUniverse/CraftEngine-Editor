@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace dev.craftengine.editor.Minecraft;
+namespace dev.craftengine.editor.Minecraft.AssetDownloader;
 
 public class Constants
 {

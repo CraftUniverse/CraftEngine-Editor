@@ -8,11 +8,13 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 
-namespace dev.craftengine.editor.Minecraft;
+// ReSharper disable InconsistentNaming
 
-public class AssetDownloader
+namespace dev.craftengine.editor.Minecraft.AssetDownloader;
+
+public abstract class AssetDownloader
 {
-    public async static Task<List<IndexFile>> ReadIndexFile()
+    static private async Task<List<IndexFile>> ReadIndexFile()
     {
         string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
 
@@ -27,7 +29,7 @@ public class AssetDownloader
         return indexJson;
     }
 
-    private async static Task<string> GetFileHash(string path)
+    static private async Task<string> GetFileHash(string path)
     {
         var md5 = MD5.Create();
         var stream = File.OpenRead(path);
@@ -36,29 +38,49 @@ public class AssetDownloader
         return Encoding.Default.GetString(hash);
     }
 
-    public async static Task Download(ProgressBar progressBar, TextBlock infoText, string minecraftVersion)
+    public static async Task CheckFiles()
+    {
+        var indexFile = await ReadIndexFile();
+
+        foreach (var index in indexFile)
+        {
+            Console.WriteLine(index.hash);
+        }
+    }
+
+    public static async Task Download(ProgressBar progressBar, TextBlock infoText, string minecraftVersion)
     {
         if (Design.IsDesignMode)
         {
+            // ReSharper disable once LocalizableElement
             Console.WriteLine("Asset can not be downloaded in the design mode.");
 
             return;
         }
 
-        infoText.Text = "Downloading index.json";
-
         var client = new HttpClient();
-        var response = await client.GetAsync(Constants.INDEX_CDN_URL);
+        string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
+        List<IndexFile> indexJson;
 
-        response.EnsureSuccessStatusCode();
+        if (File.Exists(indexPath))
+        {
+            indexJson = await ReadIndexFile();
+        }
+        else
+        {
+            infoText.Text = "Downloading index.json";
 
-        string responseContent = await response.Content.ReadAsStringAsync();
+            var response = await client.GetAsync(Constants.INDEX_CDN_URL);
+            response.EnsureSuccessStatusCode();
 
-        var indexJsonStr = $"{{\"data\":{responseContent}}}";
-        var indexJson = JsonSerializer.Deserialize<IndexFileHead>(indexJsonStr)!.data;
+            string responseContent = await response.Content.ReadAsStringAsync();
+            var indexJsonStr = $"{{\"data\":{responseContent}}}";
 
-        Directory.CreateDirectory(Constants.BASE_PATH);
-        File.WriteAllText(Path.Combine(Constants.BASE_PATH, "index.json"), indexJsonStr);
+            indexJson = JsonSerializer.Deserialize<IndexFileHead>(indexJsonStr)!.data;
+
+            Directory.CreateDirectory(Constants.BASE_PATH);
+            await File.WriteAllTextAsync(Path.Combine(Constants.BASE_PATH, "index.json"), indexJsonStr);
+        }
 
         double index = 0;
 
@@ -69,13 +91,14 @@ public class AssetDownloader
                 continue;
             }
 
-            var downloadURL = new StringBuilder();
+            var downloadUrl = new StringBuilder();
 
-            downloadURL.Append(Constants.BASE_CDN_URL);
-            downloadURL.Append(asset.hash[..2]);
-            downloadURL.Append("/" + asset.hash);
+            // Creating URL for download
+            downloadUrl.Append(Constants.BASE_CDN_URL);
+            downloadUrl.Append(asset.hash[..2]);
+            downloadUrl.Append("/" + asset.hash);
 
-            var assetResponse = client.GetAsync(downloadURL.ToString());
+            var assetResponse = client.GetAsync(downloadUrl.ToString());
             var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
             byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
 
@@ -90,7 +113,7 @@ public class AssetDownloader
             progressBar.Value = index / indexJson.Count * 100.0;
             infoText.Text = $"Downloading {asset.hash} ({index}/{indexJson.Count})";
 
-            // Need to be delayed 250ms, if not await will not work.
+            // Needs to be delayed 250ms, if not await will not work.
             // and before the CDN closes the connection due to DDOS protection
             await Task.Delay(250);
         }
@@ -98,10 +121,10 @@ public class AssetDownloader
 
     public class IndexFileHead
     {
-        public required List<IndexFile> data { get; set; }
+        public required List<IndexFile> data { get; init; }
     }
 
-    public class IndexFile
+    public abstract class IndexFile
     {
         public required string hash { get; set; }
         public required string path { get; set; }

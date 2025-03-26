@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
-using dev.craftengine.editor.Minecraft;
+using dev.craftengine.editor.Minecraft.AssetDownloader;
 
 namespace dev.craftengine.editor.Views;
 
