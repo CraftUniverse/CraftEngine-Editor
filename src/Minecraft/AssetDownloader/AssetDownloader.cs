@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
-using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -17,35 +16,10 @@ public abstract class AssetDownloader
     static private async Task<List<IndexFile>> ReadIndexFile()
     {
         string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
-
-        if (File.Exists(indexPath))
-        {
-            return new List<IndexFile>();
-        }
-
         string content = await File.ReadAllTextAsync(indexPath);
-        var indexJson = JsonSerializer.Deserialize<IndexFileHead>(content)!.data;
+        var indexJson = JsonSerializer.Deserialize<IndexFileHead>(content)!;
 
-        return indexJson;
-    }
-
-    static private async Task<string> GetFileHash(string path)
-    {
-        var md5 = MD5.Create();
-        var stream = File.OpenRead(path);
-        byte[] hash = await md5.ComputeHashAsync(stream);
-
-        return Encoding.Default.GetString(hash);
-    }
-
-    public static async Task CheckFiles()
-    {
-        var indexFile = await ReadIndexFile();
-
-        foreach (var index in indexFile)
-        {
-            Console.WriteLine(index.hash);
-        }
+        return indexJson.data;
     }
 
     public static async Task Download(ProgressBar progressBar, TextBlock infoText, string minecraftVersion)
@@ -83,6 +57,8 @@ public abstract class AssetDownloader
         }
 
         double index = 0;
+        double amount = indexJson.Count;
+        double delayCount = 0;
 
         foreach (var asset in indexJson)
         {
@@ -91,31 +67,46 @@ public abstract class AssetDownloader
                 continue;
             }
 
-            var downloadUrl = new StringBuilder();
-
-            // Creating URL for download
-            downloadUrl.Append(Constants.BASE_CDN_URL);
-            downloadUrl.Append(asset.hash[..2]);
-            downloadUrl.Append("/" + asset.hash);
-
-            var assetResponse = client.GetAsync(downloadUrl.ToString());
-            var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
-            byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
-
+            var addDelay = false;
             string filePath = Path.Combine(Constants.BASE_PATH, asset.hash[..2], asset.hash);
 
-            Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? "");
-            File.WriteAllBytes(filePath, byteArray);
+            if (!File.Exists(filePath))
+            {
+                var downloadUrl = new StringBuilder();
 
-            index++;
+                // Creating URL for download
+                downloadUrl.Append(Constants.BASE_CDN_URL);
+                downloadUrl.Append(asset.hash[..2]);
+                downloadUrl.Append("/" + asset.hash);
+
+                var assetResponse = client.GetAsync(downloadUrl.ToString());
+                var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
+                byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
+
+
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? "");
+                File.WriteAllBytes(filePath, byteArray);
+
+                delayCount++;
+                addDelay = true;
+                index++;
+            }
+            else
+            {
+                amount--;
+            }
 
             // Calculates the Percentage based on how much is downloaded
-            progressBar.Value = index / indexJson.Count * 100.0;
-            infoText.Text = $"Downloading {asset.hash} ({index}/{indexJson.Count})";
+            progressBar.Value = index / amount * 100.0;
+            infoText.Text = $"Downloading {asset.hash} ({index}/{amount})";
 
-            // Needs to be delayed 250ms, if not await will not work.
+            // Needs to be delayed 350ms, if not await will not work.
             // and before the CDN closes the connection due to DDOS protection
-            await Task.Delay(250);
+            if (addDelay && delayCount < 15)
+            {
+                delayCount = 0;
+                await Task.Delay(350);
+            }
         }
     }
 
@@ -124,7 +115,7 @@ public abstract class AssetDownloader
         public required List<IndexFile> data { get; init; }
     }
 
-    public abstract class IndexFile
+    public class IndexFile
     {
         public required string hash { get; set; }
         public required string path { get; set; }
