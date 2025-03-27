@@ -32,6 +32,8 @@ public abstract class AssetDownloader
             return;
         }
 
+        progressBar.ProgressTextFormat = "{1:0}% (ca. 0 minutes)";
+
         var client = new HttpClient();
         string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
         List<IndexFile> indexJson;
@@ -58,7 +60,7 @@ public abstract class AssetDownloader
 
         double index = 0;
         double amount = indexJson.Count;
-        double delayCount = 0;
+        var delayCount = 0;
 
         foreach (var asset in indexJson)
         {
@@ -66,6 +68,9 @@ public abstract class AssetDownloader
             {
                 continue;
             }
+
+            var estTime = 0;
+            var startTime = DateTime.Now;
 
             var addDelay = false;
             string filePath = Path.Combine(Constants.BASE_PATH, asset.hash[..2], asset.hash);
@@ -83,18 +88,22 @@ public abstract class AssetDownloader
                 var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
                 byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
 
-
                 Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? "");
                 File.WriteAllBytes(filePath, byteArray);
 
                 delayCount++;
                 addDelay = true;
                 index++;
+
+                var endTime = DateTime.Now;
+                estTime = (int)(endTime.Subtract(startTime).Milliseconds * (amount - index) / 1000);
             }
             else
             {
                 amount--;
             }
+
+            progressBar.ProgressTextFormat = "{1:0}% (ca. " + (estTime / 60) + " minutes)";
 
             // Calculates the Percentage based on how much is downloaded
             progressBar.Value = index / amount * 100.0;
@@ -102,10 +111,14 @@ public abstract class AssetDownloader
 
             // Needs to be delayed 350ms, if not await will not work.
             // and before the CDN closes the connection due to DDOS protection
-            if (addDelay && delayCount < 15)
+            if (addDelay && delayCount == 30)
             {
+                await Task.Delay(500);
                 delayCount = 0;
-                await Task.Delay(350);
+            }
+            else if (addDelay)
+            {
+                await Task.Delay(1);
             }
         }
     }
