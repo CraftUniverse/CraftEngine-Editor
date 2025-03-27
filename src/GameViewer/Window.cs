@@ -1,36 +1,48 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using Avalonia.Platform;
 using Veldrid;
-using Veldrid.Sdl2;
-using Veldrid.StartupUtilities;
 
 namespace dev.craftengine.editor.GameViewer;
 
 public class Window
 {
-    private GraphicsDevice _graphicsDevice;
+    public GraphicsDevice graphicsDevice;
+    public Swapchain swapchain;
+    public CommandList commandList;
 
-    public Window(IntPtr windowHandle)
+    public Window(IntPtr windowHandle, uint width, uint height)
     {
-        var windowCI = new WindowCreateInfo()
-        {
-            WindowTitle = "Veldrid Tutorial"
-        };
-        var window = VeldridStartup.CreateWindow(ref windowCI);
-
         var options = new GraphicsDeviceOptions
         {
-            PreferStandardClipSpaceYDirection = true,
-            PreferDepthRangeZeroToOne = true
+            PreferStandardClipSpaceYDirection = true, PreferDepthRangeZeroToOne = true
         };
 
-        var swapchain = SwapchainSource.CreateWin32(windowHandle, windowHandle);
+        graphicsDevice = GraphicsDevice.CreateVulkan(options);
 
+        var swapchainSource = SwapchainSource.CreateWin32(windowHandle, windowHandle);
 
-        while (window.Exists)
-        {
-            window.PumpEvents();
-        }
+        swapchain = graphicsDevice.ResourceFactory.CreateSwapchain(
+            new SwapchainDescription(
+                swapchainSource,
+                width,
+                height,
+                null,
+                false
+            )
+        );
+
+        commandList = graphicsDevice.ResourceFactory.CreateCommandList();
+
+        Paint();
+    }
+
+    public void Paint()
+    {
+        commandList.Begin();
+        commandList.SetFramebuffer(swapchain.Framebuffer);
+        commandList.ClearColorTarget(0, new RgbaFloat(1, 0, 0, 1));
+        commandList.End();
+
+        graphicsDevice.SubmitCommands(commandList);
+        graphicsDevice.SwapBuffers(swapchain);
     }
 }

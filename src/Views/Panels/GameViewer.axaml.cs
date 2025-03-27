@@ -1,6 +1,6 @@
-﻿using Avalonia.Controls;
+﻿using System.Threading.Tasks;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
-using dev.craftengine.editor.GameViewer;
 using Window = dev.craftengine.editor.GameViewer.Window;
 
 namespace dev.craftengine.editor.Views.Panels;
@@ -16,16 +16,24 @@ public partial class GameViewer : UserControl
 
     private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        _window = new Window(HostFrame.Handle);
+        _window = new Window(
+            HostFrame.Handle,
+            (uint)Bounds.Size.Width,
+            (uint)Bounds.Size.Height
+        );
     }
 
-    private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
+    private async void OnSizeChanged(object? sender, SizeChangedEventArgs e)
     {
         if (!IsLoaded)
         {
             return;
         }
 
-  //      _window.Resize((int)e.NewSize.Width, (int)e.NewSize.Height);
+        // Fix Maximizing the Window
+        await Task.Delay(10);
+
+        _window.swapchain.Resize((uint)e.NewSize.Width, (uint)e.NewSize.Height);
+        _window.Paint();
     }
 }
