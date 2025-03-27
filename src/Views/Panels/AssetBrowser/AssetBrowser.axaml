@@ -85,7 +85,8 @@
                                                 </MenuItem.InputGesture>
                                             </MenuItem>
                                             <Separator />
-                                            <MenuItem Header="Rename">
+                                            <MenuItem Header="Rename" Click="MenuItem_Rename"
+                                                      DataContext="{Binding Path}">
                                                 <MenuItem.Icon>
                                                     <PathIcon Data="{StaticResource rename_regular}" />
                                                 </MenuItem.Icon>

@@ -10,6 +10,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using dev.craftengine.editor.ViewModels;
 using FluentAvalonia.UI.Controls;
+using Path = System.IO.Path;
 
 namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
@@ -184,5 +185,14 @@ public partial class AssetBrowser : UserControl
 
             break;
         }
+    }
+
+    private void MenuItem_Rename(object? sender, RoutedEventArgs e)
+    {
+        var item = (MenuItem)sender!;
+        string filename = Path.GetFileName(item.DataContext as string)!;
+
+        var win = new Rename(filename);
+        win.ShowDialog((Window)TopLevel.GetTopLevel(this)!);
     }
 }
