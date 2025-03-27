@@ -113,7 +113,7 @@ public abstract class AssetDownloader
             // and before the CDN closes the connection due to DDOS protection
             if (addDelay && delayCount == 30)
             {
-                await Task.Delay(500);
+                await Task.Delay(1000);
                 delayCount = 0;
             }
             else if (addDelay)
