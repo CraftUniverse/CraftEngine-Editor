@@ -96,7 +96,7 @@ public abstract class AssetDownloader
                 index++;
 
                 var endTime = DateTime.Now;
-                estTime = (int)(endTime.Subtract(startTime).Milliseconds * (amount - index) / 1000);
+                estTime = (int)((endTime - startTime).Milliseconds * (amount - index) / 1000);
             }
             else
             {
