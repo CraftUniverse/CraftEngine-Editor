@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
@@ -9,11 +9,11 @@
         <AvaloniaVersion>11.2.2</AvaloniaVersion>
         <EremexVersion>[1.1.*,)</EremexVersion>
         <RootNamespace>dev.craftengine.editor</RootNamespace>
-        <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+        <ApplicationIcon>Assets\Icon.ico</ApplicationIcon>
         <Authors>CraftUniverse</Authors>
         <Copyright>© 2025 CraftUniverse</Copyright>
         <PackageProjectUrl>https://craftengine.dev</PackageProjectUrl>
-        <PackageIcon>icon.ico</PackageIcon>
+        <PackageIcon>Icon.ico</PackageIcon>
         <Company>CraftUniverse</Company>
         <SignAssembly>true</SignAssembly>
         <AssemblyName>CraftEngine Editor</AssemblyName>
