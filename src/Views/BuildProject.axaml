@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Width="400" Height="105" Title="Build Project"
-        WindowStartupLocation="CenterOwner" CanResize="False"
+        WindowStartupLocation="CenterOwner" CanResize="False" Icon="/Assets/Icon.ico"
         x:Class="dev.craftengine.editor.Views.BuildProject">
     <StackPanel>
         <StackPanel Orientation="Horizontal">

@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" SizeToContent="WidthAndHeight"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterOwner" Icon="/Assets/Icon.ico"
         x:Class="dev.craftengine.editor.Views.ColorPicker"
         Title="ColorPicker" CanResize="False">
     <StackPanel Orientation="Horizontal" Margin="8 8 8 0">

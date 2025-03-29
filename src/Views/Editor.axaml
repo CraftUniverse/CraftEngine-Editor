@@ -2,10 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         d:DesignWidth="1920" d:DesignHeight="1080"
-        WindowState="Maximized"
+        WindowState="Maximized" Icon="/Assets/Icon.ico"
         WindowStartupLocation="CenterScreen"
-        x:Class="dev.craftengine.editor.Views.Editor"
-        Icon="/Assets/Icon.ico">
+        x:Class="dev.craftengine.editor.Views.Editor">
     <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
