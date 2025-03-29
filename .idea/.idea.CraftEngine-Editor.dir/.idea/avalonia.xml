@@ -7,6 +7,7 @@
         <entry key="MainWindow.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="Views/ProjectList.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="Views/SplashScreen.axaml" value="CraftEngine-Editor.csproj" />
+        <entry key="src/Views/About.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/BuildProject.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/ColorPicker.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Editor.axaml" value="CraftEngine-Editor.csproj" />

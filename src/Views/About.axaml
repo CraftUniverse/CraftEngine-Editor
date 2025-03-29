@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight"
-        x:Class="dev.craftengine.editor.Views.Panels.About"
+        x:Class="dev.craftengine.editor.Views.About"
         Title="About" WindowStartupLocation="CenterOwner">
     <StackPanel Orientation="Vertical" Margin="20 20">
         <Image Source="/Assets/Logo.png" Width="450" Margin="0 0 0 10" />
