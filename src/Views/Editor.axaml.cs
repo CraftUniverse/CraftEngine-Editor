@@ -50,6 +50,6 @@ public partial class Editor : Window
     private void Menu_Help_About_OnClick(object? sender, RoutedEventArgs e)
     {
         var win = new About();
-        win.Show(this);
+        win.ShowDialog(this);
     }
 }

@@ -30,12 +30,10 @@
         <TextBlock Margin="0 20 0 0">
             © 2025 CraftUniverse
         </TextBlock>
-        <HyperlinkButton FontWeight="DemiBold" Padding="0"
-                         NavigateUri="https://craftuniverse.net/">
+        <HyperlinkButton Padding="0" NavigateUri="https://craftuniverse.net/">
             https://craftuniverse.net
         </HyperlinkButton>
-        <HyperlinkButton FontWeight="DemiBold" Padding="0"
-                         NavigateUri="https://craftengine.dev/">
+        <HyperlinkButton Padding="0" NavigateUri="https://craftengine.dev/">
             https://craftengine.dev
         </HyperlinkButton>
 
