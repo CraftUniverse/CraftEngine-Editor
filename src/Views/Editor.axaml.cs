@@ -46,4 +46,10 @@ public partial class Editor : Window
     private void PlayOfflineButton(object? sender, RoutedEventArgs e)
     {
     }
+
+    private void Menu_Help_About_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var win = new About();
+        win.Show(this);
+    }
 }
