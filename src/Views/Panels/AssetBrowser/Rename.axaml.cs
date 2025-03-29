@@ -44,10 +44,7 @@ public partial class Rename : Window
             var msgBox = new MessageBox(
                 "Are you sure?",
                 "Are you sure to change the File Extension?",
-                [
-                    MessageBox.Button.YES,
-                    MessageBox.Button.NO,
-                ],
+                MessageBox.Button.YES | MessageBox.Button.NO,
                 MessageBox.Icon.QUESTION
             );
 
