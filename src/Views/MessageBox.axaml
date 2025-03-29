@@ -8,8 +8,23 @@
     <StackPanel Margin="5">
         <TextBlock Margin="5" Name="Text" MaxWidth="550"></TextBlock>
         <StackPanel Orientation="Horizontal" Margin="0 5 0 0" HorizontalAlignment="Right">
-            <Button Margin="5 0">Yes</Button>
-            <Button Margin="5 0">No</Button>
+            <Button Name="YesButton" Margin="5 0"
+                    IsVisible="False">
+                Yes
+            </Button>
+            <Button Name="NoButton" Margin="5 0"
+                    IsVisible="False">
+                No
+            </Button>
+
+            <Button Name="OkButton" Margin="5 0"
+                    IsVisible="False">
+                Okay
+            </Button>
+            <Button Name="CancelButton" Margin="5 0"
+                    IsVisible="False">
+                Cancel
+            </Button>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -20,7 +21,11 @@ public partial class Rename : Window
     private void TextBox_OnLoaded(object? sender, RoutedEventArgs e)
     {
         TextBox.Focus(NavigationMethod.Tab);
-        TextBox.SelectionEnd = _oldName.IndexOf(Path.GetExtension(_oldName));
+
+        TextBox.SelectionEnd = _oldName.IndexOf(
+            Path.GetExtension(_oldName),
+            StringComparison.Ordinal
+        );
     }
 
     private void Button_Cancel(object? sender, RoutedEventArgs e)
@@ -28,6 +33,7 @@ public partial class Rename : Window
         Close();
     }
 
+    // ReSharper disable once AsyncVoidMethod
     private async void Button_Okay(object? sender, RoutedEventArgs e)
     {
         string oldExt = Path.GetExtension(_oldName);
@@ -35,8 +41,19 @@ public partial class Rename : Window
 
         if (oldExt != ext)
         {
-            var msgBox = new MessageBox("Are you sure?", "Are you sure to change the File Extension?");
-            await msgBox.ShowDialog(this);
+            var msgBox = new MessageBox(
+                "Are you sure?",
+                "Are you sure to change the File Extension?",
+                [
+                    MessageBox.Button.YES,
+                    MessageBox.Button.NO,
+                ]
+            );
+
+            if (await msgBox.ShowDialog(this) == MessageBox.Button.NO)
+            {
+                return;
+            }
         }
 
         Close();
