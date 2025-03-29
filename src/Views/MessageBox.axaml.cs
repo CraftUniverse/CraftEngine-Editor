@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
@@ -9,23 +10,17 @@ namespace dev.craftengine.editor.Views;
 
 public partial class MessageBox : Window
 {
-    public MessageBox(string title, string message, List<Button> buttons, string? displayIcon = null)
+    public MessageBox(string title, string message, Button buttons, string? displayIcon = null)
     {
         InitializeComponent();
 
         Title = title;
         Text.Text = message;
 
-        foreach (var button in buttons)
-        {
-            switch (button)
-            {
-                case Button.YES: YesButton.IsVisible = true; break;
-                case Button.NO: NoButton.IsVisible = true; break;
-                case Button.OK: OkButton.IsVisible = true; break;
-                case Button.CANCEL: CancelButton.IsVisible = true; break;
-            }
-        }
+        YesButton.IsVisible =    (buttons & Button.YES) == Button.YES;
+        NoButton.IsVisible =     (buttons & Button.NO) == Button.NO;
+        OkButton.IsVisible =     (buttons & Button.OK) == Button.OK;
+        CancelButton.IsVisible = (buttons & Button.CANCEL) == Button.CANCEL;
 
         if (displayIcon == null)
         {
@@ -69,6 +64,7 @@ public partial class MessageBox : Window
         return _returnButton;
     }
 
+    [Flags]
     public enum Button
     {
         OK,
