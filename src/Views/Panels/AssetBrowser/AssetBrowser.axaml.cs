@@ -123,7 +123,7 @@ public partial class AssetBrowser : UserControl
             return;
         }
 
-        if (data.IsBackButton)
+        if (data!.IsBackButton)
         {
             Console.WriteLine("BACK!");
 

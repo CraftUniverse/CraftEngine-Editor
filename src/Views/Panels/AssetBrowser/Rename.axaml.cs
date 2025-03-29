@@ -8,7 +8,7 @@ namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
 public partial class Rename : Window
 {
-    private string _oldName;
+    private readonly string _oldName;
 
     public Rename(string oldName)
     {
@@ -47,7 +47,8 @@ public partial class Rename : Window
                 [
                     MessageBox.Button.YES,
                     MessageBox.Button.NO,
-                ]
+                ],
+                MessageBox.Icon.QUESTION
             );
 
             if (await msgBox.ShowDialog(this) == MessageBox.Button.NO)

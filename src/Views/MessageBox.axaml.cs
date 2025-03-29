@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
+using Avalonia.Styling;
 
 namespace dev.craftengine.editor.Views;
 
 public partial class MessageBox : Window
 {
-    public MessageBox(string title, string message, List<Button> buttons)
+    public MessageBox(string title, string message, List<Button> buttons, string? displayIcon = null)
     {
         InitializeComponent();
 
@@ -23,6 +26,14 @@ public partial class MessageBox : Window
                 case Button.CANCEL: CancelButton.IsVisible = true; break;
             }
         }
+
+        if (displayIcon == null)
+        {
+            return;
+        }
+
+        Application.Current!.Resources.TryGetResource(displayIcon, ThemeVariant.Default, out object? icon);
+        PathIcon.Data = (StreamGeometry)icon!;
     }
 
     private Button _returnButton;
@@ -64,5 +75,11 @@ public partial class MessageBox : Window
         CANCEL,
         YES,
         NO
+    }
+
+    public class Icon
+    {
+        public static string INFO => "info_regular";
+        public static string QUESTION => "question_circle_regular";
     }
 }
