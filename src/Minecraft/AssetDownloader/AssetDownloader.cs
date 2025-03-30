@@ -46,7 +46,13 @@ public abstract class AssetDownloader
         }
         catch (HttpRequestException e)
         {
+            infoText.Text = "Failed to download index.json";
             await Console.Error.WriteLineAsync($"Failed to download index.json: {e.Message}");
+
+            if (!File.Exists(indexPath))
+            {
+                return;
+            }
         }
 
         double index = 0;
