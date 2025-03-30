@@ -4,8 +4,8 @@ The **CraftEngine** is a special [Game Engine](https://en.wikipedia.org/wiki/Gam
 bigger games for [**Minecraft™: Java Edition**](https://minecraft.net/en-us/). _Maybe for
 the [**Minecraft™: Bedrock Edition**](https://www.minecraft.net/en-us) as well later._
 
-The **CraftEngine Editor** is the editor for the [**CraftEngine**](https://craftengine.dev/) [**Game Engine
-**](https://en.wikipedia.org/wiki/Game_engine).
+The **CraftEngine Editor** is the editor for the **[CraftEngine](https://craftengine.dev/) [Game Engine
+](https://en.wikipedia.org/wiki/Game_engine)**.
 
 ### Table of Contents
 
