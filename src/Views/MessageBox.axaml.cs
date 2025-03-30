@@ -67,7 +67,7 @@ public partial class MessageBox : Window
     [Flags]
     public enum Button
     {
-        OK,
+        OK = 1,
         CANCEL,
         YES,
         NO
