@@ -13,15 +13,6 @@ namespace dev.craftengine.editor.Minecraft.AssetDownloader;
 
 public abstract class AssetDownloader
 {
-    static private async Task<List<IndexFile>> ReadIndexFile()
-    {
-        string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
-        string content = await File.ReadAllTextAsync(indexPath);
-        var indexJson = JsonSerializer.Deserialize<IndexFileHead>(content)!;
-
-        return indexJson.data;
-    }
-
     public static async Task Download(ProgressBar progressBar, TextBlock infoText, string minecraftVersion)
     {
         if (Design.IsDesignMode)
@@ -32,17 +23,13 @@ public abstract class AssetDownloader
             return;
         }
 
-        progressBar.ProgressTextFormat = "{1:0}% (ca. 0 minutes)";
+        progressBar.ProgressTextFormat = "{1:0}%";
 
         var client = new HttpClient();
         string indexPath = Path.Combine(Constants.BASE_PATH, "index.json");
-        List<IndexFile> indexJson;
+        var indexJson = new List<IndexFile>();
 
-        if (File.Exists(indexPath))
-        {
-            indexJson = await ReadIndexFile();
-        }
-        else
+        try
         {
             infoText.Text = "Downloading index.json";
 
@@ -55,7 +42,11 @@ public abstract class AssetDownloader
             indexJson = JsonSerializer.Deserialize<IndexFileHead>(indexJsonStr)!.data;
 
             Directory.CreateDirectory(Constants.BASE_PATH);
-            await File.WriteAllTextAsync(Path.Combine(Constants.BASE_PATH, "index.json"), indexJsonStr);
+            await File.WriteAllTextAsync(indexPath, indexJsonStr);
+        }
+        catch (HttpRequestException e)
+        {
+            await Console.Error.WriteLineAsync($"Failed to download index.json: {e.Message}");
         }
 
         double index = 0;
@@ -84,12 +75,19 @@ public abstract class AssetDownloader
                 downloadUrl.Append(asset.hash[..2]);
                 downloadUrl.Append("/" + asset.hash);
 
-                var assetResponse = client.GetAsync(downloadUrl.ToString());
-                var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
-                byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
+                try
+                {
+                    var assetResponse = client.GetAsync(downloadUrl.ToString());
+                    var assetResult = assetResponse.Result.EnsureSuccessStatusCode();
+                    byte[] byteArray = await assetResult.Content.ReadAsByteArrayAsync();
 
-                Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? "");
-                File.WriteAllBytes(filePath, byteArray);
+                    Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? "");
+                    File.WriteAllBytesAsync(filePath, byteArray);
+                }
+                catch (HttpRequestException e)
+                {
+                    await Console.Error.WriteLineAsync($"Failed to download asset \"{asset.hash}\": {e.Message}");
+                }
 
                 delayCount++;
                 addDelay = true;
