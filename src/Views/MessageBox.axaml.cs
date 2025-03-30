@@ -68,9 +68,9 @@ public partial class MessageBox : Window
     public enum Button
     {
         OK = 1,
-        CANCEL,
-        YES,
-        NO
+        CANCEL = 2,
+        YES = 4,
+        NO = 8
     }
 
     public class Icon
