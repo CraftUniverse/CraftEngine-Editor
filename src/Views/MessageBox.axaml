@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" SizeToContent="WidthAndHeight" CanResize="False"
         WindowStartupLocation="CenterOwner" Icon="/Assets/Icon.ico"
-        xmlns:a="using:dev.craftengine.editor.Assets"
+        xmlns:res="using:dev.craftengine.editor.Resources"
         x:Class="dev.craftengine.editor.Views.MessageBox">
     <StackPanel Margin="5">
         <StackPanel Orientation="Horizontal">
@@ -16,17 +16,17 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0 5 0 0" HorizontalAlignment="Right">
             <Button Name="YesButton" Margin="5 0" IsVisible="False">
-                <TextBlock Text="{x:Static a:Resources.messagebox_button_yes}" />
+                <TextBlock Text="{x:Static res:Resources.messagebox_button_yes}" />
             </Button>
             <Button Name="NoButton" Margin="5 0" IsVisible="False">
-                <TextBlock Text="{x:Static a:Resources.messagebox_button_no}" />
+                <TextBlock Text="{x:Static res:Resources.messagebox_button_no}" />
             </Button>
 
             <Button Name="OkButton" Margin="5 0" IsVisible="False">
-                <TextBlock Text="{x:Static a:Resources.messagebox_button_okay}" />
+                <TextBlock Text="{x:Static res:Resources.messagebox_button_okay}" />
             </Button>
             <Button Name="CancelButton" Margin="5 0" IsVisible="False">
-                <TextBlock Text="{x:Static a:Resources.messagebox_button_cancel}" />
+                <TextBlock Text="{x:Static res:Resources.messagebox_button_cancel}" />
             </Button>
         </StackPanel>
     </StackPanel>

@@ -28,6 +28,8 @@
         <comment/></data>
     <data name="asset_browser.context.common.show_finder" xml:space="preserve"><value>Show in Finder</value>
         <comment/></data>
+    <data name="asset_browser.context.common.show_in_files" xml:space="preserve"><value>Show in File Explorer</value>
+        <comment/></data>
     <data name="asset_browser.context.copy_path" xml:space="preserve"><value>Copy Path</value>
         <comment/></data>
     <data name="asset_browser.context.open" xml:space="preserve"><value>Open</value>
@@ -149,6 +151,12 @@
     <data name="projectlist.list.name.title" xml:space="preserve"><value>Name</value>
         <comment/></data>
     <data name="projectlist.list.version.title" xml:space="preserve"><value>Minecraft Version</value>
+        <comment/></data>
+    <data name="rename.quest.file_ext.message" xml:space="preserve"><value>Are you sure to change the File Extension?</value>
+        <comment/></data>
+    <data name="rename.quest.file_ext.title" xml:space="preserve"><value>Are you sure?</value>
+        <comment/></data>
+    <data name="rename.title" xml:space="preserve"><value>Rename</value>
         <comment/></data>
     <data name="startup.image_credits" xml:space="preserve"><value>Image by {credit}</value>
         <comment/></data>

@@ -42,8 +42,8 @@ public partial class Rename : Window
         if (oldExt != ext)
         {
             var msgBox = new MessageBox(
-                "Are you sure?",
-                "Are you sure to change the File Extension?",
+                editor.Resources.Resources.rename_quest_file_ext_title,
+                editor.Resources.Resources.rename_quest_file_ext_message,
                 MessageBox.Button.YES | MessageBox.Button.NO,
                 MessageBox.Icon.QUESTION
             );

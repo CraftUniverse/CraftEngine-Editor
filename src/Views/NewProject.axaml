@@ -1,26 +1,26 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
-        xmlns:a="using:dev.craftengine.editor.Assets"
+        xmlns:res="using:dev.craftengine.editor.Resources"
         Height="178" Width="420" CanResize="False"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.NewProject"
         x:DataType="vm:ProjectListModel" Icon="/Assets/Icon.ico"
-        Title="{x:Static a:Resources.newproject_title}">
+        Title="{x:Static res:Resources.newproject_title}">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <StackPanel Margin="10 ">
                 <TextBlock Margin="0 0 0 5"
-                           Text="{x:Static a:Resources.newproject_textinput_name_label}">
+                           Text="{x:Static res:Resources.newproject_textinput_name_label}">
                     :
                 </TextBlock>
                 <TextBox Text="New Project" MinWidth="250"
-                         Watermark="{x:Static a:Resources.newproject_textinput_name_label}" />
+                         Watermark="{x:Static res:Resources.newproject_textinput_name_label}" />
             </StackPanel>
 
             <StackPanel Margin="0 10">
                 <TextBlock Margin="0 0 0 5"
-                           Text="{x:Static a:Resources.newproject_select_version_label}" />
+                           Text="{x:Static res:Resources.newproject_select_version_label}" />
                 <ComboBox MinWidth="140" SelectedIndex="0" MaxDropDownHeight="100">
                     <ComboBoxItem>1.21.4</ComboBoxItem>
                 </ComboBox>
@@ -30,11 +30,11 @@
         <StackPanel Orientation="Horizontal">
             <StackPanel Margin="10 0 10 0">
                 <TextBlock Margin="0 0 0 5"
-                           Text="{x:Static a:Resources.newproject_textinput_path_label}">
+                           Text="{x:Static res:Resources.newproject_textinput_path_label}">
                     :
                 </TextBlock>
                 <TextBox Name="PathInput" Focusable="False" IsReadOnly="True" MinWidth="360"
-                         Watermark="{x:Static a:Resources.newproject_textinput_path_label}" />
+                         Watermark="{x:Static res:Resources.newproject_textinput_path_label}" />
             </StackPanel>
 
             <StackPanel>
@@ -45,10 +45,10 @@
 
         <StackPanel Orientation="Horizontal" Margin="0 10">
             <Button Click="CloseButton_OnClick" Margin="10 0">
-                <TextBlock Text="{x:Static a:Resources.newproject_button_close}"></TextBlock>
+                <TextBlock Text="{x:Static res:Resources.newproject_button_close}"></TextBlock>
             </Button>
             <Button>
-                <TextBlock Text="{x:Static a:Resources.newproject_button_create}"></TextBlock>
+                <TextBlock Text="{x:Static res:Resources.newproject_button_create}"></TextBlock>
             </Button>
         </StackPanel>
     </StackPanel>

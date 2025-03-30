@@ -28,6 +28,8 @@
         <comment/></data>
     <data name="asset_browser.context.common.show_finder" xml:space="preserve"><value>In Finder Zeigen</value>
         <comment/></data>
+    <data name="asset_browser.context.common.show_in_files" xml:space="preserve"><value>In File Explorer Zeigen</value>
+        <comment/></data>
     <data name="asset_browser.context.copy_path" xml:space="preserve"><value>Pfad Kopieren</value>
         <comment/></data>
     <data name="asset_browser.context.open" xml:space="preserve"><value>Öffnen</value>
@@ -149,6 +151,12 @@
     <data name="projectlist.list.name.title" xml:space="preserve"><value>Name</value>
         <comment/></data>
     <data name="projectlist.list.version.title" xml:space="preserve"><value>Minecraft Version</value>
+        <comment/></data>
+    <data name="rename.quest.file_ext.message" xml:space="preserve"><value>Bist du sicher, dass du die Dateierweiterung ändern möchtest?</value>
+        <comment/></data>
+    <data name="rename.quest.file_ext.title" xml:space="preserve"><value>Bist du sicher?</value>
+        <comment/></data>
+    <data name="rename.title" xml:space="preserve"><value>Umbenennen</value>
         <comment/></data>
     <data name="startup.image_credits" xml:space="preserve"><value>Bild von {credit}</value>
         <comment/></data>

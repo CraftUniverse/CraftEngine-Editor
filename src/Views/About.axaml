@@ -2,15 +2,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:a="using:dev.craftengine.editor.Assets"
+        xmlns:res="using:dev.craftengine.editor.Resources"
         mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight"
         x:Class="dev.craftengine.editor.Views.About"
-        Title="{x:Static a:Resources.about_title}" WindowStartupLocation="CenterOwner">
+        Title="{x:Static res:Resources.about_title}" WindowStartupLocation="CenterOwner">
     <StackPanel Orientation="Vertical" Margin="20 20">
         <Image Source="/Assets/Logo.png" Width="450" Margin="0 0 0 10" />
 
         <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="24"
-                   Text="{x:Static a:Resources.about_ce}" />
+                   Text="{x:Static res:Resources.about_ce}" />
         <TextBlock HorizontalAlignment="Center" Foreground="Gray"
                    FontSize="16" Name="VersionText" />
 

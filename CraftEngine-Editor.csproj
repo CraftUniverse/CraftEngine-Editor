@@ -74,22 +74,12 @@
             <DependentUpon>About.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Assets\Resources.Designer.cs">
+        <Compile Update="Resources\Resources.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
-        <Compile Update="Assets\Resources.de-DE.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Resources.de-DE.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Assets\Resources.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Resources.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Assets\Resources.de-DE.Designer.cs">
+        <Compile Update="Resources\Resources.de-DE.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.de-DE.resx</DependentUpon>
@@ -97,34 +87,14 @@
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Update="Assets\Resources.resx">
+        <EmbeddedResource Update="Resources\Resources.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Assets\Resources.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Assets\Resources.de-DE.resx">
+        <EmbeddedResource Update="Resources\Resources.de-DE.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.de-DE.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Assets\Resources.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Assets\Resources.de-DE.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resources.de-DE.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Compile Update="Resources.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Resources.resx</DependentUpon>
-        </Compile>
     </ItemGroup>
 
     <!-- SDL 2 -->

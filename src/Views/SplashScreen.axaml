@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:a="using:dev.craftengine.editor.Assets"
+        xmlns:res="using:dev.craftengine.editor.Resources"
         mc:Ignorable="d" TransparencyLevelHint="Transparent"
         x:Class="dev.craftengine.editor.Views.SplashScreen"
         WindowStartupLocation="CenterScreen" RequestedThemeVariant="Dark"
@@ -27,7 +27,7 @@
             </TextBlock>
             <TextBlock Margin="10 0" FontSize="20" Name="InfoText"
                        FontWeight="Medium" Foreground="White"
-                       Text="{x:Static a:Resources.startup_text_opening_project}" />
+                       Text="{x:Static res:Resources.startup_text_opening_project}" />
             <ProgressBar Margin="10 5 300 0" Height="20"
                          Minimum="0" Maximum="100" Value="0" IsVisible="False"
                          ShowProgressText="True" Name="ProgressBar"

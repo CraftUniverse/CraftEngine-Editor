@@ -15,7 +15,7 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        Assets.Resources.Culture = new CultureInfo("de-DE");
+        editor.Resources.Resources.Culture = new CultureInfo("en-US");
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

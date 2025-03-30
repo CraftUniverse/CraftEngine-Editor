@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dev.craftengine.editor.Assets {
+namespace dev.craftengine.editor.Resources {
     using System;
     
     
@@ -21,14 +21,14 @@ namespace dev.craftengine.editor.Assets {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources_de_DE {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources_de_DE() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace dev.craftengine.editor.Assets {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("dev.craftengine.editor.Assets.Resources.de-DE", typeof(Resources_de_DE).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("dev.craftengine.editor.Resources.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,7 +60,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Über CraftEngine.
+        ///   Looks up a localized string similar to About CraftEngine.
         /// </summary>
         public static string about_ce {
             get {
@@ -69,7 +69,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Über.
+        ///   Looks up a localized string similar to About.
         /// </summary>
         public static string about_title {
             get {
@@ -78,7 +78,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zurück.
+        ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string asset_browser_back_folder {
             get {
@@ -87,7 +87,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zeige Metadaten.
+        ///   Looks up a localized string similar to View Metadata.
         /// </summary>
         public static string asset_browser_context_common_metadata {
             get {
@@ -96,7 +96,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neu.
+        ///   Looks up a localized string similar to New.
         /// </summary>
         public static string asset_browser_context_common_new {
             get {
@@ -105,7 +105,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neuladen.
+        ///   Looks up a localized string similar to Reload.
         /// </summary>
         public static string asset_browser_context_common_reload {
             get {
@@ -114,7 +114,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In Explorer Zeigen.
+        ///   Looks up a localized string similar to Show in Explorer.
         /// </summary>
         public static string asset_browser_context_common_show_explorer {
             get {
@@ -123,7 +123,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In Finder Zeigen.
+        ///   Looks up a localized string similar to Show in Finder.
         /// </summary>
         public static string asset_browser_context_common_show_finder {
             get {
@@ -132,7 +132,16 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pfad Kopieren.
+        ///   Looks up a localized string similar to Show in File Explorer.
+        /// </summary>
+        public static string asset_browser_context_common_show_in_files {
+            get {
+                return ResourceManager.GetString("asset_browser.context.common.show_in_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Path.
         /// </summary>
         public static string asset_browser_context_copy_path {
             get {
@@ -141,7 +150,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Öffnen.
+        ///   Looks up a localized string similar to Open.
         /// </summary>
         public static string asset_browser_context_open {
             get {
@@ -150,7 +159,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Öffne in {program}.
+        ///   Looks up a localized string similar to Open in {program}.
         /// </summary>
         public static string asset_browser_context_open_external {
             get {
@@ -159,7 +168,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Umbenennen.
+        ///   Looks up a localized string similar to Rename.
         /// </summary>
         public static string asset_browser_context_rename {
             get {
@@ -168,7 +177,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ordner.
+        ///   Looks up a localized string similar to Folder.
         /// </summary>
         public static string asset_browser_new_folder {
             get {
@@ -186,7 +195,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suchen.
+        ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string asset_browser_search {
             get {
@@ -195,7 +204,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Farbauswahl.
+        ///   Looks up a localized string similar to Color Picker.
         /// </summary>
         public static string colorpicker_title {
             get {
@@ -204,7 +213,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kopieren.
+        ///   Looks up a localized string similar to Copy.
         /// </summary>
         public static string common_copy {
             get {
@@ -213,7 +222,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Löschen.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string common_delete {
             get {
@@ -222,7 +231,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einfügen.
+        ///   Looks up a localized string similar to Paste.
         /// </summary>
         public static string common_paste {
             get {
@@ -231,7 +240,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Bearbeiten.
+        ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string editor_menubar_edit {
             get {
@@ -240,7 +249,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einstellungen.
+        ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string editor_menubar_edit_preferences {
             get {
@@ -249,7 +258,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellen.
+        ///   Looks up a localized string similar to Redo.
         /// </summary>
         public static string editor_menubar_edit_redo {
             get {
@@ -258,7 +267,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rückgängig.
+        ///   Looks up a localized string similar to Undo.
         /// </summary>
         public static string editor_menubar_edit_undo {
             get {
@@ -267,7 +276,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Datei.
+        ///   Looks up a localized string similar to _File.
         /// </summary>
         public static string editor_menubar_file {
             get {
@@ -276,7 +285,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekt Bauen.
+        ///   Looks up a localized string similar to Build Project.
         /// </summary>
         public static string editor_menubar_file_build {
             get {
@@ -285,7 +294,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beenden.
+        ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string editor_menubar_file_exit {
             get {
@@ -294,7 +303,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auf CraftUniverse Veröffentlichen.
+        ///   Looks up a localized string similar to Publish to CraftUniverse.
         /// </summary>
         public static string editor_menubar_file_publish_cu {
             get {
@@ -303,7 +312,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichere Level.
+        ///   Looks up a localized string similar to Save Level.
         /// </summary>
         public static string editor_menubar_file_save_level {
             get {
@@ -312,7 +321,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichere Level als ....
+        ///   Looks up a localized string similar to Save Level as ....
         /// </summary>
         public static string editor_menubar_file_save_level_as {
             get {
@@ -321,7 +330,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Hilfe.
+        ///   Looks up a localized string similar to _Help.
         /// </summary>
         public static string editor_menubar_help {
             get {
@@ -330,7 +339,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Über....
+        ///   Looks up a localized string similar to About....
         /// </summary>
         public static string editor_menubar_help_about {
             get {
@@ -348,7 +357,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Objekte.
+        ///   Looks up a localized string similar to _Objects.
         /// </summary>
         public static string editor_menubar_objects {
             get {
@@ -357,7 +366,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spielen.
+        ///   Looks up a localized string similar to Play.
         /// </summary>
         public static string editor_menubar_play {
             get {
@@ -366,7 +375,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Online Spielen.
+        ///   Looks up a localized string similar to Play Online.
         /// </summary>
         public static string editor_menubar_play_online {
             get {
@@ -375,7 +384,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Fenster.
+        ///   Looks up a localized string similar to _Windows.
         /// </summary>
         public static string editor_menubar_windows {
             get {
@@ -384,7 +393,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abbrechen.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string messagebox_button_cancel {
             get {
@@ -393,7 +402,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nein.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         public static string messagebox_button_no {
             get {
@@ -411,7 +420,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ja.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string messagebox_button_yes {
             get {
@@ -420,7 +429,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Schließen.
+        ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string newproject_button_close {
             get {
@@ -429,7 +438,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekt Erstellen.
+        ///   Looks up a localized string similar to Create Project.
         /// </summary>
         public static string newproject_button_create {
             get {
@@ -438,7 +447,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spiel Version:.
+        ///   Looks up a localized string similar to Game Version:.
         /// </summary>
         public static string newproject_select_version_label {
             get {
@@ -456,7 +465,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pfad.
+        ///   Looks up a localized string similar to Path.
         /// </summary>
         public static string newproject_textinput_path_label {
             get {
@@ -465,7 +474,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Projekt.
+        ///   Looks up a localized string similar to New Project.
         /// </summary>
         public static string newproject_title {
             get {
@@ -474,7 +483,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hier ist nichts zusehen.
+        ///   Looks up a localized string similar to Nothing to see here.
         /// </summary>
         public static string notifications_common_nothing {
             get {
@@ -501,7 +510,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bild Editor.
+        ///   Looks up a localized string similar to Image Editor.
         /// </summary>
         public static string preferences_external_select_image_label {
             get {
@@ -519,7 +528,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sprache.
+        ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string preferences_general_select_languages_label {
             get {
@@ -528,7 +537,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deutsch (Deutschland).
+        ///   Looks up a localized string similar to German (Germany).
         /// </summary>
         public static string preferences_general_select_languages_options_de_DE {
             get {
@@ -537,7 +546,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Englisch (UK).
+        ///   Looks up a localized string similar to English (UK).
         /// </summary>
         public static string preferences_general_select_languages_options_en_GB {
             get {
@@ -546,7 +555,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Englisch (US).
+        ///   Looks up a localized string similar to English (US).
         /// </summary>
         public static string preferences_general_select_languages_options_en_US {
             get {
@@ -555,7 +564,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Französisch (Frankreich).
+        ///   Looks up a localized string similar to French (France).
         /// </summary>
         public static string preferences_general_select_languages_options_fr_FR {
             get {
@@ -564,7 +573,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Schweizerdeutsch (Schweiz).
+        ///   Looks up a localized string similar to Swiss German (Switzerland).
         /// </summary>
         public static string preferences_general_select_languages_options_gsw_CH {
             get {
@@ -582,7 +591,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Externe Tools.
+        ///   Looks up a localized string similar to External Tools.
         /// </summary>
         public static string preferences_sidebar_external {
             get {
@@ -591,7 +600,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Allgemein.
+        ///   Looks up a localized string similar to General.
         /// </summary>
         public static string preferences_sidebar_general {
             get {
@@ -600,7 +609,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leistung.
+        ///   Looks up a localized string similar to Performance.
         /// </summary>
         public static string preferences_sidebar_performance {
             get {
@@ -609,7 +618,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einstellungen.
+        ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string preferences_title {
             get {
@@ -618,7 +627,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Projekt.
+        ///   Looks up a localized string similar to New Project.
         /// </summary>
         public static string projectlist_buttons_new_project {
             get {
@@ -627,7 +636,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekt Öffnen.
+        ///   Looks up a localized string similar to Open Project.
         /// </summary>
         public static string projectlist_buttons_open_project {
             get {
@@ -636,7 +645,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekte Neuladen.
+        ///   Looks up a localized string similar to Reload Projects.
         /// </summary>
         public static string projectlist_buttons_reload_tooltip {
             get {
@@ -645,7 +654,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekt Löschen.
+        ///   Looks up a localized string similar to Delete Project.
         /// </summary>
         public static string projectlist_list_item_delete_tooltip {
             get {
@@ -654,7 +663,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projekt Öffnen.
+        ///   Looks up a localized string similar to Open Project.
         /// </summary>
         public static string projectlist_list_item_open_tooltip {
             get {
@@ -681,7 +690,34 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bild von {credit}.
+        ///   Looks up a localized string similar to Are you sure to change the File Extension?.
+        /// </summary>
+        public static string rename_quest_file_ext_message {
+            get {
+                return ResourceManager.GetString("rename.quest.file_ext.message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure?.
+        /// </summary>
+        public static string rename_quest_file_ext_title {
+            get {
+                return ResourceManager.GetString("rename.quest.file_ext.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename.
+        /// </summary>
+        public static string rename_title {
+            get {
+                return ResourceManager.GetString("rename.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image by {credit}.
         /// </summary>
         public static string startup_image_credits {
             get {
@@ -690,7 +726,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lade {asset} herunter....
+        ///   Looks up a localized string similar to Downloading {asset}....
         /// </summary>
         public static string startup_minecraft_asset_download_asset {
             get {
@@ -699,7 +735,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lade index.json herunter....
+        ///   Looks up a localized string similar to Downloading index.json....
         /// </summary>
         public static string startup_minecraft_asset_index {
             get {
@@ -708,7 +744,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Herunterladen von index.json Fehlgeschlagen.
+        ///   Looks up a localized string similar to Failed to download index.json.
         /// </summary>
         public static string startup_minecraft_asset_index_failed {
             get {
@@ -717,7 +753,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to minuten.
+        ///   Looks up a localized string similar to minutes.
         /// </summary>
         public static string startup_minutes {
             get {
@@ -726,7 +762,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lade Minecraft Assets herunter....
+        ///   Looks up a localized string similar to Downloading Minecraft Assets....
         /// </summary>
         public static string startup_text_downloading_minecraft_assets {
             get {
@@ -735,7 +771,7 @@ namespace dev.craftengine.editor.Assets {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Öffne Projekt....
+        ///   Looks up a localized string similar to Opening Project....
         /// </summary>
         public static string startup_text_opening_project {
             get {
