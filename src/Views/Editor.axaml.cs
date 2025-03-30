@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using System.Diagnostics;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
 using dev.craftengine.editor.Views.Panels;
@@ -51,5 +52,10 @@ public partial class Editor : Window
     {
         var win = new About();
         win.ShowDialog(this);
+    }
+
+    private void Menu_Help_Wiki_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Process.Start("https://wiki.craftengine.dev/");
     }
 }

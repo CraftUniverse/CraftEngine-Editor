@@ -34,6 +34,7 @@
             </MenuItem>
 
             <MenuItem Header="_Help">
+                <MenuItem Header="Wiki" Click="Menu_Help_Wiki_OnClick" />
                 <MenuItem Header="About" Click="Menu_Help_About_OnClick" />
             </MenuItem>
         </Menu>
