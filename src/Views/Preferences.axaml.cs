@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using dev.craftengine.editor.Helpers;
 
 namespace dev.craftengine.editor.Views;
 
@@ -8,8 +7,6 @@ public partial class Preferences : Window
     public Preferences()
     {
         InitializeComponent();
-
-        Title = "CraftEngine Editor " + VersionControl.Version + " - Preferences";
 
         SidebarGeneral.SelectedItems?.Add(SidebarGeneralEdior);
     }

@@ -2,11 +2,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:a="using:dev.craftengine.editor.Assets"
         mc:Ignorable="d" TransparencyLevelHint="Transparent"
         x:Class="dev.craftengine.editor.Views.SplashScreen"
         WindowStartupLocation="CenterScreen" RequestedThemeVariant="Dark"
         SystemDecorations="None" CanResize="False" Icon="/Assets/Icon.ico"
-        Width="650" Height="487" Loaded="Control_OnLoaded">
+        Width="650" Height="487" Loaded="Control_OnLoaded" Title="Splashscreen">
     <Window.Background>
         <ImageBrush Source="../../Assets/SplashScreen.jpg" />
     </Window.Background>
@@ -22,12 +23,11 @@
 
             <TextBlock Margin="10 0" FontSize="20"
                        FontWeight="Medium" Foreground="White">
-                Test
+                Test Project
             </TextBlock>
             <TextBlock Margin="10 0" FontSize="20" Name="InfoText"
-                       FontWeight="Medium" Foreground="White">
-                Opening Project...
-            </TextBlock>
+                       FontWeight="Medium" Foreground="White"
+                       Text="{x:Static a:Resources.startup_text_opening_project}" />
             <ProgressBar Margin="10 5 300 0" Height="20"
                          Minimum="0" Maximum="100" Value="0" IsVisible="False"
                          ShowProgressText="True" Name="ProgressBar"
@@ -36,8 +36,6 @@
                        FontWeight="Medium" Foreground="White" IsVisible="False" />
         </StackPanel>
         <TextBlock Margin="10" VerticalAlignment="Bottom" FontSize="13"
-                   FontWeight="Light" Foreground="White">
-            Credits...
-        </TextBlock>
+                   FontWeight="Light" Foreground="White" Name="CreditText" />
     </Panel>
 </Window>

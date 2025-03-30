@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using dev.craftengine.editor.Assets;
 
 // ReSharper disable InconsistentNaming
 
@@ -31,7 +32,7 @@ public abstract class AssetDownloader
 
         try
         {
-            infoText.Text = "Downloading index.json";
+            infoText.Text = Resources.startup_minecraft_asset_index;
 
             var response = await client.GetAsync(Constants.INDEX_CDN_URL);
             response.EnsureSuccessStatusCode();
@@ -46,7 +47,7 @@ public abstract class AssetDownloader
         }
         catch (HttpRequestException e)
         {
-            infoText.Text = "Failed to download index.json";
+            infoText.Text = Resources.startup_minecraft_asset_index_failed;
             await Console.Error.WriteLineAsync($"Failed to download index.json: {e.Message}");
 
             if (!File.Exists(indexPath))
@@ -107,11 +108,13 @@ public abstract class AssetDownloader
                 amount--;
             }
 
-            progressBar.ProgressTextFormat = "{1:0}% (ca. " + (estTime / 60) + " minutes)";
+            progressBar.ProgressTextFormat = $"{{1:0}}% (ca. {estTime / 60} {Resources.startup_minutes})";
 
             // Calculates the Percentage based on how much is downloaded
             progressBar.Value = index / amount * 100.0;
-            infoText.Text = $"Downloading {asset.hash} ({index}/{amount})";
+
+            infoText.Text =
+                $"{Resources.startup_minecraft_asset_download_asset.Replace("{asset}", asset.hash)} ({index}/{amount})";
 
             // Needs to be delayed 350ms, if not await will not work.
             // and before the CDN closes the connection due to DDOS protection

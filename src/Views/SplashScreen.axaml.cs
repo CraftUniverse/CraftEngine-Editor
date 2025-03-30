@@ -13,6 +13,7 @@ public partial class SplashScreen : Window
         InitializeComponent();
 
         VersionText.Text = VersionControl.Version;
+        CreditText.Text = Assets.Resources.startup_image_credits.Replace("{credit}", "unknown");
     }
 
     private async void Control_OnLoaded(object? sender, RoutedEventArgs e)
@@ -21,7 +22,7 @@ public partial class SplashScreen : Window
 
         ProgressBar.IsVisible = true;
         InfoText2.IsVisible = true;
-        InfoText.Text = "Downloading Minecraft Assets...";
+        InfoText.Text = Assets.Resources.startup_text_downloading_minecraft_assets;
 
         await AssetDownloader.Download(ProgressBar, InfoText2, "1.21.4");
 

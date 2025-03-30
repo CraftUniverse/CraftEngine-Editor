@@ -13,7 +13,8 @@ public partial class Editor : Window
     {
         InitializeComponent();
 
-        Title = "CraftEngine Editor " + VersionControl.Version;
+        Title =
+            $"CraftEngine Editor {VersionControl.Version} - C:/Users/USER/Documents/CraftEngine Projects/Test Project";
 
         PanelLayout1.Children.Add(new Hierarchy());
 

@@ -1,31 +1,34 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:a="using:dev.craftengine.editor.Assets"
         d:DesignWidth="1920" d:DesignHeight="1080"
         WindowState="Maximized" Icon="/Assets/Icon.ico"
         WindowStartupLocation="CenterScreen"
         x:Class="dev.craftengine.editor.Views.Editor">
     <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="Save Level" />
-                <MenuItem Header="Save Level as..." />
-                <MenuItem Click="Menu_File_Export_OnClick" Header="Build Project" />
+            <MenuItem Header="{x:Static a:Resources.editor_menubar_file}">
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_file_save_level}" />
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_file_save_level_as}" />
+                <MenuItem Click="Menu_File_Export_OnClick" Header="{x:Static a:Resources.editor_menubar_file_build}" />
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_file_publish_cu}" IsEnabled="False" />
                 <Separator />
-                <MenuItem Click="Menu_File_Exit_OnClick" Header="Exit" />
+                <MenuItem Click="Menu_File_Exit_OnClick" Header="{x:Static a:Resources.editor_menubar_file_exit}" />
             </MenuItem>
 
-            <MenuItem Header="_Edit">
-                <MenuItem Header="Undo" />
-                <MenuItem Header="Redo" />
-                <MenuItem Header="Preferences" Click="Menu_Edit_Preferences_OnClick" />
+            <MenuItem Header="{x:Static a:Resources.editor_menubar_edit}">
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_edit_undo}" />
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_edit_redo}" />
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_edit_preferences}"
+                          Click="Menu_Edit_Preferences_OnClick" />
             </MenuItem>
 
-            <MenuItem Header="_Objects">
+            <MenuItem Header="{x:Static a:Resources.editor_menubar_objects}">
                 <MenuItem />
             </MenuItem>
 
-            <MenuItem Header="_Windows">
+            <MenuItem Header="{x:Static a:Resources.editor_menubar_windows}">
                 <MenuItem Header="Game Viewer" ToggleType="CheckBox" IsChecked="True" />
                 <MenuItem Header="Properties" ToggleType="CheckBox" IsChecked="True" />
                 <MenuItem Header="Hierarchy" ToggleType="CheckBox" IsChecked="True" />
@@ -33,18 +36,18 @@
                 <MenuItem Header="Console" ToggleType="CheckBox" IsChecked="True" />
             </MenuItem>
 
-            <MenuItem Header="_Help">
-                <MenuItem Header="Wiki" Click="Menu_Help_Wiki_OnClick" />
-                <MenuItem Header="About" Click="Menu_Help_About_OnClick" />
+            <MenuItem Header="{x:Static a:Resources.editor_menubar_help}">
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_help_wiki}" Click="Menu_Help_Wiki_OnClick" />
+                <MenuItem Header="{x:Static a:Resources.editor_menubar_help_about}" Click="Menu_Help_About_OnClick" />
             </MenuItem>
         </Menu>
 
         <SplitButton HorizontalAlignment="Center" Margin="0 -32 0 0" DockPanel.Dock="Top"
                      Click="PlayOfflineButton">
-            Play
+            <TextBlock Text="{x:Static a:Resources.editor_menubar_play}" />
             <SplitButton.Flyout>
                 <MenuFlyout Placement="Bottom">
-                    <MenuItem Header="Play Online" />
+                    <MenuItem Header="{x:Static a:Resources.editor_menubar_play_online}" />
                 </MenuFlyout>
             </SplitButton.Flyout>
         </SplitButton>

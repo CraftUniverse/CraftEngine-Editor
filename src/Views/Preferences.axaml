@@ -2,28 +2,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:a="using:dev.craftengine.editor.Assets"
         mc:Ignorable="d" Width="600" Height="400"
+        Title="{x:Static a:Resources.preferences_title}"
         WindowStartupLocation="CenterOwner"
         x:Class="dev.craftengine.editor.Views.Preferences">
     <StackPanel Orientation="Horizontal" Margin="5">
-
         <ScrollViewer AllowAutoHide="False" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Vertical">
-                <TextBlock Margin="5" FontWeight="Bold">General</TextBlock>
+                <TextBlock Margin="5" FontWeight="Bold"
+                           Text="{x:Static a:Resources.preferences_sidebar_general}" />
 
                 <ListBox Name="SidebarGeneral" CornerRadius="3"
                          SelectionChanged="SidebarGeneral_OnSelectionChanged">
                     <ListBoxItem Name="SidebarGeneralEdior" CornerRadius="3"
                                  Padding="8">
-                        Editor
+                        <TextBlock Text="{x:Static a:Resources.preferences_sidebar_editor}" />
                     </ListBoxItem>
                     <ListBoxItem Name="SidebarGeneralPerformance" CornerRadius="3"
                                  Padding="8">
-                        Performance
+                        <TextBlock Text="{x:Static a:Resources.preferences_sidebar_performance}" />
                     </ListBoxItem>
                     <ListBoxItem Name="SidebarGeneralExternal" CornerRadius="3"
                                  Padding="8">
-                        External Tools
+                        <TextBlock Text="{x:Static a:Resources.preferences_sidebar_external}" />
                     </ListBoxItem>
                 </ListBox>
 
@@ -43,21 +45,34 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Vertical" Name="PanelGeneralEditor">
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Margin="7">Language</TextBlock>
+                    <TextBlock Margin="7"
+                               Text="{x:Static a:Resources.preferences_general_select_languages_label}" />
                     <ComboBox SelectedIndex="0"
                               AutoScrollToSelectedItem="True">
-                        <ComboBoxItem>English (US)</ComboBoxItem>
-                        <ComboBoxItem IsEnabled="False">English (UK)</ComboBoxItem>
-                        <ComboBoxItem IsEnabled="False">French</ComboBoxItem>
-                        <ComboBoxItem IsEnabled="False">German</ComboBoxItem>
-                        <ComboBoxItem IsEnabled="False">Swiss German</ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="{x:Static a:Resources.preferences_general_select_languages_options_en_US}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">
+                            <TextBlock Text="{x:Static a:Resources.preferences_general_select_languages_options_en_GB}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">
+                            <TextBlock Text="{x:Static a:Resources.preferences_general_select_languages_options_fr_FR}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="{x:Static a:Resources.preferences_general_select_languages_options_de_DE}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">
+                            <TextBlock
+                                Text="{x:Static a:Resources.preferences_general_select_languages_options_gsw_CH}" />
+                        </ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Vertical" Name="PanelGeneralPerformance" />
             <StackPanel Orientation="Vertical" Name="PanelGeneralExternal">
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Margin="7">Image Editor</TextBlock>
+                    <TextBlock Margin="7"
+                               Text="{x:Static a:Resources.preferences_external_select_image_label}" />
                     <ComboBox SelectedIndex="0"
                               AutoScrollToSelectedItem="True">
                         <ComboBoxItem>Adobe Photoshop 2025</ComboBoxItem>
@@ -68,7 +83,8 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Margin="7">Audio Editor</TextBlock>
+                    <TextBlock Margin="7"
+                               Text="{x:Static a:Resources.preferences_external_select_audio_label}" />
                     <ComboBox SelectedIndex="0"
                               AutoScrollToSelectedItem="True">
                         <ComboBoxItem>Adobe Audition 2025</ComboBoxItem>
@@ -77,7 +93,8 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Margin="7">Code Editor</TextBlock>
+                    <TextBlock Margin="7"
+                               Text="{x:Static a:Resources.preferences_external_select_coding_label}" />
                     <ComboBox SelectedIndex="0"
                               AutoScrollToSelectedItem="True">
                         <ComboBoxItem>Visual Studio Code</ComboBoxItem>
@@ -90,7 +107,8 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Margin="7">Model Editor</TextBlock>
+                    <TextBlock Margin="7"
+                               Text="{x:Static a:Resources.preferences_external_select_models_label}" />
                     <ComboBox SelectedIndex="0"
                               AutoScrollToSelectedItem="True">
                         <ComboBoxItem>Blockbench</ComboBoxItem>

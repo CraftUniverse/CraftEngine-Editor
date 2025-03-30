@@ -12,9 +12,133 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral</value>
     </resheader>
-    <data name="projectlist.buttons.new_project" xml:space="preserve"><value>NEUES PROJEKT</value>
+    <data name="about.ce" xml:space="preserve"><value>Über CraftEngine</value>
         <comment/></data>
-    <data name="projectlist.buttons.open_project" xml:space="preserve"><value>PROJEKT ÖFFNEN</value>
+    <data name="about.title" xml:space="preserve"><value>Über</value>
+        <comment/></data>
+    <data name="asset_browser.back_folder" xml:space="preserve"><value>Zurück</value>
+        <comment/></data>
+    <data name="asset_browser.context.common.metadata" xml:space="preserve"><value>Zeige Metadaten</value>
+        <comment/></data>
+    <data name="asset_browser.context.common.new" xml:space="preserve"><value>Neu</value>
+        <comment/></data>
+    <data name="asset_browser.context.common.reload" xml:space="preserve"><value>Neuladen</value>
+        <comment/></data>
+    <data name="asset_browser.context.common.show_explorer" xml:space="preserve"><value>In Explorer Zeigen</value>
+        <comment/></data>
+    <data name="asset_browser.context.common.show_finder" xml:space="preserve"><value>In Finder Zeigen</value>
+        <comment/></data>
+    <data name="asset_browser.context.copy_path" xml:space="preserve"><value>Pfad Kopieren</value>
+        <comment/></data>
+    <data name="asset_browser.context.open" xml:space="preserve"><value>Öffnen</value>
+        <comment/></data>
+    <data name="asset_browser.context.open.external" xml:space="preserve"><value>Öffne in {program}</value>
+        <comment/></data>
+    <data name="asset_browser.context.rename" xml:space="preserve"><value>Umbenennen</value>
+        <comment/></data>
+    <data name="asset_browser.new.folder" xml:space="preserve"><value>Ordner</value>
+        <comment/></data>
+    <data name="asset_browser.new.level" xml:space="preserve"><value>Level</value>
+        <comment/></data>
+    <data name="asset_browser.search" xml:space="preserve"><value>Suchen</value>
+        <comment/></data>
+    <data name="colorpicker.title" xml:space="preserve"><value>Farbauswahl</value>
+        <comment/></data>
+    <data name="common.copy" xml:space="preserve"><value>Kopieren</value>
+        <comment/></data>
+    <data name="common.delete" xml:space="preserve"><value>Löschen</value>
+        <comment/></data>
+    <data name="common.paste" xml:space="preserve"><value>Einfügen</value>
+        <comment/></data>
+    <data name="editor.menubar.edit" xml:space="preserve"><value>_Bearbeiten</value>
+        <comment/></data>
+    <data name="editor.menubar.edit.preferences" xml:space="preserve"><value>Einstellungen</value>
+        <comment/></data>
+    <data name="editor.menubar.edit.redo" xml:space="preserve"><value>Wiederherstellen</value>
+        <comment/></data>
+    <data name="editor.menubar.edit.undo" xml:space="preserve"><value>Rückgängig</value>
+        <comment/></data>
+    <data name="editor.menubar.file" xml:space="preserve"><value>_Datei</value>
+        <comment/></data>
+    <data name="editor.menubar.file.build" xml:space="preserve"><value>Projekt Bauen</value>
+        <comment/></data>
+    <data name="editor.menubar.file.exit" xml:space="preserve"><value>Beenden</value>
+        <comment/></data>
+    <data name="editor.menubar.file.publish_cu" xml:space="preserve"><value>Auf CraftUniverse Veröffentlichen</value>
+        <comment/></data>
+    <data name="editor.menubar.file.save_level" xml:space="preserve"><value>Speichere Level</value>
+        <comment/></data>
+    <data name="editor.menubar.file.save_level_as" xml:space="preserve"><value>Speichere Level als ...</value>
+        <comment/></data>
+    <data name="editor.menubar.help" xml:space="preserve"><value>_Hilfe</value>
+        <comment/></data>
+    <data name="editor.menubar.help.about" xml:space="preserve"><value>Über...</value>
+        <comment/></data>
+    <data name="editor.menubar.help.wiki" xml:space="preserve"><value>Wiki</value>
+        <comment/></data>
+    <data name="editor.menubar.objects" xml:space="preserve"><value>_Objekte</value>
+        <comment/></data>
+    <data name="editor.menubar.play" xml:space="preserve"><value>Spielen</value>
+        <comment/></data>
+    <data name="editor.menubar.play.online" xml:space="preserve"><value>Online Spielen</value>
+        <comment/></data>
+    <data name="editor.menubar.windows" xml:space="preserve"><value>_Fenster</value>
+        <comment/></data>
+    <data name="messagebox.button.cancel" xml:space="preserve"><value>Abbrechen</value>
+        <comment/></data>
+    <data name="messagebox.button.no" xml:space="preserve"><value>Nein</value>
+        <comment/></data>
+    <data name="messagebox.button.okay" xml:space="preserve"><value>Okay</value>
+        <comment/></data>
+    <data name="messagebox.button.yes" xml:space="preserve"><value>Ja</value>
+        <comment/></data>
+    <data name="newproject.button.close" xml:space="preserve"><value>Schließen</value>
+        <comment/></data>
+    <data name="newproject.button.create" xml:space="preserve"><value>Projekt Erstellen</value>
+        <comment/></data>
+    <data name="newproject.select.version.label" xml:space="preserve"><value>Spiel Version:</value>
+        <comment/></data>
+    <data name="newproject.textinput.name.label" xml:space="preserve"><value>Name</value>
+        <comment/></data>
+    <data name="newproject.textinput.path.label" xml:space="preserve"><value>Pfad</value>
+        <comment/></data>
+    <data name="newproject.title" xml:space="preserve"><value>Neues Projekt</value>
+        <comment/></data>
+    <data name="notifications.common.nothing" xml:space="preserve"><value>Hier ist nichts zusehen</value>
+        <comment/></data>
+    <data name="preferences.external.select.audio.label" xml:space="preserve"><value>Audio Editor</value>
+        <comment/></data>
+    <data name="preferences.external.select.coding.label" xml:space="preserve"><value>Code Editor</value>
+        <comment/></data>
+    <data name="preferences.external.select.image.label" xml:space="preserve"><value>Bild Editor</value>
+        <comment/></data>
+    <data name="preferences.external.select.models.label" xml:space="preserve"><value>Model Editor</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.label" xml:space="preserve"><value>Sprache</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.options.de-DE" xml:space="preserve"><value>Deutsch (Deutschland)</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.options.en-GB" xml:space="preserve"><value>Englisch (UK)</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.options.en-US" xml:space="preserve"><value>Englisch (US)</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.options.fr-FR" xml:space="preserve"><value>Französisch (Frankreich)</value>
+        <comment/></data>
+    <data name="preferences.general.select.languages.options.gsw-CH" xml:space="preserve"><value>Schweizerdeutsch (Schweiz)</value>
+        <comment/></data>
+    <data name="preferences.sidebar.editor" xml:space="preserve"><value>Editor</value>
+        <comment/></data>
+    <data name="preferences.sidebar.external" xml:space="preserve"><value>Externe Tools</value>
+        <comment/></data>
+    <data name="preferences.sidebar.general" xml:space="preserve"><value>Allgemein</value>
+        <comment/></data>
+    <data name="preferences.sidebar.performance" xml:space="preserve"><value>Leistung</value>
+        <comment/></data>
+    <data name="preferences.title" xml:space="preserve"><value>Einstellungen</value>
+        <comment/></data>
+    <data name="projectlist.buttons.new_project" xml:space="preserve"><value>Neues Projekt</value>
+        <comment/></data>
+    <data name="projectlist.buttons.open_project" xml:space="preserve"><value>Projekt Öffnen</value>
         <comment/></data>
     <data name="projectlist.buttons.reload.tooltip" xml:space="preserve"><value>Projekte Neuladen</value>
         <comment/></data>
@@ -25,5 +149,19 @@
     <data name="projectlist.list.name.title" xml:space="preserve"><value>Name</value>
         <comment/></data>
     <data name="projectlist.list.version.title" xml:space="preserve"><value>Minecraft Version</value>
+        <comment/></data>
+    <data name="startup.image_credits" xml:space="preserve"><value>Bild von {credit}</value>
+        <comment/></data>
+    <data name="startup.minecraft_asset.download_asset" xml:space="preserve"><value>Lade {asset} herunter...</value>
+        <comment/></data>
+    <data name="startup.minecraft_asset.index" xml:space="preserve"><value>Lade index.json herunter...</value>
+        <comment/></data>
+    <data name="startup.minecraft_asset.index.failed" xml:space="preserve"><value>Herunterladen von index.json Fehlgeschlagen</value>
+        <comment/></data>
+    <data name="startup.minutes" xml:space="preserve"><value>minuten</value>
+        <comment/></data>
+    <data name="startup.text.downloading_minecraft_assets" xml:space="preserve"><value>Lade Minecraft Assets herunter...</value>
+        <comment/></data>
+    <data name="startup.text.opening_project" xml:space="preserve"><value>Öffne Projekt...</value>
         <comment/></data>
 </root>

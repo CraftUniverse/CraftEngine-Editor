@@ -1,3 +1,4 @@
+using System.Globalization;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -14,7 +15,7 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        // Assets.Resources.Culture = new CultureInfo("en-US");
+        Assets.Resources.Culture = new CultureInfo("de-DE");
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

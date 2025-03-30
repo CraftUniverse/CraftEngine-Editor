@@ -2,10 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:a="using:dev.craftengine.editor.Assets"
         mc:Ignorable="d" SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner" Icon="/Assets/Icon.ico"
-        x:Class="dev.craftengine.editor.Views.ColorPicker"
-        Title="ColorPicker" CanResize="False">
+        x:Class="dev.craftengine.editor.Views.ColorPicker" CanResize="False"
+        Title="{x:Static a:Resources.colorpicker_title}">
     <StackPanel Orientation="Horizontal" Margin="8 8 8 0">
         <ColorView ColorSpectrumComponents="SaturationValue"
                    IsAlphaVisible="False" IsColorPaletteVisible="False" />
