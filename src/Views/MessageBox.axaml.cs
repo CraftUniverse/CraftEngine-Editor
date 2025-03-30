@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
@@ -17,9 +16,9 @@ public partial class MessageBox : Window
         Title = title;
         Text.Text = message;
 
-        YesButton.IsVisible =    (buttons & Button.YES) == Button.YES;
-        NoButton.IsVisible =     (buttons & Button.NO) == Button.NO;
-        OkButton.IsVisible =     (buttons & Button.OK) == Button.OK;
+        YesButton.IsVisible = (buttons & Button.YES) == Button.YES;
+        NoButton.IsVisible = (buttons & Button.NO) == Button.NO;
+        OkButton.IsVisible = (buttons & Button.OK) == Button.OK;
         CancelButton.IsVisible = (buttons & Button.CANCEL) == Button.CANCEL;
 
         if (displayIcon == null)
@@ -75,7 +74,7 @@ public partial class MessageBox : Window
 
     public class Icon
     {
-        public static string INFO => "info_regular";
-        public static string QUESTION => "question_circle_regular";
+        public const string INFO = "info_regular";
+        public const string QUESTION = "question_circle_regular";
     }
 }
