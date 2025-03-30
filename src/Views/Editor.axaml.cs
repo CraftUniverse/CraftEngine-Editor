@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
@@ -56,6 +56,6 @@ public partial class Editor : Window
 
     private void Menu_Help_Wiki_OnClick(object? sender, RoutedEventArgs e)
     {
-        Process.Start("https://wiki.craftengine.dev/");
+        Launcher.LaunchUriAsync(new Uri("https://wiki.craftengine.dev"));
     }
 }
