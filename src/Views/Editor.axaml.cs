@@ -46,9 +46,9 @@ public partial class Editor : Window
         prefWin.Show(this);
     }
 
-    private void PlayOfflineButton(object? sender, RoutedEventArgs e)
+    private async void PlayOfflineButton(object? sender, RoutedEventArgs e)
     {
-        ClientLauncher.Launch("1.21.4");
+        await ClientLauncher.Launch("1.21.4", this);
     }
 
     private void Menu_Help_About_OnClick(object? sender, RoutedEventArgs e)

@@ -4,18 +4,23 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using dev.craftengine.editor.Views;
 using FluentAvalonia.Core;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class ClientLauncher
 {
-    public static async Task Launch(string version)
+    public static async Task Launch(string version, Window editorWindow)
     {
         if (Design.IsDesignMode)
         {
             return;
         }
+
+        var loadingWin = new Loading();
+
+        loadingWin.ShowDialog(editorWindow);
 
         CreateFolderStructure();
 
@@ -144,6 +149,9 @@ public class ClientLauncher
         process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
         process.Start();
         process.BeginOutputReadLine();
+
+        await Task.Delay(6000);
+        loadingWin.Close();
     }
 
     static private void CreateFolderStructure()

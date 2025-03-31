@@ -11,6 +11,7 @@
         <entry key="src/Views/BuildProject.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/ColorPicker.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Editor.axaml" value="CraftEngine-Editor.csproj" />
+        <entry key="src/Views/Loading.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/MessageBox.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/NewProject.axaml" value="CraftEngine-Editor.csproj" />
         <entry key="src/Views/Panels/About.axaml" value="CraftEngine-Editor.csproj" />
