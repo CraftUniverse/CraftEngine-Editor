@@ -147,10 +147,10 @@ public class ClientLauncher
         };
 
         process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
+
         process.Start();
         process.BeginOutputReadLine();
 
-        await Task.Delay(6000);
         loadingWin.Close();
     }
 
