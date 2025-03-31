@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Utf8Json;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
 
 public class VersionMetadata
 {
-    public static async Task Download(string version)
+    public static async Task<Metadata> Download(string version)
     {
         string url = Constants.METADATA_URL.Replace("{version}", version);
         string path = Path.Combine(Constants.BASE_PATH, "versions", version);
@@ -45,6 +45,6 @@ public class VersionMetadata
             metadata = JsonSerializer.Deserialize<Metadata>(content)!;
         }
 
-        Console.WriteLine(metadata);
+        return metadata;
     }
 }

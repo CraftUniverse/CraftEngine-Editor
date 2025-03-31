@@ -1,30 +1,31 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+
+// ReSharper disable InconsistentNaming
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
 
 public class MetadataLibraries
 {
-    [JsonPropertyName("downloads")] public required LibraryDownloads Downloads { get; set; }
-    [JsonPropertyName("name")] public required string Name { get; set; }
-    [JsonPropertyName("rules")] public required List<LibraryRule>? Rules { get; set; }
+    public required LibraryDownloads downloads { get; set; }
+    public required string name { get; set; }
+    public required List<LibraryRule>? rules { get; set; }
 
     public class LibraryDownloads
     {
-        [JsonPropertyName("artifact")] public required LibraryArtifact Artifact { get; set; }
+        public required LibraryArtifact artifact { get; set; }
     }
 
     public class LibraryArtifact
     {
-        [JsonPropertyName("path")] public required string Path { get; set; }
-        [JsonPropertyName("sha1")] public required string Sha1 { get; set; }
-        [JsonPropertyName("size")] public required long Size { get; set; }
-        [JsonPropertyName("url")] public required string Url { get; set; }
+        public required string path { get; set; }
+        public required string sha1 { get; set; }
+        public required long size { get; set; }
+        public required string url { get; set; }
     }
 
     public class LibraryRule
     {
-        [JsonPropertyName("action")] public required string Action { get; set; } = "allow";
-        [JsonPropertyName("os")] public required MetadataArguments.OperatingSystemRequirements Os { get; set; }
+        public required string action { get; set; } = "allow";
+        public required MetadataArguments.OperatingSystemRequirements os { get; set; }
     }
 }

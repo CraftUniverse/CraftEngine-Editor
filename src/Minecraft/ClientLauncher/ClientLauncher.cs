@@ -17,8 +17,10 @@ public class ClientLauncher
 
         CreateFolderStructure();
 
-        await VersionMetadata.VersionMetadata.Download(version);
-        await JavaDownload.Download(21);
+        var metadata = await VersionMetadata.VersionMetadata.Download(version);
+
+        await VersionDownload.Download(metadata.downloads.client.url, version);
+        await JavaDownload.Download(metadata.javaVersion.majorVersion);
     }
 
     static private void CreateFolderStructure()
