@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight" Title="Loading..."
         x:Class="dev.craftengine.editor.Views.Loading" Closing="Window_OnClosing"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
     <ProgressBar Margin="10" IsIndeterminate="True" MinHeight="17"
                  MinWidth="350" ShowProgressText="False">
     </ProgressBar>
