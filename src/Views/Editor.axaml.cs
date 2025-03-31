@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
+using dev.craftengine.editor.Minecraft.ClientLauncher;
 using dev.craftengine.editor.Views.Panels;
 using dev.craftengine.editor.Views.Panels.AssetBrowser;
 
@@ -47,6 +48,7 @@ public partial class Editor : Window
 
     private void PlayOfflineButton(object? sender, RoutedEventArgs e)
     {
+        ClientLauncher.Launch("1.21.4");
     }
 
     private void Menu_Help_About_OnClick(object? sender, RoutedEventArgs e)

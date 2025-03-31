@@ -4,10 +4,9 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Avalonia.Controls;
-
-// ReSharper disable InconsistentNaming
 
 namespace dev.craftengine.editor.Minecraft.AssetDownloader;
 
@@ -61,7 +60,7 @@ public abstract class AssetDownloader
 
         foreach (var asset in indexJson)
         {
-            if (!asset.versions.Contains(minecraftVersion))
+            if (!asset.Versions.Contains(minecraftVersion))
             {
                 continue;
             }
@@ -70,7 +69,7 @@ public abstract class AssetDownloader
             var startTime = DateTime.Now;
 
             var addDelay = false;
-            string filePath = Path.Combine(Constants.BASE_PATH, asset.hash[..2], asset.hash);
+            string filePath = Path.Combine(Constants.BASE_PATH, asset.Hash[..2], asset.Hash);
 
             if (!File.Exists(filePath))
             {
@@ -78,8 +77,8 @@ public abstract class AssetDownloader
 
                 // Creating URL for download
                 downloadUrl.Append(Constants.BASE_CDN_URL);
-                downloadUrl.Append(asset.hash[..2]);
-                downloadUrl.Append("/" + asset.hash);
+                downloadUrl.Append(asset.Hash[..2]);
+                downloadUrl.Append("/" + asset.Hash);
 
                 try
                 {
@@ -92,7 +91,7 @@ public abstract class AssetDownloader
                 }
                 catch (HttpRequestException e)
                 {
-                    await Console.Error.WriteLineAsync($"Failed to download asset \"{asset.hash}\": {e.Message}");
+                    await Console.Error.WriteLineAsync($"Failed to download asset \"{asset.Hash}\": {e.Message}");
                 }
 
                 delayCount++;
@@ -113,7 +112,7 @@ public abstract class AssetDownloader
             progressBar.Value = index / amount * 100.0;
 
             infoText.Text =
-                $"{Resources.Resources.startup_minecraft_asset_download_asset.Replace("{asset}", asset.hash)} ({index}/{amount})";
+                $"{Resources.Resources.startup_minecraft_asset_download_asset.Replace("{asset}", asset.Hash)} ({index}/{amount})";
 
             // Needs to be delayed 350ms, if not await will not work.
             // and before the CDN closes the connection due to DDOS protection
@@ -136,9 +135,9 @@ public abstract class AssetDownloader
 
     public class IndexFile
     {
-        public required string hash { get; set; }
-        public required string path { get; set; }
-        public required int length { get; set; }
-        public required List<string> versions { get; set; }
+        [JsonPropertyName("hash")] public required string Hash { get; set; }
+        [JsonPropertyName("path")] public required string Path { get; set; }
+        [JsonPropertyName("length")] public required int Length { get; set; }
+        [JsonPropertyName("versions")] public required List<string> Versions { get; set; }
     }
 }
