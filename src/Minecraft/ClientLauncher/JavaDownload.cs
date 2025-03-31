@@ -7,19 +7,18 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class JavaDownload
 {
-    public static async Task Download(int version)
+    public static async Task Download(Metadata metadata)
     {
-        string finalPath = Path.Combine(Constants.BASE_PATH, "java", $"java_{version}");
+        string finalPath = Path.Combine(Constants.BASE_PATH, "java", $"java_{metadata.javaVersion.majorVersion}");
 
         if (Directory.Exists(finalPath))
         {
-            Console.WriteLine($"Java {version} is already downloaded, skipping download.");
-
             return;
         }
 
@@ -50,7 +49,7 @@ public class JavaDownload
         };
 
         string url = Constants.JAVA_URL
-            .Replace("{version}", version.ToString())
+            .Replace("{version}", metadata.javaVersion.majorVersion.ToString())
             .Replace("{os}", os)
             .Replace("{arch}", arch);
 
@@ -64,10 +63,13 @@ public class JavaDownload
             string content = await response.Content.ReadAsStringAsync();
             var json = JsonSerializer.Deserialize<List<Response>>(content)!;
 
+            Console.WriteLine($"Downloading {json[0].DownloadUrl}");
             var executableResponse = await client.GetAsync(json[0].DownloadUrl);
             executableResponse.EnsureSuccessStatusCode();
 
             string downloadName = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()) + ".zip";
+
+            // TODO: Change to stream
             byte[] executableContent = await executableResponse.Content.ReadAsByteArrayAsync();
             await File.WriteAllBytesAsync(downloadName, executableContent);
 

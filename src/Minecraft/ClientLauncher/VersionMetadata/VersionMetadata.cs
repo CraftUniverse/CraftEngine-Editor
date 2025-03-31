@@ -39,8 +39,6 @@ public class VersionMetadata
         }
         else
         {
-            Console.WriteLine($"{version}.json already exists.");
-
             string content = await File.ReadAllTextAsync(filePath);
             metadata = JsonSerializer.Deserialize<Metadata>(content)!;
         }

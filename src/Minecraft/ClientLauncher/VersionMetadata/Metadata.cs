@@ -16,4 +16,5 @@ public class Metadata
     public MetadataLogging logging { get; init; }
     public string mainClass { get; init; }
     public string type { get; init; }
+    public string id { get; init; }
 }
