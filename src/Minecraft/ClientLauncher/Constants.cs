@@ -8,6 +8,8 @@ public class Constants
     public static string APPDATA => Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     public static string BASE_PATH => Path.Combine(APPDATA, "CraftEngine", "minecraft");
 
+    public const string RESOURCES_URL = "https://resources.download.minecraft.net/";
+
     public const string METADATA_URL =
         "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/{version}/{version}.json";
 

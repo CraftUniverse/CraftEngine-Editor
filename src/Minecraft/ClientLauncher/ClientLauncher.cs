@@ -41,6 +41,7 @@ public class ClientLauncher
         await VersionDownload.Download(metadata, loadingWin);
         await JavaDownload.Download(metadata, loadingWin);
         await LibrariesDownload.Download(metadata, loadingWin);
+        await AssetDownload.Download(metadata, loadingWin);
 
         string jrePath = Path.Combine(
             Constants.BASE_PATH,
@@ -138,13 +139,16 @@ public class ClientLauncher
             metadata.mainClass,
             "--version",
             version,
+            "--assetsDir",
+            Path.Combine(Constants.BASE_PATH, "assets"),
+            "--assetIndex",
+            metadata.assetIndex.id,
             "--username",
             "Player",
             "--uuid",
             "00000000-0000-0000-0000-000000000000",
             "--accessToken",
             "null",
-            // Quick play Server
             "--quickPlayMultiplayer",
             "localhost:35565",
             "--gameDir",
