@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using Avalonia.Media;
 using dev.craftengine.editor.Views;
 using FluentAvalonia.Core;
 
@@ -15,7 +16,7 @@ public class ClientLauncher
 {
     public static Process? MinecraftProcess;
 
-    public static async Task Launch(string version, Window editorWindow)
+    public static async Task Launch(string version, Editor editorWindow)
     {
         if (Design.IsDesignMode)
         {
@@ -24,16 +25,22 @@ public class ClientLauncher
 
         MinecraftProcess?.Kill();
 
-        var loadingWin = new Loading("Starting Minecraft");
+        var loadingWin = new Loading(
+            Resources.Resources.client_launcher_launch_title
+                .Replace("{version}", version)
+        );
+
         loadingWin.ShowDialog(editorWindow);
+
+        editorWindow.PlayOfflineButton.BorderBrush = Brushes.ForestGreen;
 
         CreateFolderStructure();
 
         var metadata = await VersionMetadata.VersionMetadata.Download(version);
 
-        await VersionDownload.Download(metadata, editorWindow);
-        await JavaDownload.Download(metadata, editorWindow);
-        await LibrariesDownload.Download(metadata, editorWindow);
+        await VersionDownload.Download(metadata, loadingWin);
+        await JavaDownload.Download(metadata, loadingWin);
+        await LibrariesDownload.Download(metadata, loadingWin);
 
         string jrePath = Path.Combine(
             Constants.BASE_PATH,
@@ -160,13 +167,15 @@ public class ClientLauncher
 
         MinecraftProcess.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
 
-        MinecraftProcess.Exited += (sender, e) => MinecraftProcess = null;
-
         MinecraftProcess.Start();
         MinecraftProcess.BeginOutputReadLine();
 
         await Task.Delay(8000);
         loadingWin.Close();
+
+        await MinecraftProcess.WaitForExitAsync();
+        MinecraftProcess = null;
+        editorWindow.PlayOfflineButton.BorderBrush = Brushes.Transparent;
     }
 
     static private void CreateFolderStructure()

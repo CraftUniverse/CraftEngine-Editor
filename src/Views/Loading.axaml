@@ -2,14 +2,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight" Title="Loading..."
+        xmlns:res="using:dev.craftengine.editor.Resources"
+        mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight"
         x:Class="dev.craftengine.editor.Views.Loading" Closing="Window_OnClosing"
-        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        Title="{x:Static res:Resources.common_loading_title}">
     <StackPanel Margin="10">
         <ProgressBar IsIndeterminate="True" MinHeight="17"
-                     MinWidth="350" ShowProgressText="False">
+                     Width="450" ShowProgressText="False">
         </ProgressBar>
-        <TextBlock Margin="0 5 0 0"
+        <TextBlock Margin="0 5 0 0" MaxWidth="450"
                    Name="Text" IsVisible="False">
         </TextBlock>
     </StackPanel>

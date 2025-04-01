@@ -44,11 +44,21 @@
         <comment/></data>
     <data name="asset_browser.search" xml:space="preserve"><value>Search</value>
         <comment/></data>
+    <data name="client_launcher.download.java.title" xml:space="preserve"><value>Downloading Java {version}</value>
+        <comment/></data>
+    <data name="client_launcher.download.libraries.title" xml:space="preserve"><value>Downloading libraries</value>
+        <comment/></data>
+    <data name="client_launcher.download.version.title" xml:space="preserve"><value>Downloading version</value>
+        <comment/></data>
+    <data name="client_launcher.launch.title" xml:space="preserve"><value>Starting Minecraft {version}...</value>
+        <comment/></data>
     <data name="colorpicker.title" xml:space="preserve"><value>Color Picker</value>
         <comment/></data>
     <data name="common.copy" xml:space="preserve"><value>Copy</value>
         <comment/></data>
     <data name="common.delete" xml:space="preserve"><value>Delete</value>
+        <comment/></data>
+    <data name="common.loading.title" xml:space="preserve"><value>Loading...</value>
         <comment/></data>
     <data name="common.paste" xml:space="preserve"><value>Paste</value>
         <comment/></data>
@@ -82,7 +92,11 @@
         <comment/></data>
     <data name="editor.menubar.play" xml:space="preserve"><value>Play</value>
         <comment/></data>
+    <data name="editor.menubar.play.msgbox.running" xml:space="preserve"><value>Minecraft is already running.</value>
+        <comment/></data>
     <data name="editor.menubar.play.online" xml:space="preserve"><value>Play Online</value>
+        <comment/></data>
+    <data name="editor.menubar.play.restart" xml:space="preserve"><value>Restart</value>
         <comment/></data>
     <data name="editor.menubar.windows" xml:space="preserve"><value>_Windows</value>
         <comment/></data>

@@ -10,7 +10,7 @@ namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class VersionDownload
 {
-    public static async Task Download(Metadata metadata, Window editorWindow)
+    public static async Task Download(Metadata metadata, Window parentWindow)
     {
         string path = Path.Combine(Constants.BASE_PATH, "versions", metadata.id);
         string filePath = Path.Combine(path, metadata.id + ".jar");
@@ -20,8 +20,8 @@ public class VersionDownload
             return;
         }
 
-        var loadingWin = new Loading("Downloading version");
-        loadingWin.ShowDialog(editorWindow);
+        var loadingWin = new Loading(Resources.Resources.client_launcher_download_version_title);
+        loadingWin.ShowDialog(parentWindow);
 
         var client = new HttpClient();
 

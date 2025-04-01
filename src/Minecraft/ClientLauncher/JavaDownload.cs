@@ -15,7 +15,7 @@ namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class JavaDownload
 {
-    public static async Task Download(Metadata metadata, Window editorWindow)
+    public static async Task Download(Metadata metadata, Window parentWindow)
     {
         string finalPath = Path.Combine(Constants.BASE_PATH, "java", $"java_{metadata.javaVersion.majorVersion}");
 
@@ -24,8 +24,12 @@ public class JavaDownload
             return;
         }
 
-        var loadingWin = new Loading($"Downloading Java {metadata.javaVersion.majorVersion}");
-        loadingWin.ShowDialog(editorWindow);
+        var loadingWin = new Loading(
+            Resources.Resources.client_launcher_download_java_title
+                .Replace("{version}", metadata.javaVersion.majorVersion.ToString())
+        );
+
+        loadingWin.ShowDialog(parentWindow);
 
         string os;
 

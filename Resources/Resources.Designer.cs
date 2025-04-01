@@ -204,6 +204,42 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading Java {version}.
+        /// </summary>
+        public static string client_launcher_download_java_title {
+            get {
+                return ResourceManager.GetString("client_launcher.download.java.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading libraries.
+        /// </summary>
+        public static string client_launcher_download_libraries_title {
+            get {
+                return ResourceManager.GetString("client_launcher.download.libraries.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading version.
+        /// </summary>
+        public static string client_launcher_download_version_title {
+            get {
+                return ResourceManager.GetString("client_launcher.download.version.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting Minecraft {version}....
+        /// </summary>
+        public static string client_launcher_launch_title {
+            get {
+                return ResourceManager.GetString("client_launcher.launch.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color Picker.
         /// </summary>
         public static string colorpicker_title {
@@ -227,6 +263,15 @@ namespace dev.craftengine.editor.Resources {
         public static string common_delete {
             get {
                 return ResourceManager.GetString("common.delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string common_loading_title {
+            get {
+                return ResourceManager.GetString("common.loading.title", resourceCulture);
             }
         }
         
@@ -375,11 +420,29 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minecraft is already running..
+        /// </summary>
+        public static string editor_menubar_play_msgbox_running {
+            get {
+                return ResourceManager.GetString("editor.menubar.play.msgbox.running", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Play Online.
         /// </summary>
         public static string editor_menubar_play_online {
             get {
                 return ResourceManager.GetString("editor.menubar.play.online", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string editor_menubar_play_restart {
+            get {
+                return ResourceManager.GetString("editor.menubar.play.restart", resourceCulture);
             }
         }
         

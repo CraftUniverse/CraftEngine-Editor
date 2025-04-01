@@ -46,14 +46,14 @@ public partial class Editor : Window
         prefWin.Show(this);
     }
 
-    private async void PlayOfflineButton(object? sender, RoutedEventArgs e)
+    private async void PlayOfflineButton_Click(object? sender, RoutedEventArgs e)
     {
         if (ClientLauncher.MinecraftProcess != null &&
             !ClientLauncher.MinecraftProcess.HasExited)
         {
             var msgBox = new MessageBox(
                 "Minecraft",
-                "Minecraft is already running.",
+                editor.Resources.Resources.editor_menubar_play_msgbox_running,
                 MessageBox.Button.OK,
                 MessageBox.Icon.INFO
             );

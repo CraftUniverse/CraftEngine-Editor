@@ -10,10 +10,10 @@ namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class LibrariesDownload
 {
-    public static async Task Download(Metadata metadata, Window editorWindow)
+    public static async Task Download(Metadata metadata, Window parentWindow)
     {
-        var loadingWin = new Loading("Loading...");
-        loadingWin.ShowDialog(editorWindow);
+        var loadingWin = new Loading(Resources.Resources.common_loading_title);
+        loadingWin.ShowDialog(parentWindow);
 
         var client = new HttpClient();
 
@@ -49,7 +49,7 @@ public class LibrariesDownload
                 continue;
             }
 
-            loadingWin.SetTitle($"Downloading libraries");
+            loadingWin.SetTitle(Resources.Resources.client_launcher_download_libraries_title);
             loadingWin.Text.IsVisible = true;
             loadingWin.Text.Text = Path.GetFileName(filepath);
 

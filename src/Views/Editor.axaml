@@ -2,9 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:res="using:dev.craftengine.editor.Resources"
+        xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
         d:DesignWidth="1920" d:DesignHeight="1080"
         WindowState="Maximized" Icon="/Assets/Icon.ico"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" x:DataType="vm:EditorModel"
         x:Class="dev.craftengine.editor.Views.Editor">
     <DockPanel Name="MainPanel">
         <Menu DockPanel.Dock="Top">
@@ -42,12 +43,14 @@
             </MenuItem>
         </Menu>
 
-        <SplitButton HorizontalAlignment="Center" Margin="0 -32 0 0" DockPanel.Dock="Top"
-                     Click="PlayOfflineButton">
+        <SplitButton HorizontalAlignment="Center" Margin="-5 -37 -5 -5" DockPanel.Dock="Top"
+                     Name="PlayOfflineButton" Click="PlayOfflineButton_Click"
+                     BorderBrush="Transparent" BorderThickness="5" CornerRadius="10">
             <TextBlock Text="{x:Static res:Resources.editor_menubar_play}" />
             <SplitButton.Flyout>
                 <MenuFlyout Placement="Bottom">
-                    <MenuItem Header="{x:Static res:Resources.editor_menubar_play_online}" />
+                    <MenuItem IsEnabled="False" Header="{x:Static res:Resources.editor_menubar_play_restart}" />
+                    <MenuItem IsEnabled="False" Header="{x:Static res:Resources.editor_menubar_play_online}" />
                 </MenuFlyout>
             </SplitButton.Flyout>
         </SplitButton>
