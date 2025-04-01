@@ -5,7 +5,12 @@
         mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight" Title="Loading..."
         x:Class="dev.craftengine.editor.Views.Loading" Closing="Window_OnClosing"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
-    <ProgressBar Margin="10" IsIndeterminate="True" MinHeight="17"
-                 MinWidth="350" ShowProgressText="False">
-    </ProgressBar>
+    <StackPanel Margin="10">
+        <ProgressBar IsIndeterminate="True" MinHeight="17"
+                     MinWidth="350" ShowProgressText="False">
+        </ProgressBar>
+        <TextBlock Margin="0 5 0 0"
+                   Name="Text" IsVisible="False">
+        </TextBlock>
+    </StackPanel>
 </Window>

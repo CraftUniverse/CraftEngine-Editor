@@ -7,13 +7,15 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
+using dev.craftengine.editor.Views;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class JavaDownload
 {
-    public static async Task Download(Metadata metadata)
+    public static async Task Download(Metadata metadata, Window editorWindow)
     {
         string finalPath = Path.Combine(Constants.BASE_PATH, "java", $"java_{metadata.javaVersion.majorVersion}");
 
@@ -21,6 +23,9 @@ public class JavaDownload
         {
             return;
         }
+
+        var loadingWin = new Loading($"Downloading Java {metadata.javaVersion.majorVersion}");
+        loadingWin.ShowDialog(editorWindow);
 
         string os;
 
@@ -85,6 +90,8 @@ public class JavaDownload
         {
             await Console.Error.WriteLineAsync(e.Message);
         }
+
+        loadingWin.Close();
     }
 
     // ReSharper disable once ClassNeverInstantiated.Local

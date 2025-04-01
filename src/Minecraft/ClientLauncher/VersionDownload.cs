@@ -2,13 +2,15 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
+using dev.craftengine.editor.Views;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class VersionDownload
 {
-    public static async Task Download(Metadata metadata)
+    public static async Task Download(Metadata metadata, Window editorWindow)
     {
         string path = Path.Combine(Constants.BASE_PATH, "versions", metadata.id);
         string filePath = Path.Combine(path, metadata.id + ".jar");
@@ -17,6 +19,9 @@ public class VersionDownload
         {
             return;
         }
+
+        var loadingWin = new Loading("Downloading version");
+        loadingWin.ShowDialog(editorWindow);
 
         var client = new HttpClient();
 
@@ -33,5 +38,7 @@ public class VersionDownload
         {
             await Console.Error.WriteLineAsync(e.Message);
         }
+
+        loadingWin.Close();
     }
 }

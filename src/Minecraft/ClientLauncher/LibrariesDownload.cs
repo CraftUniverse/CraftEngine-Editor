@@ -2,14 +2,19 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using dev.craftengine.editor.Minecraft.ClientLauncher.VersionMetadata;
+using dev.craftengine.editor.Views;
 
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class LibrariesDownload
 {
-    public static async Task Download(Metadata metadata)
+    public static async Task Download(Metadata metadata, Window editorWindow)
     {
+        var loadingWin = new Loading("Loading...");
+        loadingWin.ShowDialog(editorWindow);
+
         var client = new HttpClient();
 
         foreach (var lib in metadata.libraries)
@@ -44,6 +49,10 @@ public class LibrariesDownload
                 continue;
             }
 
+            loadingWin.SetTitle($"Downloading libraries");
+            loadingWin.Text.IsVisible = true;
+            loadingWin.Text.Text = Path.GetFileName(filepath);
+
             string dir = Path.GetDirectoryName(filepath)!;
             Directory.CreateDirectory(dir);
 
@@ -55,5 +64,7 @@ public class LibrariesDownload
 
             await File.WriteAllBytesAsync(filepath, content);
         }
+
+        loadingWin.Close();
     }
 }

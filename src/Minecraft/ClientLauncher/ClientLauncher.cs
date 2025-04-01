@@ -7,10 +7,14 @@ using Avalonia.Controls;
 using dev.craftengine.editor.Views;
 using FluentAvalonia.Core;
 
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
 namespace dev.craftengine.editor.Minecraft.ClientLauncher;
 
 public class ClientLauncher
 {
+    public static Process? MinecraftProcess;
+
     public static async Task Launch(string version, Window editorWindow)
     {
         if (Design.IsDesignMode)
@@ -18,17 +22,18 @@ public class ClientLauncher
             return;
         }
 
-        var loadingWin = new Loading();
+        MinecraftProcess?.Kill();
 
+        var loadingWin = new Loading("Starting Minecraft");
         loadingWin.ShowDialog(editorWindow);
 
         CreateFolderStructure();
 
         var metadata = await VersionMetadata.VersionMetadata.Download(version);
 
-        await VersionDownload.Download(metadata);
-        await JavaDownload.Download(metadata);
-        await LibrariesDownload.Download(metadata);
+        await VersionDownload.Download(metadata, editorWindow);
+        await JavaDownload.Download(metadata, editorWindow);
+        await LibrariesDownload.Download(metadata, editorWindow);
 
         string jrePath = Path.Combine(
             Constants.BASE_PATH,
@@ -113,6 +118,13 @@ public class ClientLauncher
             }
         }
 
+        jvmArgs.AddRange(
+            [
+                "-Xms6G",
+                "-Xmx10G"
+            ]
+        );
+
         List<string> command =
         [
             ..jvmArgs,
@@ -138,19 +150,22 @@ public class ClientLauncher
             Arguments = string.Join(" ", command),
             RedirectStandardOutput = true,
             UseShellExecute = false,
-            CreateNoWindow = true
+            CreateNoWindow = true,
         };
 
-        var process = new Process
+        MinecraftProcess = new Process
         {
-            StartInfo = psi
+            StartInfo = psi,
         };
 
-        process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
+        MinecraftProcess.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
 
-        process.Start();
-        process.BeginOutputReadLine();
+        MinecraftProcess.Exited += (sender, e) => MinecraftProcess = null;
 
+        MinecraftProcess.Start();
+        MinecraftProcess.BeginOutputReadLine();
+
+        await Task.Delay(8000);
         loadingWin.Close();
     }
 
