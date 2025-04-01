@@ -204,6 +204,15 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading assets.
+        /// </summary>
+        public static string client_launcher_download_assets_title {
+            get {
+                return ResourceManager.GetString("client_launcher.download.assets.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Downloading Java {version}.
         /// </summary>
         public static string client_launcher_download_java_title {

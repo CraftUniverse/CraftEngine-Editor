@@ -19,7 +19,7 @@ public class AssetDownload
         string indexDir = Path.Combine(Constants.BASE_PATH, "assets", "indexes");
         string indexPath = Path.Combine(indexDir, metadata.assetIndex.id + ".json");
 
-        var loadingWin = new Loading("Downloading assets...");
+        var loadingWin = new Loading(Resources.Resources.client_launcher_download_assets_title);
         loadingWin.ShowDialog(parentWindow);
 
         if (!Directory.Exists(indexDir))

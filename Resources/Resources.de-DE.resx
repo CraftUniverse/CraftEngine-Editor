@@ -44,6 +44,8 @@
         <comment/></data>
     <data name="asset_browser.search" xml:space="preserve"><value>Suchen</value>
         <comment/></data>
+    <data name="client_launcher.download.assets.title" xml:space="preserve"><value>Lade Assets herunter</value>
+        <comment/></data>
     <data name="client_launcher.download.java.title" xml:space="preserve"><value>Lade Java {version} herunter</value>
         <comment/></data>
     <data name="client_launcher.download.libraries.title" xml:space="preserve"><value>Lade Bibliotheken herunter</value>
