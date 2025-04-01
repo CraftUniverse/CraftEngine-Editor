@@ -13,7 +13,7 @@ public class Window
     {
         var options = new GraphicsDeviceOptions
         {
-            PreferStandardClipSpaceYDirection = true, PreferDepthRangeZeroToOne = true
+            PreferStandardClipSpaceYDirection = true, PreferDepthRangeZeroToOne = true,
         };
 
         graphicsDevice = GraphicsDevice.CreateVulkan(options);
