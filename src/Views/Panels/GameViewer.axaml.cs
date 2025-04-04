@@ -10,7 +10,7 @@ public partial class GameViewer : UserControl
         InitializeComponent();
     }
 
-    private void OnLoaded(object? sender, RoutedEventArgs e)
+    private async void OnLoaded(object? sender, RoutedEventArgs e)
     {
         Control.Game = new editor.GameViewer.GameViewer();
     }

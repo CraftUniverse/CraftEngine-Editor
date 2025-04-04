@@ -8,6 +8,7 @@
              xmlns:monoGame="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
              x:Class="dev.craftengine.editor.Views.Panels.GameViewer">
     <Panel>
-        <monoGame:MonoGameControl Game="{Binding Viewer}" Name="Control" />
+        <monoGame:MonoGameControl Game="{Binding Viewer}"
+                                  Name="Control" />
     </Panel>
 </UserControl>
