@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="using:dev.craftengine.editor.GameViewer"
-             Loaded="OnLoaded"
-             SizeChanged="OnSizeChanged"
+             Loaded="OnLoaded" x:DataType="vm:GameViewerModel"
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="400"
+             xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
+             xmlns:monoGame="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
              x:Class="dev.craftengine.editor.Views.Panels.GameViewer">
     <Panel>
-        <local:ControlHost x:Name="HostFrame" IsHitTestVisible="False" />
+        <monoGame:MonoGameControl Game="{Binding Viewer}" Name="Control" />
     </Panel>
 </UserControl>
