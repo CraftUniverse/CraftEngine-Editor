@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
-using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class NewProject : Window
+public partial class NewProject : SukiWindow
 {
     public NewProject()
     {

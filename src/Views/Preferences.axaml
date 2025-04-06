@@ -1,32 +1,31 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:res="using:dev.craftengine.editor.Resources"
-        mc:Ignorable="d" Width="600" Height="400"
-        Title="{x:Static res:Resources.preferences_title}"
-        WindowStartupLocation="CenterOwner"
-        x:Class="dev.craftengine.editor.Views.Preferences">
+﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:res="using:dev.craftengine.editor.Resources"
+                   mc:Ignorable="d" Width="600" Height="600" ShowTitlebarBackground="False"
+                   Title="{x:Static res:Resources.preferences_title}" ShowBottomBorder="False"
+                   WindowStartupLocation="CenterOwner" BackgroundStyle="Bubble"
+                   x:Class="dev.craftengine.editor.Views.Preferences">
+    <sukiUi:SukiWindow.LogoContent>
+        <Image Source="/Assets/Icon.ico" Width="20" />
+    </sukiUi:SukiWindow.LogoContent>
+
     <StackPanel Orientation="Horizontal" Margin="5">
         <ScrollViewer AllowAutoHide="False" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Vertical">
                 <TextBlock Margin="5" FontWeight="Bold"
                            Text="{x:Static res:Resources.preferences_sidebar_general}" />
 
-                <ListBox Name="SidebarGeneral" CornerRadius="3"
+                <ListBox Name="SidebarGeneral" CornerRadius="3" Foreground="White"
                          SelectionChanged="SidebarGeneral_OnSelectionChanged">
-                    <ListBoxItem Name="SidebarGeneralEdior" CornerRadius="3"
-                                 Padding="8">
-                        <TextBlock Text="{x:Static res:Resources.preferences_sidebar_editor}" />
-                    </ListBoxItem>
+                    <ListBoxItem Name="SidebarGeneralEditor" CornerRadius="3"
+                                 Padding="8" Content="{x:Static res:Resources.preferences_sidebar_editor}" />
                     <ListBoxItem Name="SidebarGeneralPerformance" CornerRadius="3"
-                                 Padding="8">
-                        <TextBlock Text="{x:Static res:Resources.preferences_sidebar_performance}" />
-                    </ListBoxItem>
+                                 Padding="8" Content="{x:Static res:Resources.preferences_sidebar_performance}" />
                     <ListBoxItem Name="SidebarGeneralExternal" CornerRadius="3"
-                                 Padding="8">
-                        <TextBlock Text="{x:Static res:Resources.preferences_sidebar_external}" />
-                    </ListBoxItem>
+                                 Padding="8" Content="{x:Static res:Resources.preferences_sidebar_external}" />
                 </ListBox>
 
                 <Separator MinWidth="90" />
@@ -122,4 +121,4 @@
             </StackPanel>
         </StackPanel>
     </StackPanel>
-</Window>
+</sukiUi:SukiWindow>

@@ -1,11 +1,13 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
              xmlns:res="using:dev.craftengine.editor.Resources"
              xmlns:ab="using:dev.craftengine.editor.Views.Panels.AssetBrowser"
              xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="400"
              x:Class="dev.craftengine.editor.Views.Panels.AssetBrowser.AssetBrowser"
              Loaded="OnLoaded" PointerPressed="OnPointerPressed"
@@ -22,16 +24,15 @@
         </ScrollViewer>
         <Border Grid.Column="1" Width="3" Margin="5" Background="Gray"
                 CornerRadius="50" Opacity="0.45" />
-
         <Panel Grid.Column="2">
             <StackPanel>
                 <Grid ColumnDefinitions="auto * *" Margin="0 5 0 0">
-                    <Button Grid.Column="0" Margin="5 0">
+                    <DropDownButton Grid.Column="0" Margin="5 0">
                         <TextBlock Text="{x:Static res:Resources.asset_browser_context_common_new}" />
-                        <Button.Flyout>
+                        <DropDownButton.Flyout>
                             <ab:AssetBrowserNewItemDropdown></ab:AssetBrowserNewItemDropdown>
-                        </Button.Flyout>
-                    </Button>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
 
                     <ui:BreadcrumbBar Grid.Column="1" Name="BreadcrumbBar"
                                       ItemsSource="{Binding Breadcrumbs}">
@@ -44,7 +45,8 @@
                     </ui:BreadcrumbBar>
 
                     <TextBox Grid.Column="2" Margin="5 0" MinWidth="300" HorizontalAlignment="Right"
-                             Watermark="{x:Static res:Resources.asset_browser_search}">
+                             Watermark="{x:Static res:Resources.asset_browser_search}"
+                             suki:TextBoxExtensions.AddDeleteButton="True">
                     </TextBox>
                 </Grid>
 
@@ -62,96 +64,41 @@
                                         PointerPressed="ItemClick">
                                     <Border.ContextMenu>
                                         <ContextMenu Opening="ContextMenu_OnOpening">
-                                            <MenuItem Header="{x:Static res:Resources.asset_browser_context_open}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource open_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>Return</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
                                             <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-arrow-up-right-from-square"
+                                                Header="{x:Static res:Resources.asset_browser_context_open}" />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-plus"
                                                 Header="{x:Static res:Resources.asset_browser_context_common_new}"
-                                                GroupName="NewItem">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource add_regular}" />
-                                                </MenuItem.Icon>
-                                            </MenuItem>
-                                            <MenuItem Header="{x:Static res:Resources.asset_browser_context_copy_path}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource copy_link_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>CTRL + SHIFT + C</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
-                                            <Separator />
-                                            <MenuItem Header="{x:Static res:Resources.asset_browser_context_rename}"
-                                                      Click="MenuItem_Rename" DataContext="{Binding Path}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource rename_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>F2</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
-                                            <MenuItem Header="{x:Static res:Resources.common_delete}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource delete_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>DELETE</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
-                                            <MenuItem Header="{x:Static res:Resources.common_copy}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource copy_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>CTRL + C</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
-                                            <MenuItem Header="{x:Static res:Resources.common_paste}" IsEnabled="False">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource clipboard_paste_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>CTRL + V</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
+                                                GroupName="NewItem" />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-copy"
+                                                Header="{x:Static res:Resources.asset_browser_context_copy_path}" />
                                             <Separator />
                                             <MenuItem
-                                                Header="{x:Static res:Resources.asset_browser_context_common_metadata}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource tag_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>F6</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
+                                                i:MenuItem.Icon="fa-solid fa-i-cursor"
+                                                Header="{x:Static res:Resources.asset_browser_context_rename}"
+                                                Click="MenuItem_Rename" DataContext="{Binding Path}" />
                                             <MenuItem
-                                                Header="{x:Static res:Resources.asset_browser_context_common_show_explorer}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource open_regular}" />
-                                                </MenuItem.Icon>
-
-                                                <MenuItem.InputGesture>
-                                                    <KeyGesture>CTRL + E</KeyGesture>
-                                                </MenuItem.InputGesture>
-                                            </MenuItem>
+                                                i:MenuItem.Icon="fa-solid fa-trash"
+                                                Header="{x:Static res:Resources.common_delete}" />
                                             <MenuItem
-                                                Header="{x:Static res:Resources.asset_browser_context_common_reload}">
-                                                <MenuItem.Icon>
-                                                    <PathIcon Data="{StaticResource arrow_clockwise_regular}" />
-                                                </MenuItem.Icon>
-                                            </MenuItem>
+                                                i:MenuItem.Icon="fa-solid fa-copy"
+                                                Header="{x:Static res:Resources.common_copy}" />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-paste"
+                                                Header="{x:Static res:Resources.common_paste}"
+                                                IsEnabled="False" />
+                                            <Separator />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-tags"
+                                                Header="{x:Static res:Resources.asset_browser_context_common_metadata}" />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-arrow-up-right-from-square"
+                                                Header="{x:Static res:Resources.asset_browser_context_common_show_explorer}" />
+                                            <MenuItem
+                                                i:MenuItem.Icon="fa-solid fa-rotate-right"
+                                                Header="{x:Static res:Resources.asset_browser_context_common_reload}" />
                                         </ContextMenu>
                                     </Border.ContextMenu>
 

@@ -1,10 +1,10 @@
-﻿using Avalonia.Controls;
-using Avalonia.Interactivity;
+﻿using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class ProjectList : Window
+public partial class ProjectList : SukiWindow
 {
     public ProjectList()
     {

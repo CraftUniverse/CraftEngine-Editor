@@ -1,10 +1,13 @@
-﻿using Avalonia.Controls;
+﻿using System;
+using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using dev.craftengine.editor.Helpers;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class About : Window
+public partial class About : SukiWindow
 {
     public About()
     {
@@ -20,5 +23,10 @@ public partial class About : Window
         {
             Close();
         }
+    }
+
+    private void Github_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Launcher.LaunchUriAsync(new Uri("https://github.com/CraftUniverse/CraftEngine-Editor"));
     }
 }

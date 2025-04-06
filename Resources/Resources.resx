@@ -64,16 +64,16 @@
         <comment/></data>
     <data name="common.paste" xml:space="preserve"><value>Paste</value>
         <comment/></data>
-    <data name="editor.menubar.edit" xml:space="preserve"><value>_Edit</value>
-        <comment/></data>
+    <data name="editor.menubar.edit" xml:space="preserve"><value>Edit</value>
+    </data>
     <data name="editor.menubar.edit.preferences" xml:space="preserve"><value>Preferences</value>
         <comment/></data>
     <data name="editor.menubar.edit.redo" xml:space="preserve"><value>Redo</value>
         <comment/></data>
     <data name="editor.menubar.edit.undo" xml:space="preserve"><value>Undo</value>
         <comment/></data>
-    <data name="editor.menubar.file" xml:space="preserve"><value>_File</value>
-        <comment/></data>
+    <data name="editor.menubar.file" xml:space="preserve"><value>File</value>
+    </data>
     <data name="editor.menubar.file.build" xml:space="preserve"><value>Build Project</value>
         <comment/></data>
     <data name="editor.menubar.file.exit" xml:space="preserve"><value>Exit</value>
@@ -84,14 +84,14 @@
         <comment/></data>
     <data name="editor.menubar.file.save_level_as" xml:space="preserve"><value>Save Level as ...</value>
         <comment/></data>
-    <data name="editor.menubar.help" xml:space="preserve"><value>_Help</value>
-        <comment/></data>
+    <data name="editor.menubar.help" xml:space="preserve"><value>Help</value>
+    </data>
     <data name="editor.menubar.help.about" xml:space="preserve"><value>About...</value>
         <comment/></data>
     <data name="editor.menubar.help.wiki" xml:space="preserve"><value>Wiki</value>
         <comment/></data>
-    <data name="editor.menubar.objects" xml:space="preserve"><value>_Objects</value>
-        <comment/></data>
+    <data name="editor.menubar.objects" xml:space="preserve"><value>Objects</value>
+    </data>
     <data name="editor.menubar.play" xml:space="preserve"><value>Play</value>
         <comment/></data>
     <data name="editor.menubar.play.msgbox.running" xml:space="preserve"><value>Minecraft is already running.</value>
@@ -100,8 +100,8 @@
         <comment/></data>
     <data name="editor.menubar.play.restart" xml:space="preserve"><value>Restart</value>
         <comment/></data>
-    <data name="editor.menubar.windows" xml:space="preserve"><value>_Windows</value>
-        <comment/></data>
+    <data name="editor.menubar.windows" xml:space="preserve"><value>Windows</value>
+    </data>
     <data name="messagebox.button.cancel" xml:space="preserve"><value>Cancel</value>
         <comment/></data>
     <data name="messagebox.button.no" xml:space="preserve"><value>No</value>

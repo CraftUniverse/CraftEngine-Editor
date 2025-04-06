@@ -1,11 +1,17 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" SizeToContent="WidthAndHeight" CanResize="False"
-        WindowStartupLocation="CenterOwner" Icon="/Assets/Icon.ico"
-        xmlns:res="using:dev.craftengine.editor.Resources"
-        x:Class="dev.craftengine.editor.Views.MessageBox">
+﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:res="using:dev.craftengine.editor.Resources" ShowBottomBorder="False"
+                   mc:Ignorable="d" SizeToContent="WidthAndHeight" CanResize="False"
+                   WindowStartupLocation="CenterOwner" Icon="/Assets/Icon.ico"
+                   x:Class="dev.craftengine.editor.Views.MessageBox"
+                   BackgroundStyle="Bubble" CanMaximize="False" ShowTitlebarBackground="False">
+    <sukiUi:SukiWindow.LogoContent>
+        <Image Source="/Assets/Icon.ico" Width="20" />
+    </sukiUi:SukiWindow.LogoContent>
+
     <StackPanel Margin="5">
         <StackPanel Orientation="Horizontal">
             <PathIcon Height="36" Width="36" Name="PathIcon"
@@ -30,4 +36,4 @@
             </Button>
         </StackPanel>
     </StackPanel>
-</Window>
+</sukiUi:SukiWindow>

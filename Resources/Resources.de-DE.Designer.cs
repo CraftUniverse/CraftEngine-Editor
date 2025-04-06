@@ -294,7 +294,7 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Bearbeiten.
+        ///   Looks up a localized string similar to Bearbeiten.
         /// </summary>
         public static string editor_menubar_edit {
             get {
@@ -330,7 +330,7 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Datei.
+        ///   Looks up a localized string similar to Datei.
         /// </summary>
         public static string editor_menubar_file {
             get {
@@ -384,7 +384,7 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Hilfe.
+        ///   Looks up a localized string similar to Hilfe.
         /// </summary>
         public static string editor_menubar_help {
             get {
@@ -411,7 +411,7 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Objekte.
+        ///   Looks up a localized string similar to Objekte.
         /// </summary>
         public static string editor_menubar_objects {
             get {
@@ -456,7 +456,7 @@ namespace dev.craftengine.editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Fenster.
+        ///   Looks up a localized string similar to Fenster.
         /// </summary>
         public static string editor_menubar_windows {
             get {

@@ -5,10 +5,11 @@ using dev.craftengine.editor.Helpers;
 using dev.craftengine.editor.Minecraft.ClientLauncher;
 using dev.craftengine.editor.Views.Panels;
 using dev.craftengine.editor.Views.Panels.AssetBrowser;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class Editor : Window
+public partial class Editor : SukiWindow
 {
     public Editor()
     {

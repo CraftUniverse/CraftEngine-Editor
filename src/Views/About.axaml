@@ -1,27 +1,38 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:res="using:dev.craftengine.editor.Resources"
-        mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight"
-        x:Class="dev.craftengine.editor.Views.About"
-        Title="{x:Static res:Resources.about_title}" WindowStartupLocation="CenterOwner">
+﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:i="https://github.com/projektanker/icons.avalonia"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:res="using:dev.craftengine.editor.Resources" ShowTitlebarBackground="False"
+                   mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight" ShowBottomBorder="False"
+                   x:Class="dev.craftengine.editor.Views.About" BackgroundStyle="Bubble"
+                   Title="{x:Static res:Resources.about_title}" WindowStartupLocation="CenterOwner">
+    <sukiUi:SukiWindow.LogoContent>
+        <Image Source="/Assets/Icon.ico" Width="20" />
+    </sukiUi:SukiWindow.LogoContent>
+
+    <sukiUi:SukiWindow.RightWindowTitleBarControls>
+        <Button Margin="0" Classes="WindowControlsButton" Click="Github_OnClick"
+                i:Attached.Icon="fa-brands fa-github" />
+    </sukiUi:SukiWindow.RightWindowTitleBarControls>
+
     <StackPanel Orientation="Vertical" Margin="20 20">
         <Image Source="/Assets/Logo.png" Width="450" Margin="0 0 0 10" />
 
         <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="24"
                    Text="{x:Static res:Resources.about_ce}" />
         <TextBlock HorizontalAlignment="Center" Foreground="Gray"
-                   FontSize="16" Name="VersionText" />
+                   FontSize="20" Name="VersionText" />
 
-        <TextBlock Margin="0 20 0 0">
+        <TextBlock Margin="0 20 0 0" FontSize="16">
             Contributers
         </TextBlock>
-        <HyperlinkButton FontWeight="DemiBold" Padding="0"
+        <HyperlinkButton FontWeight="DemiBold" Padding="0" FontSize="16"
                          NavigateUri="https://github.com/Turboman3000">
             - @Turboman3000
         </HyperlinkButton>
-        <HyperlinkButton FontWeight="DemiBold" Padding="0"
+        <HyperlinkButton FontWeight="DemiBold" Padding="0" FontSize="16"
                          NavigateUri="https://github.com/Aaron-Junker">
             - @Aaron-Junker
         </HyperlinkButton>
@@ -38,4 +49,4 @@
 
         <Image Source="/Assets/CU_Logo.png" Width="120" Margin="0 25 0 -5" />
     </StackPanel>
-</Window>
+</sukiUi:SukiWindow>

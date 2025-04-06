@@ -4,10 +4,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Styling;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class MessageBox : Window
+public partial class MessageBox : SukiWindow
 {
     public MessageBox(string title, string message, Button buttons, string? displayIcon = null)
     {

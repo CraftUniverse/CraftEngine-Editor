@@ -1,21 +1,22 @@
 ﻿using Avalonia.Controls;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class Preferences : Window
+public partial class Preferences : SukiWindow
 {
     public Preferences()
     {
         InitializeComponent();
 
-        SidebarGeneral.SelectedItems?.Add(SidebarGeneralEdior);
+        SidebarGeneral.SelectedItems?.Add(SidebarGeneralEditor);
     }
 
     private void SidebarGeneral_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         ClosePanels();
 
-        if (e.AddedItems.Contains(SidebarGeneralEdior)) // GENERAL - EDITOR
+        if (e.AddedItems.Contains(SidebarGeneralEditor)) // GENERAL - EDITOR
         {
             PanelGeneralEditor.IsVisible = true;
         }
