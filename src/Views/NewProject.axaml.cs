@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using SukiUI.Controls;
@@ -51,5 +52,21 @@ public partial class NewProject : SukiWindow
         {
             await Console.Error.WriteLineAsync(exp.Message);
         }
+    }
+
+    private void CreateButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var selectedVersion = ProjectVersion.SelectedItem as ComboBoxItem;
+        var ownerWindow = Owner as SukiWindow;
+
+        ProjectManagement.ProjectManagement.CreateNewProject(
+            ProjectName.Text!,
+            selectedVersion!.Content!.ToString()!,
+            PathInput.Text!
+        );
+
+        new SplashScreen().Show();
+        Close();
+        ownerWindow!.Close();
     }
 }
