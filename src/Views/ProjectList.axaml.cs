@@ -62,4 +62,10 @@ public partial class ProjectList : SukiWindow
 
         textBox!.Foreground = ActualThemeVariant == ThemeVariant.Dark ? Brushes.White : Brushes.Black;
     }
+
+    private void OpenProject_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (sender is not Button button) return;
+        if (button.Parent.Parent is not ListBoxItem btnParent) return;
+    }
 }

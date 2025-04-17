@@ -5,7 +5,7 @@
                    xmlns:i="https://github.com/projektanker/icons.avalonia"
                    xmlns:res="using:dev.craftengine.editor.Resources"
                    MinHeight="600" Height="600" ShowTitlebarBackground="False"
-                   MinWidth="400" Width="400" ShowBottomBorder="False"
+                   MinWidth="450" Width="450" ShowBottomBorder="False"
                    WindowStartupLocation="CenterScreen" CanMaximize="False"
                    x:Class="dev.craftengine.editor.Views.ProjectList"
                    Icon="/Assets/Icon.ico" BackgroundStyle="Bubble">
@@ -32,13 +32,19 @@
                 <ListBox Margin="5" SelectionChanged="SelectingItemsControl_OnSelectionChanged">
                     <ListBoxItem>
                         <Grid ColumnDefinitions="*, auto, auto">
-                            <TextBlock Grid.Column="0" FontWeight="Medium" Text="TEST" VerticalAlignment="Center"
-                                       Foreground="White" Loaded="TextBlock_OnLoaded" />
-                            <Button Grid.Column="1" Classes="Rounded"
+                            <StackPanel Grid.Column="0">
+                                <TextBlock FontWeight="Bold" Text="New Project" Loaded="TextBlock_OnLoaded"
+                                           FontSize="16"
+                                           Margin="0" Padding="0" />
+                                <TextBlock FontWeight="Light" Text="C:\....\CraftEngine Projects\New Project"
+                                           Loaded="TextBlock_OnLoaded"
+                                           FontSize="12" Margin="0" Padding="0" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Classes="Icon" Click="OpenProject_OnClick"
                                     i:Attached.Icon="fa-solid fa-arrow-up-right-from-square"
-                                    HorizontalAlignment="Right" />
-                            <Button Grid.Column="2" Classes="Rounded Accent" i:Attached.Icon="fa-solid fa-trash"
-                                    HorizontalAlignment="Right" />
+                                    HorizontalAlignment="Right" Margin="5 0" />
+                            <Button Grid.Column="2" Classes="Accent Icon" i:Attached.Icon="fa-solid fa-trash"
+                                    HorizontalAlignment="Right" Margin="5 0" />
                         </Grid>
                     </ListBoxItem>
                 </ListBox>
