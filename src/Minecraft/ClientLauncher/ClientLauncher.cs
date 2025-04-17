@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using Avalonia.Controls;
-using Avalonia.Media;
 using dev.craftengine.editor.Views;
 using FluentAvalonia.Core;
 
@@ -32,7 +31,7 @@ public class ClientLauncher
 
         loadingWin.ShowDialog(editorWindow);
 
-        editorWindow.PlayOfflineButton.BorderBrush = Brushes.ForestGreen;
+        //      editorWindow.PlayOfflineButton.BorderBrush = Brushes.ForestGreen;
 
         CreateFolderStructure();
 
@@ -179,7 +178,7 @@ public class ClientLauncher
 
         await MinecraftProcess.WaitForExitAsync();
         MinecraftProcess = null;
-        editorWindow.PlayOfflineButton.BorderBrush = Brushes.Transparent;
+        //   editorWindow.PlayOfflineButton.BorderBrush = Brushes.Transparent;
     }
 
     static private void CreateFolderStructure()

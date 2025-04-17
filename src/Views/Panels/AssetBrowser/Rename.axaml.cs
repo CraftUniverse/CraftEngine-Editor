@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
-using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views.Panels.AssetBrowser;
 
-public partial class Rename : Window
+public partial class Rename : SukiWindow
 {
     private readonly string _oldName;
 

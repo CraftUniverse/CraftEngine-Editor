@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Avalonia.Controls;
+using SukiUI.Controls;
 
 namespace dev.craftengine.editor.Views;
 
-public partial class Loading : Window
+public partial class Loading : SukiWindow
 {
     private bool _shouldClose;
     private bool _shouldTimerRun = true;

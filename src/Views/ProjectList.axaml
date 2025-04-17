@@ -1,14 +1,19 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
-        xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
-        xmlns:res="using:dev.craftengine.editor.Resources"
-        MinHeight="600" Height="600"
-        MinWidth="400" Width="400"
-        WindowStartupLocation="CenterScreen"
-        x:Class="dev.craftengine.editor.Views.ProjectList"
-        x:DataType="vm:ProjectListModel"
-        Icon="/Assets/Icon.ico">
+﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:asi="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+                   xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
+                   xmlns:res="using:dev.craftengine.editor.Resources"
+                   MinHeight="600" Height="600" ShowTitlebarBackground="False"
+                   MinWidth="400" Width="400" ShowBottomBorder="False"
+                   WindowStartupLocation="CenterScreen"
+                   x:Class="dev.craftengine.editor.Views.ProjectList"
+                   x:DataType="vm:ProjectListModel" CanMaximize="False"
+                   Icon="/Assets/Icon.ico" BackgroundStyle="Bubble">
+    <sukiUi:SukiWindow.LogoContent>
+        <Image Source="/Assets/Icon.ico" Width="20" />
+    </sukiUi:SukiWindow.LogoContent>
+
     <Design.DataContext>
         <vm:ProjectListModel />
     </Design.DataContext>
@@ -16,15 +21,15 @@
     <Panel>
         <StackPanel Orientation="Vertical">
             <DockPanel>
-                <Button Click="CreateButton_OnClick" Margin="10">
+                <Button Click="CreateButton_OnClick" Margin="10 10 5 10">
                     <TextBlock Text="{x:Static res:Resources.projectlist_buttons_new_project}"></TextBlock>
                 </Button>
-                <Button Click="OpenButton_OnClick">
+                <Button Click="OpenButton_OnClick" Margin="5 10 10 10">
                     <TextBlock Text="{x:Static res:Resources.projectlist_buttons_open_project}"></TextBlock>
                 </Button>
                 <Border Margin="10" Width="25" Height="25" CornerRadius="50"
                         ClipToBounds="True" HorizontalAlignment="Right">
-                    <Image asyncImageLoader:ImageLoader.Source="https://ui-avatars.com/api" Stretch="UniformToFill" />
+                    <Image asi:ImageLoader.Source="https://ui-avatars.com/api" Stretch="UniformToFill" />
                 </Border>
             </DockPanel>
 
@@ -57,4 +62,4 @@
             </DockPanel>
         </StackPanel>
     </Panel>
-</Window>
+</sukiUi:SukiWindow>

@@ -1,12 +1,17 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:res="using:dev.craftengine.editor.Resources"
-        mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight"
-        x:Class="dev.craftengine.editor.Views.Loading" Closing="Window_OnClosing"
-        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
-        Title="{x:Static res:Resources.common_loading_title}">
+﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:res="using:dev.craftengine.editor.Resources" CanMaximize="False"
+                   mc:Ignorable="d" CanResize="False" SizeToContent="WidthAndHeight" ShowBottomBorder="False"
+                   x:Class="dev.craftengine.editor.Views.Loading" Closing="Window_OnClosing"
+                   WindowStartupLocation="CenterOwner" ShowInTaskbar="False" BackgroundStyle="Bubble"
+                   Title="{x:Static res:Resources.common_loading_title}" ShowTitlebarBackground="False">
+    <sukiUi:SukiWindow.LogoContent>
+        <Image Source="/Assets/Icon.ico" Width="20" />
+    </sukiUi:SukiWindow.LogoContent>
+
     <StackPanel Margin="10">
         <ProgressBar IsIndeterminate="True" MinHeight="17"
                      Width="450" ShowProgressText="False">
@@ -15,4 +20,4 @@
                    Name="Text" IsVisible="False">
         </TextBlock>
     </StackPanel>
-</Window>
+</sukiUi:SukiWindow>
