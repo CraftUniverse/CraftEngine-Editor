@@ -8,14 +8,16 @@ namespace dev.craftengine.editor.Views;
 
 public partial class NewProject : SukiWindow
 {
+    private readonly string _basePath = Path.Join(
+        Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+        "CraftEngine Projects"
+    );
+
     public NewProject()
     {
         InitializeComponent();
 
-        PathInput.Text = Path.Join(
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-            "CraftEngine Projects"
-        );
+        PathInput.Text = _basePath;
     }
 
     private void CloseButton_OnClick(object? sender, RoutedEventArgs e)
@@ -23,20 +25,31 @@ public partial class NewProject : SukiWindow
         Close();
     }
 
-    private void PathButton_OnClick(object? sender, RoutedEventArgs e)
+    private async void PathButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        var options = new FolderPickerOpenOptions();
-        options.AllowMultiple = false;
-
-        var dialog = StorageProvider.OpenFolderPickerAsync(options);
-
-        if (dialog.Result.Count != 1)
+        try
         {
-            return;
+            var baseFolder = await StorageProvider.TryGetFolderFromPathAsync(_basePath);
+
+            var options = new FolderPickerOpenOptions
+            {
+                AllowMultiple = false, SuggestedStartLocation = baseFolder, Title = "Select a folder"
+            };
+
+            var dialog = await StorageProvider.OpenFolderPickerAsync(options);
+
+            if (dialog.Count != 1)
+            {
+                return;
+            }
+
+            string path = dialog[0].Path.LocalPath;
+
+            PathInput.Text = path;
         }
-
-        string path = dialog.Result[0].Path.LocalPath;
-
-        PathInput.Text = path;
+        catch (Exception exp)
+        {
+            await Console.Error.WriteLineAsync(exp.Message);
+        }
     }
 }
