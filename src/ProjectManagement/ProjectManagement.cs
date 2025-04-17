@@ -9,7 +9,7 @@ public class ProjectManagement
 {
     public static FileObjects.ProjectConfig? CurrentProjectConfig { get; set; }
 
-    public static async Task CreateNewProject(string name, string version, string path)
+    public static async Task CreateNewProject(string name, string gameVersion, int gameProtocol, string path)
     {
         try
         {
@@ -20,11 +20,13 @@ public class ProjectManagement
             var projectConfig = new FileObjects.ProjectConfig
             {
                 ProjectName = name,
-                GameVersion = version,
+                GameVersion = gameVersion,
                 ProjectVersion = "1.0.0",
-                GameProtocol = 769,
+                GameProtocol = gameProtocol,
                 ProjectAuthors = []
             };
+
+            Console.WriteLine($"Creating new project {name}");
 
             byte[] projectConfigBytes = MessagePackSerializer.Serialize(projectConfig);
 

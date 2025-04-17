@@ -54,19 +54,27 @@ public partial class NewProject : SukiWindow
         }
     }
 
-    private void CreateButton_OnClick(object? sender, RoutedEventArgs e)
+    private async void CreateButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        var selectedVersion = ProjectVersion.SelectedItem as ComboBoxItem;
-        var ownerWindow = Owner as SukiWindow;
+        try
+        {
+            var selectedVersion = ProjectVersion.SelectedItem as ComboBoxItem;
+            var ownerWindow = Owner as SukiWindow;
 
-        ProjectManagement.ProjectManagement.CreateNewProject(
-            ProjectName.Text!,
-            selectedVersion!.Content!.ToString()!,
-            PathInput.Text!
-        );
+            await ProjectManagement.ProjectManagement.CreateNewProject(
+                ProjectName.Text!,
+                selectedVersion!.Content!.ToString()!,
+                int.Parse(selectedVersion.Tag as string ?? "-1"),
+                PathInput.Text!
+            );
 
-        new SplashScreen().Show();
-        Close();
-        ownerWindow!.Close();
+            new SplashScreen().Show();
+            Close();
+            ownerWindow!.Close();
+        }
+        catch (Exception exp)
+        {
+            await Console.Error.WriteLineAsync(exp.Message);
+        }
     }
 }

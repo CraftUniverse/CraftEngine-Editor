@@ -27,7 +27,7 @@
                 <TextBlock Text="{x:Static res:Resources.newproject_select_version_label}" />
                 <ComboBox MinWidth="140" SelectedIndex="0" MaxDropDownHeight="100"
                           Margin="-8 0 -10 0" Name="ProjectVersion">
-                    <ComboBoxItem>1.21.4</ComboBoxItem>
+                    <ComboBoxItem Tag="769">1.21.4</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
         </StackPanel>
