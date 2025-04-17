@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media;
+using Avalonia.Styling;
 using dev.craftengine.editor.Helpers;
 using SukiUI.Controls;
 
@@ -39,5 +42,24 @@ public partial class ProjectList : SukiWindow
     {
         var newProject = new NewProject();
         newProject.ShowDialog(this);
+    }
+
+    private void SelectingItemsControl_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        var obj = sender as ListBox;
+
+        if (obj!.SelectedItems!.Count == 0)
+        {
+            return;
+        }
+
+        obj!.SelectedItems?.Clear();
+    }
+
+    private void TextBlock_OnLoaded(object? sender, RoutedEventArgs e)
+    {
+        var textBox = sender as TextBlock;
+
+        textBox!.Foreground = ActualThemeVariant == ThemeVariant.Dark ? Brushes.White : Brushes.Black;
     }
 }

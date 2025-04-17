@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using MessagePack;
@@ -8,6 +9,7 @@ namespace dev.craftengine.editor.ProjectManagement;
 public class ProjectManagement
 {
     public static FileObjects.ProjectConfig? CurrentProjectConfig { get; set; }
+    public static List<RecentProject> RecentProjects { get; set; }
 
     public static async Task CreateNewProject(string name, string gameVersion, int gameProtocol, string path)
     {
@@ -52,5 +54,9 @@ public class ProjectManagement
         {
             await Console.Error.WriteLineAsync(exp.Message);
         }
+    }
+
+    public record RecentProject(string name, string path)
+    {
     }
 }

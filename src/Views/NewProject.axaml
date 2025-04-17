@@ -1,14 +1,12 @@
 ﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
                    xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:vm="clr-namespace:dev.craftengine.editor.ViewModels"
                    xmlns:res="using:dev.craftengine.editor.Resources"
                    Height="218" Width="425" CanResize="False"
                    WindowStartupLocation="CenterScreen" BackgroundStyle="Bubble"
                    CanMaximize="False" ShowBottomBorder="False" ShowTitlebarBackground="False"
                    x:Class="dev.craftengine.editor.Views.NewProject"
-                   x:DataType="vm:ProjectListModel" Icon="/Assets/Icon.ico"
-                   Title="{x:Static res:Resources.newproject_title}">
+                   Icon="/Assets/Icon.ico" Title="{x:Static res:Resources.newproject_title}">
     <sukiUi:SukiWindow.LogoContent>
         <Image Source="/Assets/Icon.ico" Width="20" />
     </sukiUi:SukiWindow.LogoContent>
