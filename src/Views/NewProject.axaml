@@ -19,14 +19,14 @@
                 <TextBlock Text="{x:Static res:Resources.newproject_textinput_name_label}">
                     :
                 </TextBlock>
-                <TextBox Text="New Project" MinWidth="250" Margin="-8 0 -10 0"
+                <TextBox Text="New Project" MinWidth="250" Margin="-8 0 -10 0" Name="ProjectName"
                          Watermark="{x:Static res:Resources.newproject_textinput_name_label}" />
             </StackPanel>
 
             <StackPanel Margin="5 0 0 0">
                 <TextBlock Text="{x:Static res:Resources.newproject_select_version_label}" />
                 <ComboBox MinWidth="140" SelectedIndex="0" MaxDropDownHeight="100"
-                          Margin="-8 0 -10 0">
+                          Margin="-8 0 -10 0" Name="ProjectVersion">
                     <ComboBoxItem>1.21.4</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
@@ -48,12 +48,10 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0 5">
-            <Button Click="CloseButton_OnClick" Margin="10 0">
-                <TextBlock Text="{x:Static res:Resources.newproject_button_close}"></TextBlock>
-            </Button>
-            <Button>
-                <TextBlock Text="{x:Static res:Resources.newproject_button_create}"></TextBlock>
-            </Button>
+            <Button Click="CloseButton_OnClick" Margin="10 0"
+                    Content="{x:Static res:Resources.newproject_button_close}" />
+            <Button Click="CreateButton_OnClick"
+                    Content="{x:Static res:Resources.newproject_button_create}" />
         </StackPanel>
     </StackPanel>
 </sukiUi:SukiWindow>
