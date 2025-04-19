@@ -21,10 +21,8 @@
                      FontWeight="Medium" Foreground="DimGray" />
             </TextBlock>
 
-            <TextBlock Margin="10 0" FontSize="20"
-                       FontWeight="Medium" Foreground="White">
-                Test Project
-            </TextBlock>
+            <TextBlock Margin="10 0" FontSize="20" Name="ProjectName"
+                       FontWeight="Medium" Foreground="White" />
             <TextBlock Margin="10 0" FontSize="20" Name="InfoText"
                        FontWeight="Medium" Foreground="White"
                        Text="{x:Static res:Resources.startup_text_opening_project}" />
