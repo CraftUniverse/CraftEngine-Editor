@@ -6,6 +6,15 @@ namespace dev.craftengine.editor.ProjectManagement;
 public class FileObjects
 {
     [MessagePackObject]
+    public class RecentProject
+    {
+        [Key(0)] public required string ProjectName { get; init; }
+        [Key(1)] public required string ProjectVersion { get; init; }
+        [Key(2)] public required string ProjectPath { get; init; }
+        [Key(3)] public required ulong LastAccess { get; init; }
+    }
+    
+    [MessagePackObject]
     public class ProjectConfig
     {
         [Key(0)] public int MagicNumber { get; set; } = 0xCE9C1;
