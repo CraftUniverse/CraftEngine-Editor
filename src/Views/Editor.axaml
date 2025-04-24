@@ -22,8 +22,7 @@
         <MenuItem Header="{x:Static res:Resources.editor_menubar_file}">
             <MenuItem Header="{x:Static res:Resources.editor_menubar_file_save_level}" />
             <MenuItem Header="{x:Static res:Resources.editor_menubar_file_save_level_as}" />
-            <MenuItem Click="Menu_File_Export_OnClick" Header="{x:Static res:Resources.editor_menubar_file_build}" />
-            <MenuItem Header="{x:Static res:Resources.editor_menubar_file_publish_cu}" IsEnabled="False" />
+            <MenuItem Header="{x:Static res:Resources.editor_menubar_file_publish_cu}" />
             <Separator />
             <MenuItem Click="Menu_File_Exit_OnClick" Header="{x:Static res:Resources.editor_menubar_file_exit}" />
         </MenuItem>

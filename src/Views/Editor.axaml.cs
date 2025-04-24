@@ -30,12 +30,6 @@ public partial class Editor : SukiWindow
         PanelLayout4.Children.Add(new Properties());
     }
 
-    private void Menu_File_Export_OnClick(object? sender, RoutedEventArgs e)
-    {
-        var win = new BuildProject();
-        win.ShowDialog(this);
-    }
-
     private void Menu_File_Exit_OnClick(object? sender, RoutedEventArgs e)
     {
         Close();
