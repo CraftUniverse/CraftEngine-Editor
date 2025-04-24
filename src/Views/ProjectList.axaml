@@ -1,7 +1,6 @@
 ﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
                    xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:asi="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
                    xmlns:i="https://github.com/projektanker/icons.avalonia"
                    xmlns:res="using:dev.craftengine.editor.Resources"
                    MinHeight="600" Height="600" ShowTitlebarBackground="False"
@@ -22,10 +21,9 @@
                 <Button Click="OpenButton_OnClick" Margin="5 10 10 10">
                     <TextBlock Text="{x:Static res:Resources.projectlist_buttons_open_project}"></TextBlock>
                 </Button>
-                <Border Margin="10" Width="25" Height="25" CornerRadius="50"
-                        ClipToBounds="True" HorizontalAlignment="Right">
-                    <Image asi:ImageLoader.Source="https://ui-avatars.com/api" Stretch="UniformToFill" />
-                </Border>
+                <Button Click="Auth_OnClick" Margin="5 10 10 10">
+                    <TextBlock Text="AUTH"></TextBlock>
+                </Button>
             </DockPanel>
 
             <DockPanel>

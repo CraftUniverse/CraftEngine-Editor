@@ -1,28 +1,33 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Threading.Tasks;
 using Avalonia.Controls;
+using Utf8Json;
 
 namespace dev.craftengine.editor.Firebase;
 
 public class Authentification
 {
-    static private string _url = "http://localhost";
+    static private string _url = "http://127.0.0.1/";
     static private HttpListener? _serverListener;
-    static private bool _runServer = true;
 
-    public static void Authenticate(Control control)
+    public static async void Authenticate(Control control)
     {
-        var rand = new Random();
-        int port = rand.Next(4000, 65535);
+        try
+        {
+            var rand = new Random();
+            int port = rand.Next(4000, 65535);
 
-        _url = $"https://localhost:${port}/";
+            _url = $"http://127.0.0.1:{port}/";
 
-        var uri = new Uri($"https://auth.craftengine.dev/?port=${port}");
-        TopLevel.GetTopLevel(control)!.Launcher.LaunchUriAsync(uri);
-
-        StartServer();
+            StartServer();
+            var uri = new Uri($"https://beta.craftuniverse.net/SUFCE?port={port}");
+            await TopLevel.GetTopLevel(control)!.Launcher.LaunchUriAsync(uri);
+        }
+        catch (Exception e)
+        {
+            Console.Error.WriteLine(e);
+        }
     }
 
     static private void StartServer()
@@ -31,35 +36,49 @@ public class Authentification
         _serverListener.Prefixes.Add(_url);
         _serverListener.Start();
 
-        var connection = HandleConnection();
-        connection.GetAwaiter().GetResult();
-
-        _serverListener.Close();
+        _serverListener.BeginGetContext(HandleConnection, _serverListener);
     }
 
-    static private async Task HandleConnection()
+    static private async void HandleConnection(IAsyncResult result)
     {
-        while (_runServer)
+        try
         {
-            var ctx = await _serverListener?.GetContextAsync()!;
-            var req = ctx.Request;
-            var resp = ctx.Response;
+            if (!_serverListener!.IsListening) return;
 
-            if (req is { HttpMethod: "POST", Url.AbsolutePath: "/token" })
+            var context = _serverListener.EndGetContext(result);
+            var request = context.Request;
+
+            if (request is { HttpMethod: "OPTIONS" })
             {
-                _runServer = false;
+                _serverListener.BeginGetContext(HandleConnection, _serverListener);
 
-                string input;
-
-                using (var reader = new StreamReader(req.InputStream))
-                {
-                    input = await reader.ReadToEndAsync();
-                }
-
-                Console.WriteLine(input);
+                return;
             }
 
-            resp.Close();
+            if (request is not { HttpMethod: "POST" })
+            {
+                return;
+            }
+
+            string input;
+
+            using (var reader = new StreamReader(request.InputStream))
+            {
+                input = await reader.ReadToEndAsync();
+            }
+
+            var resp = JsonSerializer.Deserialize<ServerResponse>(input);
+            Console.WriteLine(resp.token);
+            _serverListener.Stop();
         }
+        catch (Exception e)
+        {
+            Console.Error.WriteLine(e);
+        }
+    }
+
+    public class ServerResponse
+    {
+        public required string token { get; set; }
     }
 }

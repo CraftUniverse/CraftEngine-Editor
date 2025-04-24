@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Styling;
+using dev.craftengine.editor.Firebase;
 using dev.craftengine.editor.Helpers;
 using SukiUI.Controls;
 
@@ -67,5 +68,12 @@ public partial class ProjectList : SukiWindow
     {
         if (sender is not Button button) return;
         if (button.Parent.Parent is not ListBoxItem btnParent) return;
+    }
+
+    private void Auth_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var btn = sender as Button;
+
+        Authentification.Authenticate(btn!);
     }
 }
