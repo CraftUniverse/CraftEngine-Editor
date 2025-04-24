@@ -8,14 +8,17 @@ namespace dev.craftengine.editor.ProjectManagement;
 
 public class ProjectManagement
 {
-    public static FileObjects.ProjectConfig? CurrentProjectConfig { get; set; }
-    public static List<RecentProject> RecentProjects { get; set; }
+    public static FileObjects.ProjectConfig? CurrentProjectConfig { get; private set; }
+    public static List<RecentProject> RecentProjects = [];
+
+    static private readonly string RecentProjectsPath =
+        Path.Join($"${Environment.SpecialFolder.ApplicationData}", "CraftEngine", "recent.dat");
 
     public static async Task CreateNewProject(string name, string gameVersion, int gameProtocol, string path)
     {
         try
         {
-            string projectPath = Path.Join(path, name);
+            var projectPath = Path.Join(path, name);
 
             Directory.CreateDirectory(projectPath);
 
@@ -30,7 +33,7 @@ public class ProjectManagement
 
             Console.WriteLine($"Creating new project {name}");
 
-            byte[] projectConfigBytes = MessagePackSerializer.Serialize(projectConfig);
+            var projectConfigBytes = MessagePackSerializer.Serialize(projectConfig);
 
             await File.WriteAllBytesAsync(Path.Join(projectPath, "config.dat"), projectConfigBytes);
             CurrentProjectConfig = projectConfig;
@@ -56,7 +59,42 @@ public class ProjectManagement
         }
     }
 
-    public record RecentProject(string name, string path)
+    public static async Task WriteRecentProjects()
+    {
+        List<FileObjects.RecentProject> recentProjects = [];
+
+        foreach (var project in RecentProjects)
+        {
+            recentProjects.Add(new FileObjects.RecentProject()
+            {
+                LastAccess = project.lastAccess,
+                ProjectName = project.name,
+                ProjectPath = project.path,
+                ProjectVersion = project.version,
+            });
+        }
+
+        var file = MessagePackSerializer.Serialize(recentProjects);
+
+        await File.WriteAllBytesAsync(RecentProjectsPath, file);
+    }
+
+    public static async Task ReaadRecentProjects()
+    {
+        var file = await File.ReadAllBytesAsync(RecentProjectsPath);
+        var recentProjects = MessagePackSerializer.Deserialize<List<FileObjects.RecentProject>>(file);
+
+        foreach (var project in recentProjects)
+        {
+            RecentProjects.Add((new RecentProject(
+                project.ProjectName,
+                project.ProjectPath,
+                project.ProjectVersion,
+                project.LastAccess)));
+        }
+    }
+
+    public record RecentProject(string name, string path, string version, ulong lastAccess)
     {
     }
 }

@@ -12,6 +12,9 @@ public partial class SplashScreen : Window
     {
         InitializeComponent();
 
+        Title = $"CraftEngine Editor {VersionControl.Version}";
+        
+        ProjectName.Text = ProjectManagement.ProjectManagement.CurrentProjectConfig?.ProjectName;
         VersionText.Text = VersionControl.Version;
         CreditText.Text = editor.Resources.Resources.startup_image_credits.Replace("{credit}", "unknown");
     }
