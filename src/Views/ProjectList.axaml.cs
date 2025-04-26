@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Styling;
@@ -67,7 +68,7 @@ public partial class ProjectList : SukiWindow
     private void OpenProject_OnClick(object? sender, RoutedEventArgs e)
     {
         if (sender is not Button button) return;
-        if (button.Parent.Parent is not ListBoxItem btnParent) return;
+        if (button.Parent!.Parent is not ListBoxItem btnParent) return;
     }
 
     private void Auth_OnClick(object? sender, RoutedEventArgs e)
@@ -75,5 +76,19 @@ public partial class ProjectList : SukiWindow
         var btn = sender as Button;
 
         Authentification.Authenticate(btn!);
+    }
+
+    private void Profile_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        var border = sender as Border;
+
+        if (border!.ContextMenu!.IsOpen)
+        {
+            border.ContextMenu.Close();
+        }
+        else
+        {
+            border.ContextMenu.Open();
+        }
     }
 }

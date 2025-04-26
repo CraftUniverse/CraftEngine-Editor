@@ -1,4 +1,5 @@
 ﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
                    xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                    xmlns:i="https://github.com/projektanker/icons.avalonia"
@@ -21,9 +22,15 @@
                 <Button Click="OpenButton_OnClick" Margin="5 10 10 10">
                     <TextBlock Text="{x:Static res:Resources.projectlist_buttons_open_project}"></TextBlock>
                 </Button>
-                <Button Click="Auth_OnClick" Margin="5 10 10 10">
-                    <TextBlock Text="AUTH"></TextBlock>
-                </Button>
+                <Border Width="40" Height="40" CornerRadius="100" ClipToBounds="True"
+                        HorizontalAlignment="Right" Margin="0 0 10 0" PointerPressed="Profile_OnPointerPressed">
+                    <Image asyncImageLoader:ImageLoader.Source="https://placehold.co/80x80/png" />
+                    <Border.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Test"></MenuItem>
+                        </ContextMenu>
+                    </Border.ContextMenu>
+                </Border>
             </DockPanel>
 
             <DockPanel>
