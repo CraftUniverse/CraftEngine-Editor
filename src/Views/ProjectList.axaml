@@ -16,18 +16,32 @@
     <Panel>
         <StackPanel Orientation="Vertical">
             <DockPanel>
-                <Button Click="CreateButton_OnClick" Margin="10 10 5 10">
-                    <TextBlock Text="{x:Static res:Resources.projectlist_buttons_new_project}"></TextBlock>
-                </Button>
-                <Button Click="OpenButton_OnClick" Margin="5 10 10 10">
-                    <TextBlock Text="{x:Static res:Resources.projectlist_buttons_open_project}"></TextBlock>
+                <Button Click="CreateButton_OnClick" Margin="10 10 5 10"
+                        Content="{x:Static res:Resources.projectlist_buttons_new_project}" />
+                <Button Click="OpenButton_OnClick" Margin="5 10 10 10"
+                        Content="{x:Static res:Resources.projectlist_buttons_open_project}" />
+                <Button Content="..." Margin="5 10 10 10">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuItem Header="Clone from git" />
+                        </MenuFlyout>
+                    </Button.Flyout>
                 </Button>
                 <Border Width="40" Height="40" CornerRadius="100" ClipToBounds="True"
                         HorizontalAlignment="Right" Margin="0 0 10 0" PointerPressed="Profile_OnPointerPressed">
                     <Image asyncImageLoader:ImageLoader.Source="https://placehold.co/80x80/png" />
                     <Border.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Test"></MenuItem>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" TextAlignment="Center">Turboman3000</TextBlock>
+                                <TextBlock TextAlignment="Center">turboman@turboman.de</TextBlock>
+                            </StackPanel>
+
+                            <MenuItem Header="-"></MenuItem>
+                            <MenuItem Header="View on CraftUniverse"></MenuItem>
+                            <MenuItem Header="Settings"></MenuItem>
+                            <MenuItem Header="-"></MenuItem>
+                            <MenuItem Header="Logout"></MenuItem>
                         </ContextMenu>
                     </Border.ContextMenu>
                 </Border>
@@ -41,7 +55,7 @@
                                 <TextBlock FontWeight="Bold" Text="New Project" Loaded="TextBlock_OnLoaded"
                                            FontSize="16"
                                            Margin="0" Padding="0" />
-                                <TextBlock FontWeight="Light" Text="C:\....\CraftEngine Projects\New Project"
+                                <TextBlock FontWeight="Light" Text="C:\...\CraftEngine Projects\New Project"
                                            Loaded="TextBlock_OnLoaded"
                                            FontSize="12" Margin="0" Padding="0" />
                             </StackPanel>

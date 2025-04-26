@@ -6,7 +6,7 @@ using MessagePack;
 
 namespace dev.craftengine.editor.ProjectManagement;
 
-public class ProjectManagement
+public static class ProjectManagement
 {
     public static FileObjects.ProjectConfig? CurrentProjectConfig { get; private set; }
     public static List<RecentProject> RecentProjects = [];
@@ -48,7 +48,7 @@ public class ProjectManagement
     {
         try
         {
-            byte[] projectConfigBytes = await File.ReadAllBytesAsync(Path.Join(path, "config.dat"));
+            var projectConfigBytes = await File.ReadAllBytesAsync(Path.Join(path, "config.dat"));
             var projectConfig = MessagePackSerializer.Deserialize<FileObjects.ProjectConfig>(projectConfigBytes);
 
             CurrentProjectConfig = projectConfig;
