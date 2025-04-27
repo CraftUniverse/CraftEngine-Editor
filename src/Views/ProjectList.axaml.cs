@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using Avalonia.Controls;
-using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Styling;
@@ -76,19 +75,5 @@ public partial class ProjectList : SukiWindow
         var btn = sender as Button;
 
         Authentification.Authenticate(btn!);
-    }
-
-    private void Profile_OnPointerPressed(object? sender, PointerPressedEventArgs e)
-    {
-        var border = sender as Border;
-
-        if (border!.ContextMenu!.IsOpen)
-        {
-            border.ContextMenu.Close();
-        }
-        else
-        {
-            border.ContextMenu.Open();
-        }
     }
 }

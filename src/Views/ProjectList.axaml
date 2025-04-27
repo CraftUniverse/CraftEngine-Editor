@@ -1,5 +1,5 @@
 ﻿<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
-                   xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+                   xmlns:engine="clr-namespace:dev.craftengine.editor.Views.Modules"
                    xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                    xmlns:i="https://github.com/projektanker/icons.avalonia"
@@ -27,24 +27,8 @@
                         </MenuFlyout>
                     </Button.Flyout>
                 </Button>
-                <Border Width="40" Height="40" CornerRadius="100" ClipToBounds="True"
-                        HorizontalAlignment="Right" Margin="0 0 10 0" PointerPressed="Profile_OnPointerPressed">
-                    <Image asyncImageLoader:ImageLoader.Source="https://placehold.co/80x80/png" />
-                    <Border.ContextMenu>
-                        <ContextMenu>
-                            <StackPanel>
-                                <TextBlock FontWeight="Bold" TextAlignment="Center">Turboman3000</TextBlock>
-                                <TextBlock TextAlignment="Center">turboman@turboman.de</TextBlock>
-                            </StackPanel>
-
-                            <MenuItem Header="-"></MenuItem>
-                            <MenuItem Header="View on CraftUniverse"></MenuItem>
-                            <MenuItem Header="Settings"></MenuItem>
-                            <MenuItem Header="-"></MenuItem>
-                            <MenuItem Header="Logout"></MenuItem>
-                        </ContextMenu>
-                    </Border.ContextMenu>
-                </Border>
+                <engine:AccountIcon Margin="0 0 10 0"
+                                    Width="40" Height="40" />
             </DockPanel>
 
             <DockPanel>
