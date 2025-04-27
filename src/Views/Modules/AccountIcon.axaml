@@ -9,17 +9,20 @@
             HorizontalAlignment="Right" PointerPressed="OnPointerPressed">
         <ail:AdvancedImage Source="/Assets/NoUser.png" />
         <Border.ContextMenu>
-            <ContextMenu>
-                <StackPanel>
-                    <TextBlock FontWeight="Bold" TextAlignment="Center">Turboman3000</TextBlock>
-                    <TextBlock TextAlignment="Center">turboman@turboman.de</TextBlock>
-                </StackPanel>
+            <ContextMenu Loaded="Context_OnLoaded">
+                <MenuItem GroupName="LOGGED_IN">
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold" TextAlignment="Center">Turboman3000</TextBlock>
+                        <TextBlock TextAlignment="Center">turboman@turboman.de</TextBlock>
+                    </StackPanel>
+                </MenuItem>
 
-                <MenuItem Header="-"></MenuItem>
-                <MenuItem Header="View on CraftUniverse"></MenuItem>
-                <MenuItem Header="Settings"></MenuItem>
-                <MenuItem Header="-"></MenuItem>
-                <MenuItem Header="Logout"></MenuItem>
+                <MenuItem GroupName="LOGGED_IN" Header="-"></MenuItem>
+                <MenuItem GroupName="LOGGED_IN" Header="View on CraftUniverse"></MenuItem>
+                <MenuItem GroupName="LOGGED_IN" Header="Settings"></MenuItem>
+                <MenuItem GroupName="LOGGED_IN" Header="-"></MenuItem>
+                <MenuItem GroupName="LOGGED_IN" Header="Logout"></MenuItem>
+                <MenuItem GroupName="LOGGED_OUT" Header="Login"></MenuItem>
             </ContextMenu>
         </Border.ContextMenu>
     </Border>
